@@ -1,0 +1,25 @@
+- can dynamically grow like array lists / unlike arrays
+- however, elements cannot be accessed directly like array lists / array
+- so, allocation of memory need not be contiguous?
+- each node has a pointer pointing to the next node
+- last pointer points to null
+- head and tail can be maintained as well
+- complexity (and comparison with array list where different) - 
+  - adding to end - o(1)
+  - removing from end - o(n) - o(1) in array list
+  - adding to front - o(1) - o(n) in array list (requires reindexing every thing again)
+  - removing from front - o(1) - o(n) in array list (requires reindexing every thing again)
+  - adding in between - o(n)
+  - removing from between - o(n)
+  - look for a particular element by value - o(n)
+  - look for a particular element by index - o(n) - o(1) in array list
+- notes for interviews? - 
+  - handle edge cases even meaningless ones - 
+    - get(negative index)
+    - get(greater than length)
+  - reuse - set(index, value) in linked list can be implemented as get(index).value = value
+- some optimizations for linked list - 
+  - maintain last pointer
+  - maintain length
+
+- TODO: add for reverse linked list

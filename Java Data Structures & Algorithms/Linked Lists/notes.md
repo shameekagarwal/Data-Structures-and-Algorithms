@@ -21,5 +21,3 @@
 - some optimizations for linked list - 
   - maintain last pointer
   - maintain length
-
-- TODO: add for reverse linked list

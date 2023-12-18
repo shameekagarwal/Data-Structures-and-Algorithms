@@ -2,6 +2,7 @@
 
 - https://leetcode.com/problems/remove-nth-node-from-end-of-list/
 - checking for boundary conditions - what if n = size of list etc is key
+- remember the two pointer technique used here
 
 # Solution
 

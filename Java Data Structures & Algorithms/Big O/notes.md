@@ -23,3 +23,4 @@
   prm1 = prm2
   prm2 = new_val // prm1 stays the same
   ```
+- amortized - when for e.g. sometimes some operations take a lot of time, but that does not happen often, so we try averaging out the cost. example is "Implement Queue using Stacks" under "Stacks & Queues"

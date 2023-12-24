@@ -1,4 +1,4 @@
-# Problem
+# Points
 
 - https://leetcode.com/problems/implement-queue-using-stacks/
 - solution 1 is naive, push is o(n) and pop is o(1)

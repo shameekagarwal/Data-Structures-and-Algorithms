@@ -1,0 +1,22 @@
+- one way - we input the value and get the hash as output
+- deterministic - computed hash is always same for the same input
+- the hash will basically tell us what index of the array we should store the element at
+- collisions - when multiple keys output the same hash i.e. same array index
+- some ways of addressing collisions - 
+  - separate chaining - each array index is a linked list 
+  - linear probing - look for an empty index till found - e.g. key1, key2 and key3 all evaluate to index i
+    - store key1 at i
+    - try storing key2 at i, not empty
+    - store key2 at i + 1
+    - try storing key2 at i, not empty
+    - try storing key2 at i + 1, not empty
+    - store key2 at i + 2
+- notice how we use the prime number for calculating the hash
+- hash method complexity - o(1) (while it might feel like it is o(n) if it is a string, n will represent number of items in the has table, and hash computation is independent of number of items in the hash table, so we say o(1))
+- adding an item - o(1)
+- getting an item - o(1) amortized, but can be o(n) in worst cases
+- note - when we say getting an item above, we are talking about getting by key, since that is the one that is hashed. getting by value is o(n) (unlike maybe bst, where getting by value was o(log n) due to its sorted nature)
+- interview question - find common elements in two arrays
+  - nested for loop - o(m * n)
+  - add elements of one of the arrays to a hash table, and iterate through the second array to find common elements - o(m + n)
+- 

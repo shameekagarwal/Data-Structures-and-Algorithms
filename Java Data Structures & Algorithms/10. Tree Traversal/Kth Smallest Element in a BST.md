@@ -1,4 +1,4 @@
-# Notes
+# Points
 
 - https://leetcode.com/problems/kth-smallest-element-in-a-bst/description/
 - TODO: first read about iterative traversal of tree, then solve this using iterations

@@ -1,4 +1,4 @@
-# Notes
+# Points
 
 - https://practice.geeksforgeeks.org/problems/operations-on-binary-min-heap
 - _steps already present in notes_
@@ -114,6 +114,10 @@ void insertKey(int k)
 void deleteKey(int i) 
 {
     if (i >= heap_size || i < 0) return;
+    if (heap_size == 1) {
+      heap_size -= 1;
+      return;
+    }
     harr[i] = harr[heap_size - 1];
     heap_size -= 1;
     shiftDown(i);

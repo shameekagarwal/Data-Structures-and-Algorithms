@@ -9,9 +9,9 @@
 - e.g. queue of people waiting for something
 - we enqueue from one end and dequeue from another end
 - e.g. if we use a linked list, dequeue from head but enqueue to tail
-- note - understand how while can use array list to implement stacks, we cannot use 
+- note - understand how while can use array list to implement stacks, we cannot use it to implement queues
 - recall stacks are bad - they use vectors so synchronized so slower
-- even linked lists are slow due to gs of nodes
+- even linked lists are slow due to gc of nodes
 - so, i am planning to always use ArrayDeque for everything
 - probably remember `addLast`, `addFirst`, `removeFirst`, `removeLast`, `peekFirst` `peekLast`, `isEmpty`
   - for emulating stacks - `addLast`, `removeLast`

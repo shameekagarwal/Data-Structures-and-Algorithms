@@ -2,6 +2,7 @@
 
 - https://leetcode.com/problems/partition-list/
 - my earlier solution was very complex, but when i retried, i did it by maintaining 4 different pointers, which made it very simple
+- note how next of tail of both partitions need to be handled outside the loop
 
 # Solution
 

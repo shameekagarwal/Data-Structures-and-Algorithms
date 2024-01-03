@@ -1,10 +1,9 @@
 # Points
 
 - https://leetcode.com/problems/kth-largest-element-in-an-array/
-- at all times, maintain size of pq = k
 - we use a min pq
-- if top < incoming, remove top, replace with incoming
 - always maintain pq.size() = k
+- if top < incoming, remove top, replace with incoming
 - finally, pq has k of the largest elements
 - since it is a min pq, top is kth largest
 

@@ -1,4 +1,4 @@
-# Notes
+# Points
 
 - after every loop iteration, prev will point to the nodes in order, e.g. 1 then 2 then 3
 - make 1 prev point to current (2), make 2 prev point to current (3) and make 3 prev point to current (null)

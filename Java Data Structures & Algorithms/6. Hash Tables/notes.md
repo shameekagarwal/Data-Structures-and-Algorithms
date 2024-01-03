@@ -12,7 +12,7 @@
     - try storing key2 at i + 1, not empty
     - store key2 at i + 2
 - notice how we use the prime number for calculating the hash
-- hash method complexity - o(1) (while it might feel like it is o(n) if it is a string, n will represent number of items in the has table, and hash computation is independent of number of items in the hash table, so we say o(1))
+- hash method complexity - o(1) (while it might feel like it is o(n) if it is a string, n will represent number of items in the hash table, and hash computation is independent of number of items in the hash table, so we say o(1))
 - adding an item - o(1)
 - getting an item - o(1) amortized, but can be o(n) in worst cases
 - note - when we say getting an item above, we are talking about getting by key, since that is the one that is hashed. getting by value is o(n) (unlike maybe bst, where getting by value was o(log n) due to its sorted nature)

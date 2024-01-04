@@ -1,6 +1,0 @@
-- two pointers - previous and next
-- recall - LinkedList in java is implemented as doubly linked list, maintains both head and tail references
-- recall - with singly linked list, removing from end is o(n). this is because we needed to set secondLastNode.next = null, and we could not go backwards from tail
-- however here, we can go backward using the tail node, and the remove from last now becomes an o(1) operation
-- for operations like get, while the worst case value still remains the same, we can do some optimization - if the head is before the mid, use head to navigate forward to the element, else use tail to navigate backward to the element
-- 

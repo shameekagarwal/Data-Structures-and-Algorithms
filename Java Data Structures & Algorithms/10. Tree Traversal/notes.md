@@ -1,9 +1,0 @@
-- tree traversal - visit all nodes in the tree
-- two ways - bfs and dfs (3 different ways)
-- bfs - level order traversal
-  - we need queue (like a temporary buffer) and list (for actual results)
-  - run the loop while the queue is non empty
-- dfs - 
-  - pre order - the node itself, left, right
-  - post order - left, right, the node itself
-  - in order - left, the node itself, right. final result is sorted automatically

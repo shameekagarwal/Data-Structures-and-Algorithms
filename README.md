@@ -1,3 +1,3 @@
 # Resources
 
-https://www.udemy.com/course/data-structures-and-algorithms-java - skipped sorting since it is present in a2z as well
+https://takeuforward.org/strivers-a2z-dsa-course/strivers-a2z-dsa-course-sheet-2/

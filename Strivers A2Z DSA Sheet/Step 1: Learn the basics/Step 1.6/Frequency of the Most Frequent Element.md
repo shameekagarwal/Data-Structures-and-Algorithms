@@ -5,9 +5,12 @@
 - we can only increase an element
 - use two pointer approach - for every r, find the maximum possible frequency, where the sub array ends at r
 - assume we want to take all elements from [l, r] to nums[r]
-- let a = nums[r] * (r - l + 1) - number of elements in the sub array is r - l + 1
-- let b = prefix[r + 1] - prefix[l] - 
+- let a = nums[r] * (r - l + 1) - number of elements in the sub array is r - l + 1, so sum of all elements if converted to nums[r] from l to r is this much
+- let b = prefix[r + 1] - prefix[l] - sum of elements between l to r is this much
 - we need a - b operations
+- another idea used here for two pointer - let current window is b to d. if for converting to d, array can start at most at b (not before that), for converting to e, array can start at most at b as well (and not before that) because otherwise, d's window itself could have started from before
+  -   |   |
+  - a b c d e
 
 ```java
 import java.util.Arrays;

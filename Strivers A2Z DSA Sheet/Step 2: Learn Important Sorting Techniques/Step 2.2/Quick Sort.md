@@ -2,8 +2,8 @@
 
 - pick a pivot
 - place it in the right spot - 
-  - place the smaller elements to the left of pivot
-  - place the larger elements to the right of pivot
+	- place the smaller elements to the left of pivot
+	- place the larger elements to the right of pivot
 - then, recursively sort the right and left parts of the pivot
 - another optimization here - to determine the left and right parts of the pivot, we do not use auxiliary arrays - we use O(1) space using pointers (unlike merge sort?)
 - time complexity - O(n * log n)
@@ -20,7 +20,6 @@ public class Solution {
 		int low = startIndex;
 		int high = endIndex;
 
-
 		while (low < high) {
 			while ((low < endIndex) && (input[low] <= pivot)) {
 				low += 1;
@@ -33,9 +32,7 @@ public class Solution {
 			}
 		}
 
-		if (high != startIndex) {
-			swap(input, high, startIndex);
-		}
+		swap(input, high, startIndex);
 
 		quickSort(input, startIndex, high - 1);
 		quickSort(input, high + 1, endIndex);

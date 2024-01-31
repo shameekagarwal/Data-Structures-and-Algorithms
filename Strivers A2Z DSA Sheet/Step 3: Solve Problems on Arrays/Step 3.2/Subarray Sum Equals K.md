@@ -1,0 +1,24 @@
+# Subarray Sum Equals K
+
+- https://leetcode.com/problems/subarray-sum-equals-k/
+- note the initialization for 0 to make things easier
+- both time and space complexity - O(n)
+
+```
+class Solution {
+    public int subarraySum(int[] nums, int k) {
+        Map<Integer, Integer> prefix = new HashMap<>();
+        prefix.put(0, 1);
+        int currentSum = 0;
+        int result = 0;
+        for (int i = 0; i < nums.length; i++) {
+            currentSum += nums[i];
+            if (prefix.containsKey(currentSum - k)) {
+                result += prefix.get(currentSum - k);
+            }
+            prefix.put(currentSum, prefix.getOrDefault(currentSum, 0) + 1);
+        }
+        return result;
+    }
+}
+```

@@ -1,6 +1,6 @@
 # Reverse an array
 
-- O(n / 2) is the complexity
+- O(n) is naive, do it in O(n / 2) is the complexity
 - best practice - since return was expected, do not mutate user input
 
 ```java

@@ -6,6 +6,13 @@
   - verify if both the numbers are completely divisible by it
 - optimized - O(log<sub>something</sub>(n))))
   - euclidean algorithm - gcd(a, b) = gcd(a % b, b), where a > b
+- my layman thought if asked intuition of euclidean algorithm -
+  - let a > b
+  - let a = (p * b) + r
+  - we want a % gcd = 0 and b % gcd = 0
+  - a % gcd will be 0 only if r % gcd = 0 (because b % gcd is already 0)
+  - so, f_gcd(a, b) = f_gcd(b, r)
+  - r is basically a % b
 
 # Naive
 

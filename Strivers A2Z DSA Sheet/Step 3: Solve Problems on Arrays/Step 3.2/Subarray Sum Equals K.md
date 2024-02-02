@@ -4,7 +4,7 @@
 - note the initialization for 0 to make things easier
 - both time and space complexity - O(n)
 
-```
+```java
 class Solution {
     public int subarraySum(int[] nums, int k) {
         Map<Integer, Integer> prefix = new HashMap<>();

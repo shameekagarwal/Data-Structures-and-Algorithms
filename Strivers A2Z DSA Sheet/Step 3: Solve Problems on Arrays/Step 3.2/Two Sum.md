@@ -23,6 +23,7 @@ class Solution {
 
 - solve without using a map
 - approach - two pointer
+- we had to use a custom data structure since on sorting, the index of the element is lost
 - my doubt, TODO - this feels like a variation of the usual two pointer that i do, where both start from beginning. how to identify from the problem which variation to use
 
 ```java

@@ -1,6 +1,8 @@
 # Reverse a Number
 
 - https://leetcode.com/problems/reverse-integer/
+- convert into positive before reversing it, then reverse it
+- edge case - overflow out of integer space - questions specifies to return 0
 
 ```java
 class Solution {

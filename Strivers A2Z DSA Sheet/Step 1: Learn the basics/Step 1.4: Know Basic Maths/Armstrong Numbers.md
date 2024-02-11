@@ -1,6 +1,8 @@
 # Check Armstrong
 
 - https://www.codingninjas.com/studio/problems/check-armstrong_589
+- 1 loop to count number  of digits
+- another one to add the (digit ^ number of digits) to result
 
 ```java
 import java.util.*;

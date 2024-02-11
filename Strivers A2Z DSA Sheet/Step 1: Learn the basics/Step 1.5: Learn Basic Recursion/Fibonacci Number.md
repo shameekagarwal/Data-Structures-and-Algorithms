@@ -3,6 +3,7 @@
 - difference from other recursive patterns - multiple recursive calls are made by one call
 - the first recursive call will resolve first completely, then the second recursive call, and so on
 - time complexity of recursive solution - O(2^n)
+- https://leetcode.com/problems/fibonacci-number/
 
 ## Recursive
 
@@ -16,6 +17,8 @@ class Solution {
 ```
 
 ## Optimized
+
+- we can even get away by just using 2-3 variables for last and second last, instead of the entire array
 
 ```java
 class Solution {

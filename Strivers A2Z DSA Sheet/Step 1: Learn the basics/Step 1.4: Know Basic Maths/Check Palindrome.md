@@ -1,6 +1,7 @@
 # Palindrome Number
 
 - https://leetcode.com/problems/palindrome-number/
+- use long to avoid overflow - reverse of an int can be a long
 
 ```java
 class Solution {

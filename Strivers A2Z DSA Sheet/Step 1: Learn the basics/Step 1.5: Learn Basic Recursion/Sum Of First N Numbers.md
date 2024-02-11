@@ -32,6 +32,8 @@ public class Solution {
 
 ## Optimized
 
+- important - notice how we avoid overflow when multiplying `n * (n + 1)`
+
 ```java
 public class Solution {
     public static long sumFirstN(long n) {

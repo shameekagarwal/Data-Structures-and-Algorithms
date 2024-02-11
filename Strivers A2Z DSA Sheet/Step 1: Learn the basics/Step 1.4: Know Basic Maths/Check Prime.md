@@ -2,7 +2,8 @@
 
 - https://www.codingninjas.com/studio/problems/check-prime_624934
 - note - java was not working
-- checking 2 and odd numbers only
+- checking 2 and odd numbers only up to sqrt(n)
+- remember boundary cases for 1 and 2
 
 ```cpp
 bool isPrime(int n)
@@ -15,5 +16,4 @@ bool isPrime(int n)
 	}
 	return true;
 }
-
 ```

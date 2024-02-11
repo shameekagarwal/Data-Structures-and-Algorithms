@@ -1,7 +1,7 @@
 # Highest / Lowest Frequency Elements
 
 - https://www.codingninjas.com/studio/problems/k-most-occurrent-numbers_625382
-- please remember entrySet()
+- please remember `entrySet()`
 
 ```java
 import java.util.*;

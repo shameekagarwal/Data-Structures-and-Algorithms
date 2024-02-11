@@ -3,6 +3,7 @@
 - https://www.codingninjas.com/studio/problems/count-digits_8416387
 - time complexity - O(log<sub>10</sub>(n))
 - so, think log complexity when dividing by a number in a loop
+- corner case - do not consider 0 when calculating mod
 
 ```java
 public class Solution {

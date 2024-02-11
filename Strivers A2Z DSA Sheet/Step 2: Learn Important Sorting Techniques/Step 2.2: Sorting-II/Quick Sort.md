@@ -1,5 +1,6 @@
 # Quick Sort
 
+- https://www.codingninjas.com/studio/problems/quick-sort_5844
 - pick a pivot
 - place it in the right spot - 
 	- place the smaller elements to the left of pivot

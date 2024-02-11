@@ -1,5 +1,6 @@
 # Bubble Sort
 
+- https://www.codingninjas.com/studio/problems/bubble-sort_624380
 - swap adjacent elements
 - first round puts last element in the correct place
 - second round puts second last element in the correct place
@@ -10,8 +11,8 @@
 ```java
 public class Solution {
     public static void bubbleSort(int[] arr, int n) {
-        for (int i = 0; i < arr.length - 1; i++) {
-            for (int j = 0; j < arr.length - i - 1; j++) {
+        for (int upto = n - 1; upto > 0; upto--) {
+            for (int j = 0; j < upto; j++) {
                 if (arr[j] > arr[j + 1]) {
                     swap(arr, j, j + 1);
                 }

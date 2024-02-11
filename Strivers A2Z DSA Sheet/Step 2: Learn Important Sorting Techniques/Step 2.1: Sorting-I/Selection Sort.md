@@ -1,5 +1,6 @@
 # Selection Sort
 
+- https://www.codingninjas.com/studio/problems/selection-sort_624469
 - idea is - 
   - find smallest element between [0 - n-1] and swap it with element at 0
   - find smallest element between [1 - n-1] and swap it with element at 1

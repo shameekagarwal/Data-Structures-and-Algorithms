@@ -1,7 +1,7 @@
 # Majority Element
 
 - https://leetcode.com/problems/majority-element/
-- naive - use a map- complexity - O(n) (remember in interview to point out hashing collision therefore O(n^2))
+- naive - use a map - complexity - O(n) (remember in interview to point out hashing collision therefore O(n^2))
 - optimal - moore's voting algorithm
 - intuition - if an element occurs more than n / 2 times, the running count we maintain should not touch 0
 - note - the answer we get like this might be the majority element, but it is not guaranteed

@@ -2,6 +2,7 @@
 
 - https://www.codingninjas.com/studio/problems/intersection-of-2-arrays_1082149
 - note - duplicates are allowed here. note how is different from [Find the Union](./Find%20the%20Union.md) in the same section
+- also, unlike typical merge, the two extra loops at end is not needed, since we are looking for intersection
 
 ```java
 import java.util.* ;

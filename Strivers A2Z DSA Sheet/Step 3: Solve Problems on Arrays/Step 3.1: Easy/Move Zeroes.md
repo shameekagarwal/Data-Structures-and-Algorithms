@@ -1,6 +1,8 @@
 # Move Zeroes
 
 - https://leetcode.com/problems/move-zeroes/
+- O(n) to move all non zero elements to beginning
+- use another pass to convert all elements from after the last non zero element to end and set them to 0
 
 ```java
 class Solution {
@@ -22,7 +24,8 @@ class Solution {
 
 ## Do it in One Pass?
 
-- the pointer always points to the beginning of zeroes
+- beginningOfZeroes to i - 1 is a collection of zeros
+- if i is also a zero - good. else, swap beginningOfZeroes with i, so that our condition of previous point is maintained
 
 ```java
 class Solution {

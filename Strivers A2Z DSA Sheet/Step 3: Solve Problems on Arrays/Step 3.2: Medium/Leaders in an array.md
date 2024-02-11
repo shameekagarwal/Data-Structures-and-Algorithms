@@ -1,6 +1,7 @@
 # Leaders in an array
 
 - https://www.codingninjas.com/studio/problems/leaders-in-an-array_873144
+- remember `Collections.reverse` stl
 
 ```java
 import java.util.* ;

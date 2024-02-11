@@ -7,7 +7,7 @@
 - we use a pointer for both arrays
   - do `r++` till `rightArray[r] < leftArray[l]`
   - now, number of inversions with l at left = r
-- corner case - when the while loop terminates, either l or r reaches full length. but if elements are still left for l, we simply add it
+- corner case - when the while loop terminates, either l or r reaches full length. but if elements are still left for l, we simply add it - we could have also changed the loop's `&&` to `||` and then for all elements on the left, r would have been added
 - i think this solution can be reused in multiple places - if we can solve for smaller chunks and then solve for the bigger chunk
 - create array copy to avoid mutating inputs
 

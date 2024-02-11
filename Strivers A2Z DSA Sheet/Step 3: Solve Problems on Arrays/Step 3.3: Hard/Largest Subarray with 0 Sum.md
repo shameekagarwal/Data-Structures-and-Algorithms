@@ -1,7 +1,7 @@
 # Largest Subarray with 0 Sum
 
 - https://www.codingninjas.com/studio/problems/longest-subarray-with-zero-sum_6783450
-- only add to map if already does not exist, otherwise add - if we have a prefix sum for index i as well at index j, we would want to use i if i < j for a larger subarray
+- exact same as [this](/Strivers%20A2Z%20DSA%20Sheet/Step%203:%20Solve%20Problems%20on%20Arrays/Step%203.1:%20Easy/Longest%20Subarray%20With%20Sum%20K.md)
 
 ```java
 import java.util.Map;

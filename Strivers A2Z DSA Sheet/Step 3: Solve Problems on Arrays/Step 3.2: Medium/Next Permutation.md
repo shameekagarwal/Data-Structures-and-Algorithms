@@ -7,7 +7,7 @@
 - we need to exchange 1 with the "next largest number" after it - 3 in this case
 - now, we make the number 2 3 [5 4 1 0 0]
 - now, 5 4 1 0 0 we need to make smallest possible - just reverse it!
-- small edge case i made mistake - when reversing, e.. assume it is 5 5 5 5
+- small edge case i made mistake - when reversing, e.g. assume it is 5 5 5 5
 - we need to swap with last 5, not first - otherwise reversing will not make it ascending
 
 ```java

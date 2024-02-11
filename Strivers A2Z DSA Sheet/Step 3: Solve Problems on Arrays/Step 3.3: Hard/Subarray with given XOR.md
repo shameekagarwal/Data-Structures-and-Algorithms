@@ -2,7 +2,7 @@
 
 - https://www.interviewbit.com/problems/subarray-with-given-xor/
 
-```
+```java
 public class Solution {
     public int solve(ArrayList<Integer> A, int B) {
         

@@ -62,7 +62,7 @@ class Solution {
 
 - uses no extra space complexity for set / extra time complexity for maintaining it
 - so, true O(n^2)
-- notice the change in for loop - i66 is not used, instead it is incremented manually "till the number does not change"
+- notice the change in for loop - i++ is not used, instead it is incremented manually "till the number does not change"
 
 ```java
 class Solution {

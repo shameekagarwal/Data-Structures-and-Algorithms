@@ -5,7 +5,7 @@
 - in interview, make functions like is valid etc
 - both time and space complexity - O(n ^ 2)
 
-```
+```java
 class Solution {
     public List<Integer> spiralOrder(int[][] matrix) {
 

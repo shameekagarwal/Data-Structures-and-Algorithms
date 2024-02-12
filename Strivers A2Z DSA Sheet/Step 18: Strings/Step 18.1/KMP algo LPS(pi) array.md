@@ -1,6 +1,6 @@
 # KMP algo / LPS(pi) array
 
-- https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/description/
+- https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/
 
 ## Brute Force
 

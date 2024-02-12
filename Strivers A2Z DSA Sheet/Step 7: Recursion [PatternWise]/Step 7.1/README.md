@@ -1,1 +1,0 @@
-# Get a Strong Hold

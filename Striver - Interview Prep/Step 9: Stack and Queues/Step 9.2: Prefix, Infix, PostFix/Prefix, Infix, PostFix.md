@@ -1,0 +1,76 @@
+# Prefix, Infix, PostFix
+
+- prefix - operator before operands - also called polish
+- infix - operator between operands
+- postfix - operator after operands - also called reverse polish
+- operators can be unary (e.g. increment, log, etc) or binary (multiplication etc)
+- which order to evaluate - associativity
+- e.g. 1 - 3 - 4 = -6 if we do (1 - 3) - 4, but = 2 if we do 1 - (3 - 4)
+- -4 is correct because of associativity
+- do not think bodmas for precedence - 
+  - parentheses - left
+  - unary operators
+  - exponent - right
+  - multiplication, division - left
+  - addition, subtraction - left
+  - assignment - right
+- so, 2^3^2 is 512, not 64
+- input - 2 + 3 * 5 - 1. output in steps by making chunks based on operator precedence - every time, treat each chunk as an operand
+- infix to prefix 
+  - 2 + <u>* 3 5</u> - 1
+  - <u>+ 2 * 3 5</u> - 1
+  - <u>- + 2 * 3 5 1</u>
+- infix to postfix
+  - 2 + <u>3 5 *</u> - 1
+  - <u>2 3 5 * +</u> - 1
+  - <u>2 3 5 * + 1 -</u>
+- input - `7 - 6 * 3 ^ 2 / 8 + 9`
+  - prefix - `+ - 7 / * 6 ^ 3 2 8 9`
+  - postfix - `7 6 3 2 ^ * 8 / - 9 +`
+- input - `(a + b) * (c - d) / f - x * y / z`
+  - prefix - `- / * + a b - c d f / * x y z`
+  - postfix - `a b + c d - * f / x y * z / -`
+- input - `a + b * c - d ^ e ^ f`
+  - prefix - `- + a * b c ^ d ^ e f`
+  - postfix - `a b c * + d e f ^ ^ -`
+- why we need parentheses - because we need to influence the default precedence. however, this is not needed in prefix and postfix
+- vvimp - when converting from postfix / prefix to infix, we do not scan the entire thing and look for precedence like we did when going infix to prefix / postfix
+- by default, no such concept in prefix and postfix expressions, they are already "written the right way"
+- when converting from postfix / prefix to infix, just keep the brackets regardless - and feel free to remove whatever feels redundant
+- when going postfix to infix, scan left to right
+- postfix to infix. input - `2 5 3 2 ^ * + 9 +`
+  - `2 5 (3 ^ 2) * + 9 +`
+  - `2 (5 * (3 ^ 2)) + 9 +`
+  - `(2 + (5 * (3 ^ 2))) 9 +`
+  - `((2 + (5 * (3 ^ 2))) + 9)`
+  - remove redundant brackets - `2 + 5 * 3 ^ 2 + 9`
+- postfix to infix
+  - input - `a b c * + d e / f * -`
+  - output - `a + b * c - d / e * f`
+- postfix to infix
+  - input - `a b c d - * + e /`
+  - output - `(a + b * (c - d)) / e`
+- when going prefix to infix, scan right to left
+- prefix to infix. input - `+ - 6 ^ 2 * 3 7 9`
+  - `+ - 6 ^ 2 (3 * 7) 9`
+  - `+ - 6 (2 ^ (3 * 7)) 9`
+  - `+ (6 - (2 ^ (3 * 7))) 9`
+  - `((6 - (2 ^ (3 * 7))) + 9)`
+  - remove redundant brackets - `6 - 2 ^ (3 * 7) + 9`
+- postfix evaluation - 
+  - if operand is encountered, push to stack
+  - if operator is encountered, pop 2 operands from stack, perform evaluation and finally push it back into the stack
+- e.g. input - `2 5 3 2 ^ * + 6 -`
+  - `[2`, `[2 5`, `[2 5 3`, `[2 5 3 2`
+  - `[2 5 9`
+  - `[2 45`
+  - `[47`
+  - `[47 6`
+  - `[41`
+- e.g. input - `10 5 + 30 6 / 5 5 * 3 * * + 8 -`, output - `[382`
+- e.g. input - `9 3 1 ^ / 4 2 * + 5 1 * -`, output - `[6`
+- difference between prefix and postfix evaluation 
+  - in postfix, scan left to right, and evaluate `top2 op top1`
+  - in prefix, scan right to left, and evaluate `top1 op top2`
+- e.g. input - `- + 5 / * 6 2 3 4`, output - `[5`
+- e.g. input - `/ 3 * 9 + 4 + 5 3`, output - `[3/108`

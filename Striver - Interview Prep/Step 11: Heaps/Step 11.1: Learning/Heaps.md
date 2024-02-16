@@ -1,0 +1,23 @@
+# Heaps
+
+- also called a priority queue
+- it is a complete binary tree - fills left from right without missing out positions
+- can have duplicates
+- max heap - max value at root - parent > = children
+- we can also have a min heap
+- we use an array to implement a heap
+- because the tree is complete - there would not be any gaps in the array
+- implementation - we can either leave the 0th index empty or not
+- left child - `(2 * parent index) + 1`
+- right child - `(2 * parent index) + 2`
+- parent - `(index - 1) // 2`
+- insertion - 
+  - insert at end of array to keep the tree complete
+  - keep bubbling up the current element while its value is greater than its parent
+- remove - 
+  - remove the beginning of the array
+  - move the element at the end of the array to the beginning to keep the tree complete
+  - keep bubbling down the current element while its value is lesser than its children
+- height of binary tree - log(n) always, because it is always balanced / complete
+- so, removing an item / inserting an item - both are log(n) always since tree is not skewed
+- refer [Min Heap Implementation](./Min%20Heap%20Implementation.md) for complete implementation

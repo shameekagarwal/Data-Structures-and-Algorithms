@@ -1,7 +1,7 @@
 # Convert Min Heap To Max Heap
 
 - https://www.codingninjas.com/studio/problems/convert-min-heap-to-max-heap_1381084
-- i wrote a solution where i inserted elements one by one into a new heap
+- i wrote a solution where i inserted elements one by one into a new heap - thus i ignored that the given structure is a max heap, it could have as well been a stack
 - online solutions says we call shift down on all nodes on - 
   - last level - 1
   - last level - 2
@@ -10,6 +10,7 @@
 - online proves it is O(n)
 - maybe idea is when i am shifting down elements on (last level - 1), the entire height of heap (log<sub>2</sub>n) is not being traveled - we only look at the level below it
 - ignoring actual proof for now
+- i think same logic applies to my initial solution as well - i am just constructing a heap from a given set of elements. complexity of this is not O(n * log<sub>2</sub>N), because when i insert the first element, height should not be log<sub>2</sub>N, but just 1
 
 ```java
 import java.util.Arrays;

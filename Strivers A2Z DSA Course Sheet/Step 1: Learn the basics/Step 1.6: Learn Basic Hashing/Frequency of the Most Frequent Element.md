@@ -11,6 +11,7 @@
 - let b = prefix[r + 1] - prefix[l] - sum of elements between l to r is this much
 - we need a - b operations
 - another idea used here for two pointer - let current window is b to d. if for converting to d, array can start at most at b (not before that), for converting to e, array can start at most at b as well (and not before that) because otherwise, d's window itself could have started from before
+- time complexity - O(n * logN) for sorting
 
 ```java
 import java.util.Arrays;

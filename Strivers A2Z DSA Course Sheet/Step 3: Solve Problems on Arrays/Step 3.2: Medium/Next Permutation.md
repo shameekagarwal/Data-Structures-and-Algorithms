@@ -5,6 +5,7 @@
 - optimal - lets assume number if - 2 1 5 4 3 0 0
 - we if we keep 2 and 1 as is, the remaining is the max possible
 - we need to exchange 1 with the "next largest number" after it - 3 in this case
+- doubt - can the above bit be "binary searched"
 - now, we make the number 2 3 [5 4 1 0 0]
 - now, 5 4 1 0 0 we need to make smallest possible - just reverse it!
 - small edge case i made mistake - when reversing, e.g. assume it is 5 5 5 5
@@ -29,9 +30,10 @@ class Solution {
         }
 
         int justMoreThanIndexToSwapIndex = -1;
-        for (int i = indexToSwap + 1; i < nums.length; i++) {
-            if ((justMoreThanIndexToSwapIndex == -1 || nums[justMoreThanIndexToSwapIndex] >= nums[i]) && nums[i] > nums[indexToSwap]) {
+        for (int i = nums.length - 1; i > indexToSwap; i--) {
+            if (nums[i] > nums[indexToSwap]) {
                 justMoreThanIndexToSwapIndex = i;
+                break;
             }
         }
 

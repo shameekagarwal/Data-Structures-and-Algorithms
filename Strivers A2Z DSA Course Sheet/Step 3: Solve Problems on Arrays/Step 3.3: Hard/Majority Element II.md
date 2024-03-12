@@ -2,7 +2,7 @@
 
 - https://leetcode.com/problems/majority-element-ii/
 - naive - space and time both O(n) using hash map
-- intuition - same as [Majority Element](/Strivers%20A2Z%20DSA%20Sheet/Step%203:%20Solve%20Problems%20on%20Arrays/Step%203.2/Majority%20Element.md)
+- intuition - same as [Majority Element](../Step%203.2:%20Medium/Majority%20Element.md)
 - at max, two elements can satisfy the criteria - more than 2 elements cannot be > n / 3
 - we need to run the check at the end like discussed in Majority Element
 - my doubt - why do we not decrease the count of majority 1 when for e.g. majority 2 is found? - because majority 2 is not competing with majority 1 - only elements that compete with majority 1 can decrease / affect its count

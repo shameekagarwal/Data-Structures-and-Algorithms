@@ -14,6 +14,7 @@
 
 - let we want value at row r and column c
 - answering number at a particular position - (r-1)C(c-1)
+- in interview, we cannot come up with this directly - derive it from [particular row](#particular-row)
 
 ## Particular Row
 

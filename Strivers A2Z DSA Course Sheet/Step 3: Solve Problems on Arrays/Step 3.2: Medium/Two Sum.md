@@ -24,6 +24,9 @@ class Solution {
 - solve without using a map
 - approach - two pointer
 - we had to use a custom data structure since on sorting, the index of the element is lost
+- my understanding of why this approach can be used - kind of like greedy? say we are at say 0,n-1
+  - if `arr[0] + arr[n-1] > k` - we can be sure that left is the smallest possible - so, we have to decrease right
+  - similarly, if < k, we can be sure that right is the biggest possible given left - so, we have to increase left
 - my doubt, TODO - this feels like a variation of the usual two pointer that i do, where both start from beginning. how to identify from the problem which variation to use
 
 ```java

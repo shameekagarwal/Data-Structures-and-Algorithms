@@ -1,7 +1,7 @@
 # Subarray Sum Equals K
 
 - https://leetcode.com/problems/subarray-sum-equals-k/
-- for all subarray equals sum k, recall [this](/Strivers%20A2Z%20DSA%20Sheet/Step%203:%20Solve%20Problems%20on%20Arrays/Step%203.1:%20Easy/Longest%20Subarray%20With%20Sum%20K.md) - if only positive integers are there, we might get away without using a map and only two pointers
+- for all subarray equals sum k, recall [this](../Step%203.1:%20Easy/Longest%20Subarray%20With%20Sum%20K.md) - if only positive integers are there, we might get away without using a map and only two pointers
 - note the initialization for 0 to make things easier
 - both time and space complexity - O(n)
 

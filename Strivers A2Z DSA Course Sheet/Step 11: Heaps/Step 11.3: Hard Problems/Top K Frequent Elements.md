@@ -9,7 +9,7 @@
   - building frequency hash map - O(N)
   - building heap - O((N-K) * logK + K) - why?
     - for first K elements, say it takes (K * logK) - actually i guess it should take O(K) because building a heap of size k takes O(K) time, but anyway
-    - for next K elements, size of heap does not exceed K - so, it stays at O((N-K) * logK)
+    - for next N elements, size of heap does not exceed K - so, it stays at O((N-K) * logK)
   - for popping K elements - again O(K * logK) but should be even lesser
 - so, we kind of stay under O(N*logK)
 

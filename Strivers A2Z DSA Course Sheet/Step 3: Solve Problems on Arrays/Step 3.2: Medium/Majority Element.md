@@ -8,7 +8,7 @@
 - e.g. - 2 2 2 2 2 1 1 1 1 1 3 3 - by moore's, answer would be 3, but it isn't - we got the answer because it is "end heavy"
 - so, we run an extra loop at the end
 - imp note - i did not run the extra loop in leetcode since the question guaranteed that a majority element would exist
-- remember the order of conditions - helps use the same logic in [Majority II](/Strivers%20A2Z%20DSA%20Sheet/Step%203:%20Solve%20Problems%20on%20Arrays/Step%203.3/Majority%20Element%20II.md)
+- remember the order of conditions - helps use the same logic in [Majority II](../Step%203.3:%20Hard/Majority%20Element%20II.md)
 
 ```java
 class Solution {

@@ -4,7 +4,7 @@
 - conditions - 
   - values inside a triplet can be same, but we cannot choose element at same index twice in a triplet
   - distinct triplets - if we have two -1s, we cannot consider a triplet like [-1, 0, 2] twice - a triplet can only occur once
-- brute force - O(n^3 + 3log3 + plogp) (3log3 for sorting list of 3, plogp for inserting into set, where p = final number of triplets)
+- brute force - O(n^3 + 3log3 + p) (3log3 for sorting list of 3, p for inserting into set, where p = final number of triplets)
   ```
   for (i = 0 < n) {
     for (j = i + 1 < n) {
@@ -22,6 +22,7 @@
 
 - list equals in java - checks `list1.get(i).equals(list2.get(i))`
 - so, we can use set to dedupe, because all triplets would be sorted anyway (we will never have a triplet like [2,-2,0])
+- a mistake thought - i was thinking `[a,a,a,b,b,b,c,c]` can be made into `[a,b,c,d]` to avoid duplicates, but that would not work - triplet can be a,a,b i.e. two elements of the same value
 - requires extra space for set / extra complexity for maintaining it
 
 ```java

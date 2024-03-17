@@ -38,5 +38,4 @@ public class Solution {
         return current;
     }
 }
-
 ```

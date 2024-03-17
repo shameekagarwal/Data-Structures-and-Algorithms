@@ -3,6 +3,7 @@
 - https://www.codingninjas.com/studio/problems/remove-duplicates-from-a-sorted-doubly-linked-list_2420283
 - bug in the problem - says dll but question is of ll
 - to confirm - i do not think much changes should be needed, commented the line
+- no reason for head to change, just return head as is - we retain the first element if duplicates exist
 
 ```java
 public class Solution {

@@ -53,6 +53,11 @@ public class Solution {
 - when the other reaches end, reset it to beginning of other list as well
 - now both are "aligned" i.e. they will both meet at intersection point
 - note - if they do not have an intersection point, both reach null at the same time
+- assume smaller list is x uncommon, longer has y uncommon, and both have z common
+- one pointer would move x + z + y, other would move y + z + x, after which both will meet
+  - if same length both would move the uncommon equal length part x / y
+- if no part is common, one would move a + b, other would move b + a, after which both would be null
+  - if same length both would move just move once a / b
 
 ```java
 public class Solution {

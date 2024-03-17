@@ -5,39 +5,59 @@
 
 ```java
 class Solution {
- 
+
     public ListNode rotateRight(ListNode head, int k) {
-        
-        int length = getLength(head);
-        if (length == 0) return head;
+
+        if (head == null || head.next == null) return head;
+
+        int length = findLength(head);
         k = k % length;
+
         if (k == 0) return head;
         
-        ListNode prevTail = getNode(head, length);
-        prevTail.next = head;
+        ListNode fast = head;
+        for (int i = 0; i < k; i++) {
+            fast = fast.next;
+        }
 
-        ListNode newTail = getNode(head, length - k);
-        ListNode newHead = newTail.next;
+        ListNode current = head;
+        ListNode newHead = null;
+        ListNode newTail = null;
+
+        while (true) {
+
+            if (fast != null) {
+                if (fast.next == null) {
+                    newTail = current;
+                }
+                fast = fast.next;
+                if (fast == null) {
+                    newHead = current.next;                    
+                }
+            }
+
+            if (current.next == null) {
+                current.next = head;
+                break;
+            }
+
+            current = current.next;
+        }
+
         newTail.next = null;
 
         return newHead;
     }
 
-    private ListNode getNode(ListNode current, int l) {
-        l -= 1;
-        while (l > 0) {
-            current = current.next;
-            l -= 1;
-        }
-        return current;
-    }
+    private int findLength(ListNode node) {
 
-    private int getLength(ListNode current) {
         int length = 0;
-        while (current != null) {
+
+        while (node != null) {
+            node = node.next;
             length += 1;
-            current = current.next;
         }
+
         return length;
     }
 }

@@ -32,7 +32,7 @@ class Solution {
             currentPick.add(candidates[currentIdx]);
             result.add(new ArrayList<>(currentPick));
             currentPick.remove(currentPick.size() - 1);
-        } else if (candidates[currentIdx] <= target) {
+        } else if (candidates[currentIdx] < target) {
             currentPick.add(candidates[currentIdx]);
             recurse(result, candidates, target - candidates[currentIdx], currentIdx, currentPick);
             // recurse(result, candidates, target - candidates[currentIdx], currentIdx + 1, currentPick);

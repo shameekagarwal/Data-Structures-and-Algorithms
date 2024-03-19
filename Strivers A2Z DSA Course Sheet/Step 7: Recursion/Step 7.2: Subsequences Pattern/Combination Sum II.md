@@ -5,6 +5,7 @@
 - optimized - sort array first (make a copy for leaving input untouched) - this way we ensure sorted
 - now, assume array is of form `[1, 1, 1, 2, 2]`
 - when choosing the current element for the subsequence, we only need to select the first 1st 1 or 1st 2 i.e. no point of ignoring the 1st 1 and selecting the second 1 - we end up generating duplicates this way
+- so, for 1, 4 combinations are there - no 1s, 1, 1 1, 1 1 1. so, for all the last 3 cases, we always use the first 1
 - this way, we ensure unique subsequences
 - at every step, we try picking the element all elements between startIdx to end
 - if we pick an element, we try generating all subsequences such that the next element can be anything from that idx + 1 to the end of the list
@@ -22,8 +23,6 @@ class Solution {
     }
 
     private void recurse(List<List<Integer>> result, int[] candidates, int startIdx, int target, List<Integer> currentPick) {
-        
-        // System.out.printf("startIdx = %d, target = %d, currentPick = %s\n", startIdx, target, currentPick);
 
         for (int i = startIdx; i < candidates.length; i++) {
 

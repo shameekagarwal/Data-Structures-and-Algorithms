@@ -10,6 +10,7 @@
   6 7 8
   ```
 - so, box number is - `((i / 3) * 3) + (j / 3)`
+- note how we are filling the sudoku - from left to right, then go to next row if we reach the right end
 
 ```java
 class Solution {

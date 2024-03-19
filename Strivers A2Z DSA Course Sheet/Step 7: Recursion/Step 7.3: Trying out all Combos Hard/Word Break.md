@@ -34,3 +34,37 @@ class Solution {
     }
 }
 ```
+
+### Iterative Solution - More Intuitive
+
+```java
+class Solution {
+
+    public boolean wordBreak(String s, List<String> wordDict) {
+
+        boolean[] canBreak = new boolean[s.length() + 1];
+        canBreak[0] = true;
+
+        for (int end = 0; end < s.length(); end++) {
+
+            for (String word : wordDict) {
+
+                if (word.length() > end + 1) continue;
+
+                int start = end - word.length() + 1;
+
+                if (s.substring(start, end + 1).equals(word)) {
+                    if (canBreak[end + 1 - word.length()]) {
+                        canBreak[end + 1] = true;
+                        break;
+                    }
+                }
+            }
+        }
+
+        // System.out.println(Arrays.toString(canBreak));
+
+        return canBreak[s.length()];
+    }
+}
+```

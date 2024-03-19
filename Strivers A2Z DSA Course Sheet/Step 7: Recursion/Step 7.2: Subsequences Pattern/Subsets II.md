@@ -3,6 +3,9 @@
 - https://leetcode.com/problems/subsets-ii/
 - intuition explained inside [Combination Sum II](./Combination%20Sum%20II.md)
 - remember this pattern as is to avoid confusion - notice how there is no base case here unlike what we usually see in recursion
+- vvipmp - recursion tree - this pattern can be tricky to come up with in interview, remember this as is
+
+![](./subsets-ii.png)
 
 ```java
 class Solution {

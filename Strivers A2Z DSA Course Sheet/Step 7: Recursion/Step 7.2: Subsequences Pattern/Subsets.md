@@ -33,6 +33,7 @@ class Solution {
 ## Recursive Solution
 
 - using a boolean array to track whether or not the element should be included in the current result
+- runtime looks fine on leetcode if i directly just maintain a list instead of a boolean array - probably removals from end of list ain't that bad
 
 ```java
 class Solution {

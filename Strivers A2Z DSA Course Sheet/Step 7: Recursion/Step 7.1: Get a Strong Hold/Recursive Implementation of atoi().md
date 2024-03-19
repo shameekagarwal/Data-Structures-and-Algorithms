@@ -1,7 +1,7 @@
 # Recursive Implementation of atoi()
 
 - https://leetcode.com/problems/string-to-integer-atoi/
-- kept it the same as [String to Integer (atoi)](/Strivers%20A2Z%20DSA%20Sheet/Step%205:%20Strings%20[Basic%20and%20Medium]/Step%205.2/String%20to%20Integer%20(atoi).md), but just made the number calculation bit recursive
+- kept it the same as [String to Integer (atoi)](../../Step%205:%20Strings%20[Basic%20and%20Medium]/Step%205.2:%20Medium%20String%20Problems/String%20to%20Integer%20(atoi).md), but just made the number calculation bit recursive
 
 ```java
 class Solution {

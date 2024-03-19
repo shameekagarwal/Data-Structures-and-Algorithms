@@ -12,7 +12,7 @@
 - case 2.3 - multiplication - because of bodmas
   - previous number becomes previous number * current number
   - result becomes result - previous number + new previous number
-- `5-4*3` - 5-4 will give result 1, but when 3 is found, we do `1-(-4)+(-4*3)` = `-7`, which looks right - this was possible because we took previous number as -7 and not just 7
+- `5-4*3` - 5-4 will give result 1, but when 3 is found, we do `1-(-4)+(-4*3)` = `-7`
 
 ```java
 class Solution {

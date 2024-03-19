@@ -3,6 +3,9 @@
 - constraint - 200 characters, so even long isn't enough
 - note how the problem never used big integer / long / etc for optimal runtime
 - https://leetcode.com/problems/string-to-integer-atoi/
+- dry run to prove the if condition - e.g. 123456 is the max int max value
+- if we have string "123457"
+- the last digit subtraction / 10 for int_max will make it 12344 - which would be lesser than the first 5 digits of 123457 i.e. 12345
 
 ```java
 class Solution {

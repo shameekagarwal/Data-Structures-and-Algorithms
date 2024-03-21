@@ -67,57 +67,53 @@ class Solution {
 ```
 
 - tabular + space optimized
-- look at base cases carefully
+- do take one extra row and column just for this one in the strings section - makes the problem much easier
 
 ```java
 class Solution {
 
-    //     * x
-    //   t t t
-    // a f t f
-    // b f t f
-    // x f t t
-
     public boolean isMatch(String s, String p) {
 
-        char[] string = s.toCharArray();
+        char[] source = s.toCharArray();
         char[] pattern = p.toCharArray();
 
-        boolean[] previous = new boolean[pattern.length + 1];
-        
-        // empty pattern matches empty string
-        previous[0] = true;
-        
-        // pattern with *(s) in prefix matches empty string
-        for (int i = 0; i < pattern.length; i++) {
-            if (pattern[i] != '*') break;
-            previous[i + 1] = true;
+        int m = source.length;
+        int n = pattern.length;
+
+        boolean[][] dp = new boolean[2][n + 1];
+
+        dp[0][0] = true;
+
+        for (int i = 1; i <= n; i++) {
+            if (pattern[i - 1] != '*') break;
+            dp[0][i] = true;
         }
 
-        for (int i = 0; i < string.length; i++) {
+        // System.out.println(Arrays.toString(dp[0]));
 
-            boolean[] current = new boolean[pattern.length + 1];
+        for (int i = 1; i <= m; i++) {
 
-            // empty pattern does not match non empty string
-            current[0] = false;
+            int row = i & 1;
+            int previousRow = 1 - row;
 
-            for (int j = 0; j < pattern.length; j++) {
+            dp[row][0] = false;
 
-                if (string[i] == pattern[j]) {
-                    current[j + 1] = previous[j];
-                } else if (pattern[j] == '?') {
-                    current[j + 1] = previous[j];
-                } else if (pattern[j] == '*') {
-                    current[j + 1] = previous[j + 1] || current[j];
+            for (int j = 1; j <= n; j++) {
+                if (source[i - 1] == pattern[j - 1]) {
+                    dp[row][j] = dp[previousRow][j - 1];
+                } else if (pattern[j - 1] == '?') {
+                    dp[row][j] = dp[previousRow][j - 1];
+                } else if (pattern[j - 1] == '*') {
+                    dp[row][j] = dp[previousRow][j] || dp[row][j - 1];   
                 } else {
-                    current[j + 1] = false;
+                    dp[row][j] = false;
                 }
             }
 
-            previous = current;
+            // System.out.println(Arrays.toString(dp[row]));
         }
 
-        return previous[pattern.length];
+        return dp[m & 1][n];
     }
 }
 ```

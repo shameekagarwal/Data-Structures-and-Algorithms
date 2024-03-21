@@ -113,8 +113,6 @@ class Solution {
 
     public int maxProfit(int[] prices) {
 
-        int[][] dp = new int[prices.length][2];
-        
         int buyState = -prices[0];
         int canBuyState = 0;
 
@@ -144,17 +142,18 @@ class Solution {
 
     public int maxProfit(int[] prices) {
 
+        int n = prices.length;
+        int previousMinima = prices[0];
         int profit = 0;
 
-        int minOfCurrentSlope = prices[0];
-
-        for (int i = 1; i < prices.length; i++) {
+        for (int i = 1; i < n; i++) {
             if (prices[i] < prices[i - 1]) {
-                profit += (prices[i - 1] - minOfCurrentSlope);
-                minOfCurrentSlope =  prices[i];
+                profit += (prices[i - 1] - previousMinima);
+                previousMinima = prices[i];
             }
+            previousMinima = Math.min(previousMinima, prices[i]);
         }
-        profit += (prices[prices.length - 1] - minOfCurrentSlope);
+        profit += (prices[n - 1] - previousMinima);
 
         return profit;
     }

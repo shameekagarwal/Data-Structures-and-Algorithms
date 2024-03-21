@@ -79,9 +79,8 @@ class Solution {
 
 - tabular + space optimized -
 - note how unlike other problems in this section which required a previous and current, we only use a previous for this
-- this is again because we can pick as many coins as we want
+- vvimp - this is again because we can pick as many coins as we want - aka "unbounded knapsack problem"
 - e.g. if we can form 4 using a coin 4, we can also form 8 "using the same coin"
-- 
 
 ```java
 class Solution {

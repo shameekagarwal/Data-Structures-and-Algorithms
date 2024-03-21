@@ -65,3 +65,39 @@ class Solution {
     }
 }
 ```
+
+## Math Solution
+
+- we have m - 1 rights, n - 1 downs
+- combinations - 
+  ```
+  (m + n - 2)!
+  -----------------
+  (m - 1)! (n - 1)!
+  ```
+- so, `(m+n-2) C (m-1)`
+- how to calculate [ncr](../../Step%203:%20Solve%20Problems%20on%20Arrays/Step%203.3:%20Hard/Pascal's%20Triangle.md)
+- also notice handling of overflow - we make r as max (n - r, r)
+- this way, we have "better chances" of avoiding overflow
+
+```java
+class Solution {
+
+    public int uniquePaths(int m, int n) {
+        return calculateNCR(m + n - 2, n - 1);
+    }
+
+    private int calculateNCR(int n, int r) {
+
+        long result = 1;
+
+        r = Math.min(r, n - r);
+
+        for (int i = 1; i <= r; i++) {
+            result = (result * (n - i + 1) / i);
+        }
+
+        return (int) result;
+    }
+}
+```

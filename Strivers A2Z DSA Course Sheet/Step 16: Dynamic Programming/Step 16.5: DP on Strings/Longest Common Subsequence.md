@@ -94,36 +94,44 @@ class Solution {
 
 ```java
 class Solution {
-    
-    public int longestCommonSubsequence(String text1, String text2) {
-        
-        char[] text1Arr = text1.toCharArray();
-        char[] text2Arr = text2.toCharArray();
 
-        int len1 = text1Arr.length;
-        int len2 = text2Arr.length;
+    public int longestCommonSubsequence(String text1Str, String text2Str) {
 
-        int[] previous = new int[len2];
-        
-        for (int i = 0; i < len1; i++) {
-            
-            int[] current = new int[len2];
+        char[] text1 = text1Str.toCharArray();
+        char[] text2 = text2Str.toCharArray();
 
-            for (int j = 0; j < len2; j++) {
-                if (text1Arr[i] == text2Arr[j]) {
-                    current[j] =  (j == 0 ? 0 : previous[j - 1]) + 1;
+        int m = text1.length;
+        int n = text2.length;
+
+        int[][] dp = new int[2][n];
+
+        for (int i = 0; i < m; i++) {
+
+            int row = i & 1;
+            int previousRow = 1 - row;
+
+            for (int j = 0; j < n; j++) {
+                if (text1[i] == text2[j]) {
+                    if (i == 0 || j == 0) {
+                        dp[row][j] = 1;
+                    } else {
+                        dp[row][j] = dp[previousRow][j - 1] + 1;
+                    }
                 } else {
-                    current[j] = Math.max(
-                        j == 0 ? 0 : current[j - 1],
-                        previous[j]
-                    );
+                    if (j == 0 && i == 0) {
+                        dp[row][j] = 0;
+                    } else if (j == 0) {
+                        dp[row][j] = dp[previousRow][j];
+                    } else if (i == 0) {
+                        dp[row][j] = dp[row][j - 1];
+                    } else {
+                        dp[row][j] = Math.max(dp[row][j - 1], dp[previousRow][j]);
+                    }
                 }
             }
-
-            previous = current;
         }
 
-        return previous[len2 - 1];
+        return dp[(m - 1) & 1][n - 1];
     }
 }
 ```

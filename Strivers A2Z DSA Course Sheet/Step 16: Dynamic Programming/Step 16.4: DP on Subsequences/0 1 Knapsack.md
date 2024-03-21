@@ -8,6 +8,13 @@
   30  40  50
   ```
 - by greedy, we pick up 5, get value 50, and cannot pick anything else
+- another greedy approach - like fractional knapsack - take ones with highest value / weight - 
+  ```
+  11
+    5    6     3
+  500  600   400
+  ```
+- weight 3 has the highest value / weight - but we get better results by stealing 5 and 6
 - but we know we can pick 2 and 3 and get 70
 - so, recursive solution - 2^n
 

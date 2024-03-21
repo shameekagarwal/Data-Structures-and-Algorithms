@@ -2,6 +2,7 @@
 
 - https://www.codingninjas.com/studio/problems/longest-common-substring_1235207
 - like [this](./Longest%20Common%20Subsequence.md), but with minor tweaks
+- remember - cannot think of recursive approach here unlike other problems
 - longest substring ending at i, j - i-1,j-1 + 1 if i and j are same
 - longest - maintain a separate variable. understand that this time, `previous[len - 1]` will not have the result like in subsequences
 
@@ -9,31 +10,38 @@
 public class Solution {
 
     public static int lcs(String str1, String str2) {
-        
-        char[] str1Arr = str1.toCharArray();
-        char[] str2Arr = str2.toCharArray();
 
-        int len1 = str1Arr.length;
-        int len2 = str2Arr.length;
+        char[] s1 = str1.toCharArray();
+        char[] s2 = str2.toCharArray();
 
-        int[] previous = new int[len2];
+        int m = s1.length;
+        int n = s2.length;
+
+        int[][] dp = new int[2][n];
         int result = 0;
 
-        for (int i = 0; i < len1; i++) {
-            
-            int[] current = new int[len2];
-            
-            for (int j = 0; j < len2; j++) {
-                if (str1Arr[i] == str2Arr[j]) {
-                    current[j] = ((i == 0 || j == 0) ? 0 : previous[j - 1]) + 1;
-                    result = Math.max(result, current[j]);
+        for (int i = 0; i < m; i++) {
+
+            int row = i & 1;
+            int previousRow = 1 - row;
+
+            for (int j = 0; j < n; j++) {
+                if (s1[i] == s2[j]) {
+                    if (i == 0 || j == 0) {
+                        dp[row][j] = 1;
+                    } else {
+                        dp[row][j] = dp[previousRow][j - 1] + 1;
+                    }
+
+                    result = Math.max(result, dp[row][j]);
+                } else {
+                    dp[row][j] = 0;
                 }
             }
-
-            previous = current;
         }
 
         return result;
     }
 }
+
 ```

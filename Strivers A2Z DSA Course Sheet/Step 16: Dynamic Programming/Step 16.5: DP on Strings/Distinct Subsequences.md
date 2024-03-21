@@ -5,7 +5,7 @@
   - move 1 step from source by skipping
   - if matches, move target by one as well
 - think about the example babgbag and bag
-- we say either match the first b in boh, or skip the first b in source to match a potential b later (e.g. 3rd position)V
+- we say either match the first b, or skip the first b in source to match a potential b later (e.g. 3rd position)
 - base cases 
   - target length reached - return 1
   - source length reached - return 0

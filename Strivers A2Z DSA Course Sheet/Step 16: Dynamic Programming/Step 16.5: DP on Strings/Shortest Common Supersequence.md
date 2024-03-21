@@ -6,7 +6,7 @@
 - so, final = m + n - lcs
 - we want to print the final string
 - logic is just like [Print Longest Common Subsequence](./Print%20Longest%20Common%20Subsequence.md), but we pick all the cells along the path, not just when the characters are the same
-- why it works - when we say `dp[i][j] = dp[i - 1][j]`, we are basically saying "drop j since it does not contribute to the lcs". we are picking that character now since we need supersequence
+- why it works - when we say `dp[i][j] = dp[i - 1][j]`, we are basically saying "drop i since it does not contribute to the lcs". we are picking that character now since we need supersequence
 
 ```java
 class Solution {

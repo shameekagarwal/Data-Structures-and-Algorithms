@@ -10,4 +10,4 @@
 - observation 3 - 
   - if a number is at distance x from dylan index, x swaps are needed to collect it
 - TODO - implementing this
-- apparently, this one is similar - https://leetcode.com/problems/allocate-mailboxes/description/
+- apparently, this one is similar - https://leetcode.com/problems/allocate-mailboxes/

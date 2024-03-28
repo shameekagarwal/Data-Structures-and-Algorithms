@@ -9,133 +9,135 @@
 - vvimp - see `toArray` function to easily convert list to array
 
 ```java
-class SummaryRanges {
+import java.util.*;
 
-    private Set<Integer> set;
+public class Solution {
 
-    public SummaryRanges() {
-        set = new TreeSet<>();
-    }
-    
-    public void addNum(int value) {
-        set.add(value);
-    }
-    
-    public int[][] getIntervals() {
-        
-        int currentIntervalStart = -2;
-        int currentIntervalEnd = -2;
+    public static class DisjointIntervals {
 
-        List<int[]> intervals = new ArrayList<>();
+        private Set<Integer> set;
 
-        for (int element : set) {
-            if (element == currentIntervalEnd + 1) {
-                currentIntervalEnd = element;
-            } else {
-                if (currentIntervalStart != -2) {
-                    intervals.add(new int[]{currentIntervalStart, currentIntervalEnd});
+        public DisjointIntervals() {
+            set = new TreeSet<>();
+        }
+
+        public void addInteger(int val) {
+            set.add(val);
+        }
+
+        public List<List<Integer>> getDisjointIntervals() {
+            
+            List<List<Integer>> result = new ArrayList<>();
+            
+            for (int element : set) {
+                if (result.isEmpty()) {
+                    result.add(constructList(element, element));
+                } else {
+                    List<Integer> lastInterval = result.get(result.size() - 1);
+                    int lastIntervalEnd = lastInterval.get(1);
+                    if (lastIntervalEnd == element - 1) {
+                        lastInterval.set(1, element);
+                    } else {
+                        result.add(constructList(element, element));
+                    }
                 }
-                currentIntervalStart = element;
-                currentIntervalEnd = element;
             }
+
+            return result;
         }
 
-        if (currentIntervalStart != -2) {
-            intervals.add(new int[]{currentIntervalStart, currentIntervalEnd});
+        private List<Integer> constructList(int... a) {
+            List<Integer> list = new ArrayList<>();
+            for (int i : a) {
+                list.add(i);
+            }
+            return list;
         }
-
-        return intervals.toArray(new int[][]{});
     }
 }
 ```
 
-## DSU
-
-- if parent of node is -1 - it has not been visited
-- parent of all nodes is -1
-- when calling add, call union(val - 1, val) and union(val + 1, val)
-- both parent and union have checks for -1, otherwise implementation is same as [this](./Disjoint%20Set.md)
+- solution using bfs - 
+- find all components in graph
+- find number of edges in each component
+- find number of nodes in each component
+- excess edges in a component = (number of edges in a component) - (number of nodes in a component)
+- now, number of edges we need = number of components - 1
+- if excess edges is >= above, return above, else return -1
 
 ```java
-class SummaryRanges {
+class Solution {
 
-    private int[] parent;
-    private int[] rank;
+    public int makeConnected(int n, int[][] connections) {
+        
+        List<List<Integer>> graph = constructGraph(n, connections);
 
-    public SummaryRanges() {
+        int[] color = new int[n];
+        int currentColor = 1;
 
-        parent = new int[10005];
-        Arrays.fill(parent, -1);
-
-        rank = new int[10005];
-    }
-
-    private int findParent(int node) {
-
-        if (parent[node] == -1) {
-            return -1;
-        }
-
-        if (node == parent[node]) {
-            return node;
-        }
-
-        parent[node] = findParent(parent[node]);
-        return parent[node];
-    }
-
-    private void union(int a, int b) {
-
-        int parentA = findParent(a);
-        int parentB = findParent(b);
-
-        if (parentA == -1 || parentB == -1) return;
-
-        if (rank[parentA] < rank[parentB]) {
-            union(b, a);
-        } else {
-            if (rank[parentA] == rank[parentB]) {
-                rank[parentA] += 1;
-            }
-            parent[parentB] = parentA;
-        }
-    }
-
-    public void addNum(int value) {
-
-        if (parent[value] == -1) {
-            parent[value] = value;
-            rank[value] = 0;
-        }
-
-        if (value != 0) {
-            union(value, value - 1);
-        }
-        union(value, value + 1);
-    }
-    
-    public int[][] getIntervals() {
-
-        Deque<int[]> intervals = new ArrayDeque<>();
-
-        for (int i = 0; i < parent.length; i++) {
- 
-            if (parent[i] == -1) continue;
-
-            if (!intervals.isEmpty() && intervals.peekLast()[1] == i - 1) {
-                intervals.peekLast()[1] = i;
-            } else {
-                intervals.addLast(new int[]{i, i});
+        for (int i = 0; i < n; i++) {
+            if (color[i] == 0) {
+                bfs(i, currentColor, color, graph);
+                currentColor += 1;
             }
         }
 
-        int[][] result = new int[intervals.size()][];
-        int i = 0;
-        while (!intervals.isEmpty()) {
-            result[i] = intervals.removeFirst();
-            i += 1;
+        currentColor -= 1;
+
+        Map<Integer, Integer> componentEdges = new HashMap<>();
+        Map<Integer, Integer> componentSize = new HashMap<>();
+
+        for (int i = 0; i < n; i++) {
+            componentEdges.put(color[i], componentEdges.getOrDefault(color[i], 0) + graph.get(i).size());
+            componentSize.put(color[i], componentSize.getOrDefault(color[i], 0) + 1);
         }
-        return result;
+
+        for (Map.Entry<Integer, Integer> entry : componentEdges.entrySet()) {
+            entry.setValue(entry.getValue() / 2);
+        }
+
+        int excessEdges = 0;
+
+        for (int i = 1; i <= currentColor; i++) {
+            excessEdges += componentEdges.get(i) - (componentSize.get(i) - 1);
+        }
+
+        return excessEdges >= (currentColor - 1) ? currentColor - 1 : -1;
+    }
+
+    private void bfs(int src, int currentColor, int[] color, List<List<Integer>> graph) {
+        
+        Deque<Integer> queue = new ArrayDeque<>();
+        queue.addLast(src);
+        color[src] = currentColor;
+
+        while (!queue.isEmpty()) {
+            
+            int node = queue.removeFirst();
+            
+            for (int neighbor : graph.get(node)) {
+                if (color[neighbor] == 0) {
+                    color[neighbor] = currentColor;
+                    queue.addLast(neighbor);
+                }
+            }
+        }
+    }
+
+    private List<List<Integer>> constructGraph(int n, int[][] connections) {
+
+        List<List<Integer>> graph = new ArrayList<>();
+
+        for (int i = 0; i < n; i++) {
+            graph.add(new ArrayList<>());
+        }
+
+        for (int[] connection : connections) {
+            graph.get(connection[0]).add(connection[1]);
+            graph.get(connection[1]).add(connection[0]);
+        }
+
+        return graph;
     }
 }
 ```

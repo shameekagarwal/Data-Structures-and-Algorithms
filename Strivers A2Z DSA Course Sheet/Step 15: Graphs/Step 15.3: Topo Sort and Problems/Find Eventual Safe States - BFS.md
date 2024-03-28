@@ -2,11 +2,10 @@
 
 - https://leetcode.com/problems/find-eventual-safe-states/
 - safe node - ends at terminal node
-- terminal node - out degree is 0
-- all terminal nodes are safe nodes
 - terminal nodes = nodes which have outdegree as 0
 - next - all nodes having all paths ending at one of these safe nodes are a safe node
-- so, we first reverse all edges
+- intuition - how can we travel from all nodes having outdegree 0 to all nodes having outdegree 1 and ending at one of these nodes - because both these categories classify as "safe nodes"
+- solution - we first reverse all edges
 - this means all nodes with indegree 0 are used (aka terminal nodes)
 - next, all nodes that had paths to only these terminal nodes will be used
 - so, if we simply use kahn after reversing the edges

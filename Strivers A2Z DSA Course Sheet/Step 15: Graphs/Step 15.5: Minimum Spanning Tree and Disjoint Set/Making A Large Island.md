@@ -13,6 +13,8 @@
 - so, we simply "insert ultimate parents" of adjacent nodes into a set
 - then, ultimate parents will be automatically deduped, and we will just need the size of them
 - also possible - largest island without converting any 0s
+- note - we do not use all four directions when finding initial groups - just i-1,0 and i,j-1
+- this helps us get rid of complexity around visited etc
 
 ```java
 class Solution {
@@ -24,153 +26,120 @@ class Solution {
         new int[]{0, -1}
     };
 
-    private int rows;
-    private int cols;
-    private int[][] grid;
-
-    private DisjointSetUnion dsu;
-
     public int largestIsland(int[][] grid) {
 
-        rows = grid.length;
-        cols = grid[0].length;
-        this.grid = grid;
+        int n = grid.length;
+        int sz = n * n;
 
-        dsu = new DisjointSetUnion(rows * cols);
-        populateDsu();
+        DSU dsu = new DSU(n * n);
+
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+
+                if (grid[i][j] == 1) {
+
+                    int flattenedCoordinate = getFlattenedCoordinate(i, j, n);
+
+                    if (i != 0 && (grid[i - 1][j] == 1)) {
+                        int neighboringFlattenedCoordinate = getFlattenedCoordinate(i - 1, j, n);
+                        dsu.union(neighboringFlattenedCoordinate, flattenedCoordinate);
+                    }
+
+                    if (j != 0 && (grid[i][j - 1] == 1)) {
+                        int neighboringFlattenedCoordinate = getFlattenedCoordinate(i, j - 1, n);
+                        dsu.union(neighboringFlattenedCoordinate, flattenedCoordinate);
+                    }
+                }
+            }
+        }
 
         int result = 0;
-        result = Math.max(result, tryJoiningByConvertingZerosToOnes());
-        result = Math.max(result, tryFindingBiggestIsland());
+
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                
+                int flattenedCoordinate = getFlattenedCoordinate(i, j, n);
+                
+                if (grid[i][j] == 1) {
+                    result = Math.max(result, dsu.getSize(dsu.findParent(flattenedCoordinate)));
+                } else {
+
+                    int sizeAfterJoin = 1;
+
+                    Set<Integer> usedIslands = new HashSet<>();
+
+                    for (int[] direction : directions) {
+
+                        int x = i + direction[0];
+                        int y = j + direction[1];
+
+                        if (x == -1 || x == n || y == -1 || y == n) continue;
+                        if (grid[x][y] != 1) continue;
+
+                        int neighboringFlattenedCoordinateParent = dsu.findParent(getFlattenedCoordinate(x, y, n));
+                        if (usedIslands.contains(neighboringFlattenedCoordinateParent)) continue;
+                        usedIslands.add(neighboringFlattenedCoordinateParent);
+
+                        sizeAfterJoin += dsu.getSize(neighboringFlattenedCoordinateParent);
+                    }
+
+                    result = Math.max(result, sizeAfterJoin);
+                }
+            }
+        }
 
         return result;
     }
 
-    private int tryFindingBiggestIsland() {
-
-        int maxIslandSize = 0;
-
-        for (int i = 0; i < rows; i++) {
-            for (int j = 0; j < cols; j++) {
-                if (grid[i][j] == 1) {
-                    int dsuNode = (i * cols) + j;
-                    if (dsu.parent[dsuNode] == dsuNode) {
-                        maxIslandSize = Math.max(maxIslandSize, dsu.size[dsuNode]);
-                    }
-                }
-            }
-        }
-
-        return maxIslandSize;
+    private int getFlattenedCoordinate(int x, int y, int n) {
+        return (x * n) + y;
     }
 
-    private int tryJoiningByConvertingZerosToOnes() {
+    static class DSU {
 
-        int maxJoinedSize = 0;
+        private int n;
+        private int[] parent;
+        private int[] size;
 
-        for (int i = 0; i < rows; i++) {
-            for (int j = 0; j < cols; j++) {
+        DSU(int n) {
 
-                if (grid[i][j] == 0) {
-
-                    int dsuNode = (i * cols) + j;
-
-                    Set<Integer> neighboringParents = new HashSet<>();
-                    int currentJoinedSize = 1;
-
-                    for (int[] direction : directions) {
-
-                        int neighborX = i + direction[0];
-                        int neighborY = j + direction[1];
-
-                        if (isCellSafe(neighborX, neighborY)) {
-                            if (grid[neighborX][neighborY] == 1) {
-                                int dsuNeighborNode = (neighborX * cols) + neighborY;
-                                neighboringParents.add(dsu.findParent(dsuNeighborNode));
-                            }
-                        }
-                    }
-
-                    for (int neighboringParent : neighboringParents) {
-                        currentJoinedSize += dsu.size[neighboringParent];
-                    }
-
-                    maxJoinedSize = Math.max(currentJoinedSize, maxJoinedSize);
-                }
-            }
-        }
-
-        return maxJoinedSize;
-    }
-
-    private void populateDsu() {
-
-        for (int i = 0; i < rows; i++) {
-            for (int j = 0; j < cols; j++) {
-
-                if (grid[i][j] == 1) {
-
-                    int dsuNode = (i * cols) + j;
-
-                    for (int[] direction : directions) {
-
-                        int neighborX = i + direction[0];
-                        int neighborY = j + direction[1];
-
-                        if (isCellSafe(neighborX, neighborY)) {
-                            if (grid[neighborX][neighborY] == 1) {
-                                int dsuNeighborNode = (neighborX * cols) + neighborY;
-                                dsu.union(dsuNeighborNode, dsuNode);
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-    private boolean isCellSafe(int x, int y) {
-        return x > -1 && x < rows && y > -1 && y < cols;
-    }
-
-    static class DisjointSetUnion {
-
-        int[] parent;
-        int[] size;
-
-        DisjointSetUnion(int n) {
-
+            this.n = n;
+            
             parent = new int[n];
+            size = new int[n];
+
             for (int i = 0; i < n; i++) {
                 parent[i] = i;
+                size[i] = 1;
             }
-
-            size = new int[n];
-            Arrays.fill(size, 1);
         }
 
-        int findParent(int u) {
-            if (u == parent[u]) {
-                return u;
-            }
-            parent[u] = findParent(parent[u]);
-            return parent[u];
+        int getSize(int x) {
+            return size[x];
         }
 
-        void union(int u, int v) {
+        int findParent(int x) {
 
-            int parentU = findParent(u);
-            int parentV = findParent(v);
-
-            if (parentU == parentV) {
-                return;
+            if (parent[x] == x) {
+                return x;
             }
 
-            if (size[parentU] < size[parentV]) {
-                union(v, u);
+            parent[x] = findParent(parent[x]);
+            return parent[x];
+        }
+
+        void union(int x, int y) {
+
+            int parentX = findParent(x);
+            int parentY = findParent(y);
+
+            if (parentX == parentY) return;
+
+            if (size[parentX] < size[parentY]) {
+                union(y, x);
             } else {
-                parent[parentV] = parentU;
-                size[parentU] += size[parentV];
+                parent[parentY] = parentX;
+                size[parentX] += size[parentY];
             }
         }
     }

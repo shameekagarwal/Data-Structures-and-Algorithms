@@ -4,6 +4,7 @@
 - [this method](../Step%2015.2:%20Problems%20on%20BFS%20DFS/Cycle%20Detection%20in%20Directed%20Graph%20(DFS).md) used dfs, current one uses bfs
 - we use [kahns algorithm](./Topological%20Sorting.md)
 - if topological sort does not have length n, there is a cycle
+- or - if there is a node with non zero indegree, there is a cycle - eliminate the space complexity for the topological sort
 
 ```java
 import java.util.*;

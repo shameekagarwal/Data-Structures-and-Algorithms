@@ -3,7 +3,7 @@
 - https://www.geeksforgeeks.org/problems/word-ladder-ii/1
 - remember the logic [here](./Word%20Ladder.md) - there should not be a case that if a word is used at x, it would be used at a level after x
 - so, we get rid of a word after using it at a certain level
-- note - a word can be present in the answer multiple times - look a the first example on leetcode - for "hot"
+- note - a word can be present in the answer multiple times - look at the first example on leetcode - for "hot"
 - this is why, we get rid of words from the word lookup after we compute the current level
 - multiple paths can use the same word as the next node in the path
 - so, we only remove a word after current level has been entirely processed - refer `wordsUsed`

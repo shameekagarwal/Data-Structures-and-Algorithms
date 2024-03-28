@@ -1,6 +1,7 @@
 # Number of Enclaves
 
 - https://leetcode.com/problems/number-of-enclaves/
+- easier / reframed version of [Surrounded Regions](./Surrounded%20Regions.md)
 
 ```java
 class Solution {

@@ -26,7 +26,7 @@
 ![path compression](./path-compression.png)
 
 - final complexity is something like 4 alpha (near constant)
-- why connect larger to smaller rank - this ways, rank stays the same
+- why connect larger to smaller rank - this way, rank stays the same
 - this is why, if ranks are same, we need to increment the rank by one!
 
 ![rank explanation](./rank-explanation.png)

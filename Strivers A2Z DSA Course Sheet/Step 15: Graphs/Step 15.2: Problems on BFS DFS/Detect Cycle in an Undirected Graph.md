@@ -2,8 +2,8 @@
 
 - https://www.codingninjas.com/studio/problems/detect-cycle-in-an-undirected-graph-_758967
 - if we can visit an already visited node - there is a cycle
-- we have to keep track of parent as well so that we do not end up traveling back to parent
-- we can use -1 as  parent when starting the traversal from a node
+- we have to keep track of parent as well since we can travel back to parent from a node - parent will be marked visited already, but that does not mean there is a cycle
+- we can use -1 as parent when starting the traversal from a node
 - "undirected graph" is the important keyword here
 - a graph can have multiple components, out of which one (or some) have cycles, so we need to combine our approach with [Number of Provinces](../Step%2015.1:%20Learning/Number%20of%20Provinces.md)
 - time complexity - detect cycle for every component - O(N) + O(2*E), add an extra O(N) for multiple components

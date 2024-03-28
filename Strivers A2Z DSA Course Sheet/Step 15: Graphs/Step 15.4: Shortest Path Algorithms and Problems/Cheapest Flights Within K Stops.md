@@ -2,16 +2,13 @@
 
 - https://leetcode.com/problems/cheapest-flights-within-k-stops/
 - we just use a normal bfs
-- enqueue the next neighbor only if - 
-  - stops stay less than or equal to k
-  - distance decreases - elaboration - we are doing bfs, number of stops will either stay same or increase, it cannot decrease. and there is no point using a path with more (or equal) stops and more distance
-- dijkstra was O(E*logV), and the log component was due to the priority queue. since this is a normal queue, time complexity stays O(E)
 - another note - do not stop once we find a non infinite value for destination - it might happen that a longer path that is still less than k yields a shorter distance, because this is a plain bfs
-- i break out of loop once i see the first route that already has k stops - because this point onwards, routes will start having more than k stops
-- another mistake i was stuck on - do not do `distance[currentNode] + weight` when updating answer like we can in dijkstra here
-- we would have to do current element popped form queue's distance + weight
+- remember how we saw in [dijkstra](./Dijkstra's%20Shortest%20Path.md) queue would work, but it would increase the complexity? we use that here
+- i break out of loop once i see the first route that already has k stops - because this point onwards, routes will start having more than k stops - remember this is normal bfs
+- another mistake i was stuck on - do not do `distance[currentNode] + weight` when updating answer like we can in dijkstra here - basically, `distance[currentNode]` need not be same as distance that is part of popped node - remember - we have an additional parameter k. so, we would have to do current element popped form queue's distance + weight
 - distance of reaching the current route's node can be lesser than current route's distance
 - basically, do `route.price`, not `prices[route.destination]`
+- time complexity - quadratic - O(n * k)?
 
 ```java
 class Solution {

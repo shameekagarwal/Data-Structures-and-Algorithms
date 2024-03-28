@@ -38,7 +38,7 @@
 - optimizations -
   - we filled 4, 6, 8, 10... for 2
   - we filled 6, 9, 12, 15... for 3 - but 6 would have been filled by 2 already, we can start from 9
-  - we filled 5, 10, 15, 20.... for 5 - but 5, 10, 15, 20 would have been filled by 5 already, we can start from 25
+  - we filled 5, 10, 15, 20.... for 5 - but 5, 10, 15, 20 would have been filled by 2 / 3 already, we can start from 25
 - so, overall, we can start from i * i
 - by the same logic, no need of running the outer loops beyond sqrt(N)
 - so, the algorithm can be rewritten as follows - (look at the changes in both the loop's limits)

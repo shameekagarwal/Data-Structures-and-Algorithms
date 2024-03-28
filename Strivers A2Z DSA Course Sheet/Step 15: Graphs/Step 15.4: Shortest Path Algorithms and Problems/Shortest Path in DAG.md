@@ -5,7 +5,7 @@
 - perform topological sort using dfs
 - the stack should be populated using the reverse of the topological sort
 - make a distance array initialized with infinity
-- make the source node's value as 0 (distance fro node to itself is 0)
+- make the source node's value as 0 (distance from node to itself is 0)
 - take the nodes out of the topological sort one by one
 - update the distance array one by one
 - edge case - node popped from stack itself has distance as infinity - do not process its neighbors, just continue to pop the next element from stack

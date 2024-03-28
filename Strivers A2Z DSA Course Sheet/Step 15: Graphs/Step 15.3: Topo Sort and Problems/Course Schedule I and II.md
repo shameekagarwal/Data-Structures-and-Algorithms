@@ -1,4 +1,4 @@
-# Course Schedule
+# Course Schedule I and II
 
 - has two parts - first part asks if possible or not, second part asks the topological sort
 - possible or not - two solutions - 

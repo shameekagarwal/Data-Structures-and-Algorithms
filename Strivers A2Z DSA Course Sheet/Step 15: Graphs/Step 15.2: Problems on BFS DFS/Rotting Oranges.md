@@ -6,7 +6,7 @@
 - this way, we push time = time of dequeued element + 1
 - otherwise, we use the usual current level technique
 - note - here i had to place the rotten and fresh condition because if all elements are 0, then t - 1 is returns -1, when it should have actually returned 0
-- note we end up using the matrix itself as visited
+- space optimization - note we end up using the matrix itself as visited
 
 ```java
 class Solution {
@@ -37,7 +37,7 @@ class Solution {
             }
         }
 
-        if (!(containsFreshOranges || containsFreshOranges)) return 0;
+        if (!containsFreshOranges) return 0;
 
         int t = 0;
 

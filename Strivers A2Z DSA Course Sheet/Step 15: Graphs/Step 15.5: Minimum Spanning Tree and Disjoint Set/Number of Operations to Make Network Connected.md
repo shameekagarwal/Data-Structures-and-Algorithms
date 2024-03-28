@@ -6,7 +6,9 @@
 - if possible, return n - 1
 - else, return -1
 - notice the use of getParent to find number of distinct components efficiently
+- i was thinking about running findParent for all nodes and entering the parents into a set - but above method is of course better
 - we can also make finding number of components a method exposed by dsu for convenience for clean code
+- todo - the complexity of this would be ~ e? can we use plain bfs to find the number of excess edges and components?
 
 ```java
 class Solution {

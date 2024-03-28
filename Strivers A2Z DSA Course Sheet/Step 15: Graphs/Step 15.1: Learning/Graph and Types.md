@@ -6,7 +6,7 @@
 - directed graph - has unidirectional edges
 - binary trees can also be called a graph
 - a graph has a cycle if we can start and end at the same node
-- question should mention specifically mention, e.g. undirected cyclic graph
+- question should specifically mention, e.g. undirected cyclic graph
 - most common - dag - directed acyclic graph
 - path - reachable nodes
 - a node cannot appear twice in a path i.e. we cannot go 1-2-3-2-1

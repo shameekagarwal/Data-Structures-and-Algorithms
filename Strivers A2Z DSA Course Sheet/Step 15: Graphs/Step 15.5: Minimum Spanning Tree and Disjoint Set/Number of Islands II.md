@@ -1,6 +1,7 @@
 # Number of Islands II
 
 - https://www.codingninjas.com/studio/problems/largest-island_840701
+- my understanding - main challenge is maintaining a "count on the fly" of the number of components in a dsu
 - represent every cell as a node in the dsu
 - formula - (row number * total columns) + column number
 - every time we add a node, we first mark it as visited
@@ -18,7 +19,8 @@
 - first if left is checked, count reduces by 1, and now we have 1 big connected island
 - now when down is checked, ultimate parent of both 1,1 and 2,1 come out to be same - union returns false and no changes are made
 - another edge case in lintcode - same island can be present multiple times in the queries
-- so, if queries are just `[[2,2],[2,2][]`, our logic would give 1,2, when actual answer should be 1,1. so, if a node is already visited, just add current number of archipelagos to result and continue
+- so, if queries are just `[[2,2],[2,2]]`, our logic would give 1,2, when actual answer should be 1,1. so, if a node is already visited, just add current number of archipelagos to result and continue
+- dsu with put functionality - this is a variation of the typical dsu problem that i have seen, that can be solved in this way
 
 ```java
 import java.util.*;
@@ -33,96 +35,92 @@ public class Solution {
     };
 
     public static int[] numberOfIslandII(int n, int m, int [][]queries, int q) {
+        
+        int size = n * m;
+        DSU dsu = new DSU(size);
 
-        int totalFlattenedNodes = n * m;
-        DisjointSetUnion dsu = new DisjointSetUnion(totalFlattenedNodes);
-        boolean[] visited = new boolean[totalFlattenedNodes];
+        int[] result = new int[q];
 
-        int numberOfArchipelagos = 0;
-        List<Integer> result = new ArrayList<>();
+        int groups = 0;
 
         for (int i = 0; i < q; i++) {
-
-            int x = queries[i][0];
-            int y = queries[i][1];
-
-            int currentNode = (x * m) + y;
-            if (visited[currentNode]) {
-                continue;
-            }
             
-            visited[currentNode] = true;
-            numberOfArchipelagos += 1;
-            
+            int flattenedCoordinate = (queries[i][0] * m) + queries[i][1];
+            dsu.put(flattenedCoordinate);
+
+            groups += 1;
+
             for (int[] direction : directions) {
                 
-                int neighborX = x + direction[0];
-                int neighborY = y + direction[1];
+                int newX = queries[i][0] + direction[0];
+                int newY = queries[i][1] + direction[1];
 
-                if (neighborX > -1 && neighborX < n && neighborY > -1 && neighborY < m) {
-                    
-                    int neighborNode = (neighborX * m) + neighborY;
-                    
-                    if (visited[neighborNode]) {
-
-                        boolean isDifferentComponents = dsu.union(currentNode, neighborNode);
-
-                        if (isDifferentComponents) {
-                            numberOfArchipelagos -= 1;
-                        }
+                if (newX > -1 && newX < n && newY > -1 && newY < m) {
+                    int flattenedNeigboringCoordinate = (newX * m) + newY;
+                    if (dsu.union(flattenedNeigboringCoordinate, flattenedCoordinate)) {
+                        groups -= 1;
                     }
                 }
             }
 
-            result.add(numberOfArchipelagos);
+            result[i] = groups;
         }
 
-        int[] resultArr = new int[result.size()];
-        for (int i = 0; i < result.size(); i++) {
-            resultArr[i] = result.get(i);
-        }
-        return resultArr;
+        return result;
     }
 
-    static class DisjointSetUnion {
+    static class DSU {
 
-        private int[] parent;
-        private int[] rank;
+        int[] parent;
+        int[] rank;
 
-        DisjointSetUnion(int n) {
-            parent = new int[n];
-            for (int i = 0; i < n; i++) {
-                parent[i] = i;
-            }
-            rank = new int[n];
-        }
-
-        int findParent(int u) {
-            if (u == parent[u]) {
-                return u;
-            }
-            parent[u] = findParent(parent[u]);
-            return parent[u];
-        }
-
-        boolean union(int u, int v) {
+        DSU(int size) {
             
-            int parentU = findParent(u);
-            int parentV = findParent(v);
+            parent = new int[size];
+            rank = new int[size];
+            
+            Arrays.fill(parent, -1);
+            Arrays.fill(rank, -1);
+        }
 
-            if (parentU == parentV) {
+        int findParent(int x) {
+
+            if (parent[x] == x) {
+                return x;
+            }
+
+            parent[x] = findParent(parent[x]);
+            return parent[x];
+        }
+
+        void put(int x) {
+            parent[x] = x;
+            rank[x] = 1;
+        }
+
+        boolean union(int x, int y) {
+
+            if (parent[x] == -1 || parent[y] == -1) return false;
+            
+            int parentX = findParent(x);
+            int parentY = findParent(y);
+
+            if (parentX == parentY) {
                 return false;
             }
 
-            if (rank[parentU] < rank[parentV]) {
-                return union(v, u);
+            // System.out.println("union: " + x + ", " + y);
+
+            if (rank[parentX] < rank[parentY]) {
+                return union(y, x);
             } else {
-                parent[parentV] = parentU;
-                if (rank[parentU] == rank[parentV]) {
-                    rank[parentU] += 1;
+                parent[parentY] = parentX;
+                if (rank[parentX] == rank[parentY]) {
+                    rank[parentX] += 1;
                 }
-                return true;
             }
+
+            return true;
         }
     }
 }

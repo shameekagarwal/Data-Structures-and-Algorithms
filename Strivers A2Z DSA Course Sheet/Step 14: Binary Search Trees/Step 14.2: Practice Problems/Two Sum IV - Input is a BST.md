@@ -37,10 +37,9 @@ class Solution {
 
 ## Optimal
 
-- inspired by [this](./Binary%20Search%20Tree%20Iterator.md)
-- we have iterators for previous and next
-- next we already seen
-- previous - for all elements of bst in descending order, go right -> root -> left
+- we can have twp iterators - previous and next
+- use [this](./Binary%20Search%20Tree%20Iterator.md) for next
+- for previous, go right -> root -> left
 - if asked in interview, maybe use separate classes for the two iterators, use an interface for the common structure
 
 ```java

@@ -1,13 +1,15 @@
 # Lowest Common Ancestor of a Binary Search Tree
 
 - https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/
-- naive- [Lowest Common Ancestor](../../Step%2013:%20Binary%20Trees/Step%2013.3:%20Hard%20Problems/Lowest%20Common%20Ancestor%20of%20a%20Binary%20Tree.md)
+- naive - [Lowest Common Ancestor](../../Step%2013:%20Binary%20Trees/Step%2013.3:%20Hard%20Problems/Lowest%20Common%20Ancestor%20of%20a%20Binary%20Tree.md)
 - time complexity - O(N) - all nodes need to be traversed
-- optimal - O(logN) - only height of tree needs o be traversed. at every state, we will know whether to go left or right
+- optimal - O(logN) - only height of tree needs to be traversed. at every state, we will know whether to go left or right
 - if current node has one of the values - it has to be lca - since we are going top to bottom
+- note - question says bst will have both nodes, which is why above point is valid
 - if one should be on right (i.e. greater), while other should be on left (i.e. lesser), current node has to be lca
 - if smaller value of the two values is also greater - both should be on right
 - if greater value of the two values is also smaller - both should on left
+- which is why in such questions, i reverse the order myself e.g. to ensure here p < q (refer second line)
 
 ```java
 class Solution {

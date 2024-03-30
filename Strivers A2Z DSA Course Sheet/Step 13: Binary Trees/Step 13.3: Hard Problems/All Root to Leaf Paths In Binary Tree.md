@@ -2,42 +2,46 @@
 
 - https://www.codingninjas.com/studio/problems/all-root-to-leaf-paths-in-binary-tree._983599
 - this solution can be modified to be used for variants as well - e.g. find root to node x path
-- note around mistakes i made - was adding to result when root == null - will add duplicates for leaf nodes, since both its left and right will evaluate to null. so, check leaf node condition
-- using StringBuilder for `currentPath` - removing one / adding one character works, but `node.data` can have multiple digits - so, using `StringBuilder` can complicate solution. so, use linked list instead
+- note around mistakes i made - was adding to result when root == null
+- but this will add duplicates - since both its left and right be null for leaf node
+- so, check leaf node condition instead i.e. add path to result if root is lear node and not null
 
 ```java
 import java.util.List;
 import java.util.ArrayList;
-import java.util.Deque;
-import java.util.ArrayDeque;
+import java.util.stream.Collectors;
 
 public class Solution {
 
     public static List<String> allRootToLeaf(BinaryTreeNode root) {
-        List<String> result = new ArrayList<>();
-        if (root == null) return result;
-        allRootToLeaf(result, root, new ArrayDeque<>());
-        return result;
+        
+        List<String> serializedResult = new ArrayList<>();
+
+        List<List<Integer>> result = new ArrayList<>();
+        List<Integer> current = new ArrayList<>();
+        allRootToLeaf(root, current, result);
+
+        for (List<Integer> path : result) {
+            String s = path.stream().map(i -> i.toString()).collect(Collectors.joining(" "));
+            serializedResult.add(s);
+        }
+
+        return serializedResult;
     }
 
-    private static void allRootToLeaf(List<String> result, BinaryTreeNode root, ArrayDeque<Integer> currentPath) {
-        currentPath.addLast(root.data);
+    private static void allRootToLeaf(BinaryTreeNode root, List<Integer> current, List<List<Integer>> result) {
+        
+        if (root == null) return;
+        current.add(root.data);
+
         if (root.left == null && root.right == null) {
-            StringBuilder currentPathString = new StringBuilder();
-            for (Integer nodeData : currentPath) {
-                currentPathString.append(nodeData);
-                currentPathString.append(' ');
-            }
-            result.add(currentPathString.toString());
-        } else {
-            if (root.left != null) {
-                allRootToLeaf(result, root.left, currentPath);
-            }
-            if (root.right != null) {
-                allRootToLeaf(result, root.right, currentPath);
-            }
+            result.add(new ArrayList<>(current));
         }
-        currentPath.removeLast();
+
+        allRootToLeaf(root.left, current, result);
+        allRootToLeaf(root.right, current, result);
+
+        current.remove(current.size() - 1);
     }
 }
 ``` 

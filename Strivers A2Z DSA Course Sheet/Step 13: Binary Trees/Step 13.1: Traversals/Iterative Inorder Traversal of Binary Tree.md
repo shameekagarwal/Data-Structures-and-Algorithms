@@ -11,19 +11,19 @@ class Solution {
 
     public List<Integer> inorderTraversal(TreeNode root) {
 
-        Deque<TreeNode> stack = new ArrayDeque<>();
-        TreeNode currentNode = root;
         List<Integer> result = new ArrayList<>();
-        if (root == null) return result;
+        Deque<TreeNode> stack = new ArrayDeque<>();
+        TreeNode current = root;
 
-        while(true) {
-            if (currentNode != null) {
-                stack.add(currentNode);
-                currentNode = currentNode.left;
+        while (true) {
+            if (current != null) {
+                stack.addLast(current);
+                current = current.left;
             } else {
                 if (stack.isEmpty()) break;
-                result.add(stack.peekLast().val);
-                currentNode = stack.removeLast().right;
+                current = stack.removeLast();
+                result.add(current.val);
+                current = current.right;
             }
         }
 

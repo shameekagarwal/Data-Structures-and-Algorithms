@@ -4,7 +4,7 @@
 - brute - do an in order traversal
 - correct the order - sort it or something
 - finally, again traverse the tree in in order mode and update the values where needed
-- time complexity - O(3 * N) (N to traverse, N to determine, N to fix), space complexity - O(N) to store the 
+- time complexity - O(3 * N) (N to traverse, N to determine, N to fix), space complexity - O(N) to store the inorder 
 - optimal - time complexity O(N), space complexity - O(1)
 - just perform an in order
 - there are two cases - when the adjacent nodes are swapped, and distant nodes are swapped

@@ -2,9 +2,9 @@
 
 - https://leetcode.com/problems/kth-smallest-element-in-a-bst/
 - bst in order is in sorted order
-- if question is kth largest - find n - kth smallest
-- so first, calculate size of binary tree needs t be calculated in this case
-- i think we can also change to do reverse in order instead ofr kth largest?
+- so first, calculate size of binary tree
+- if question was kth largest - find n - kth smallest
+- doubt ror above - i think we can also change to do reverse in order instead for kth largest?
 
 ```java
 class Solution {

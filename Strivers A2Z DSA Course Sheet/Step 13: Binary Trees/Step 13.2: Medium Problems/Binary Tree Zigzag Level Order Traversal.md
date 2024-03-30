@@ -6,6 +6,7 @@
 - keep inverting boolean
 - initialize array - and fill it either from back or from front
 - why use `Integer[]` and not `int[]` - `Line 28: error: incompatible types: inference variable T has incompatible bounds`
+- do not use the technique of reversing the level at the end - interviewer might complain about the extra O(n) time complexity in it
 
 ```java
 class Solution {

@@ -27,6 +27,43 @@ class Solution {
 }
 ```
 
+## Another Possible Solution - previous
+
+- every time we reach a node, we should know the previous node seen
+- this way, previous's right can be pointed to the current node
+- current node's left should be marked null and set previous to current node
+- then, flatten left and then right
+
+```java
+class Solution {
+
+    private TreeNode previous;
+
+    public void flatten(TreeNode root) {
+        previous = null;
+        _flatten(root);
+    }
+
+    private void _flatten(TreeNode root) {
+
+        if (root == null) return;
+
+        TreeNode left = root.left;
+        TreeNode right = root.right;
+
+        if (previous != null) {
+            previous.right = root;
+        }
+
+        root.left = null;
+        previous = root;
+
+        _flatten(left);
+        _flatten(right);
+    }
+}
+```
+
 ## Stack
 
 - might be easier to explain
@@ -42,10 +79,7 @@ class Solution {
         stack.addLast(root);
 
         while (!stack.isEmpty()) {
-            // 1 -> 2 -> 3 -> 
-            
-            // 1
-            // 5 4
+
             TreeNode node = stack.removeLast();
             if (node.right != null) {
                 stack.addLast(node.right);

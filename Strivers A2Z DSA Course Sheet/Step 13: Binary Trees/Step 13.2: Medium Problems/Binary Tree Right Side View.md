@@ -35,6 +35,7 @@ class Solution {
 
 ## Approach 2 - Pre Order Traversal (Reverse)
 
+- imagine question was use dfs, not bfs
 - we go root -> right -> left (pre order is root -> left -> right)
 - "every time the node is the first one encountered in the level" - it will be part of our answer
 - to check this, just compare with size of result, because we are going top to bottom

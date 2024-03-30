@@ -6,7 +6,7 @@
 - by doing this, we can return list of lists i.e. a separate list for each level
 - remove from queue and to current level list
 - add left to queue if not null
-- add right to queue if not nul
+- add right to queue if not null
 - add current level list to answer
 - time complexity - O(N)
 - space complexity - O(N)
@@ -25,14 +25,17 @@ class Solution {
         queue.addLast(root);
 
         while (!queue.isEmpty()) {
+
             int currentLevelSize = queue.size();
             List<Integer> currentLevel = new ArrayList<>();
+
             for (int i = 0; i < currentLevelSize; i++) {
                 TreeNode currentNode = queue.removeFirst();
                 currentLevel.add(currentNode.val);
                 if (currentNode.left != null) queue.addLast(currentNode.left);
                 if (currentNode.right != null) queue.addLast(currentNode.right);
             }
+
             result.add(currentLevel);
         }
 

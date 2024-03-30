@@ -15,64 +15,52 @@
 
 ```java
 import java.util.List;
+import java.util.ArrayList;
 import java.util.Deque;
 import java.util.ArrayDeque;
-import java.util.ArrayList;
 
 public class Solution {
 
     public static List<List<Integer>> getTreeTraversal(TreeNode root) {
 
-        Deque<StackNode> stack = new ArrayDeque<>();
         List<Integer> preorder = new ArrayList<>();
         List<Integer> inorder = new ArrayList<>();
         List<Integer> postorder = new ArrayList<>();
         List<List<Integer>> result = List.of(inorder, preorder, postorder);
+        Deque<StackNode> stack = new ArrayDeque<>();
 
-        if (root == null) return result;
+        TreeNode current = root;
 
-        stack.addLast(new StackNode(root, 1));
-
-        while (!stack.isEmpty()) {
-            StackNode stackNode = stack.removeLast();
-            if (stackNode.count == 1) {
-                preorder.add(stackNode.node.data);
-                stack.addLast(new StackNode(stackNode.node, 2));
-                if (stackNode.node.left != null) {
-                    stack.addLast(new StackNode(stackNode.node.left, 1));
+        while (true) {
+            if (current != null) {
+                preorder.add(current.data);
+                stack.addLast(new StackNode(current, 1));
+                current = current.left;
+            } else {
+                if (stack.isEmpty()) {
+                    break;
+                } else if (stack.peekLast().tag == 1) {
+                    StackNode top = stack.peekLast();
+                    inorder.add(top.node.data);
+                    top.tag = 2;
+                    current = top.node.right;
+                } else {
+                    postorder.add(stack.removeLast().node.data);
                 }
-            } else if (stackNode.count == 2) {
-                inorder.add(stackNode.node.data);
-                stack.addLast(new StackNode(stackNode.node, 3));
-                if (stackNode.node.right != null) {
-                    stack.addLast(new StackNode(stackNode.node.right, 1));
-                }
-            } else if (stackNode.count == 3) {
-                postorder.add(stackNode.node.data);
             }
-            // System.out.println("stack: " + stack);
-            // System.out.println("preorder: " + preorder);
-            // System.out.println("inorder: " + inorder);
-            // System.out.println("postorder: " + postorder);
-            // System.out.println("**********");
         }
 
         return result;
     }
 
-    private static class StackNode {
+    static class StackNode {
 
         TreeNode node;
-        int count;
+        int tag;
 
-        StackNode(TreeNode node, int count) {
-            this.node = node;
-            this.count = count;
-        }
-
-        @Override
-        public String toString() {
-            return "(" + node.data + ": " + count + ")";
+        StackNode(TreeNode node, int tag) {
+            this.node = node; 
+            this.tag = tag;
         }
     }
 }

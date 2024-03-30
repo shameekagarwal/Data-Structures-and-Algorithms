@@ -3,10 +3,11 @@
 - https://www.codingninjas.com/studio/problems/boundary-traversal-of-binary-tree_790725
 - add root
 - get left boundary - use root.left otherwise both this and right boundary calls will add root
-- add leaves - level order traversal might not work - refer first example in link
+- add leaves - level order traversal might not work - refer second example in link
   - leaves can be on different levels
-  - we will not be able to go from left to right when doing level order traversal if leaves are on different levels
+  - we need to go from left to right when adding leaves, but it might happen the left leaf is at a greater level than the right leaf
 - add right boundary - use root.right otherwise both this and left boundary calls will add root
+- remember - left and right boundaries should not add the leaf nodes
 
 ```java
 import java.util.List;

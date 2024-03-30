@@ -10,7 +10,6 @@
   - push left of current while left is not null
   - top of stack is the value to return
   - now, update current to top's right
-- we basically get rid of the outer loop in the iterative traversal - we only traverse "till needed" to get the next element in the in order
 - for has next, we do not need to even do this - as long as 
   - either current node is not null
   - or stack is not empty

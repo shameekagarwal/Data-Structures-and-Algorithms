@@ -11,6 +11,7 @@
 - maybe idea is when i am shifting down elements on (last level - 1), the entire height of heap (log<sub>2</sub>n) is not being traveled - we only look at the level below it
 - ignoring actual proof for now
 - i think same logic applies to my initial solution as well - i am just constructing a heap from a given set of elements. complexity of this is not O(n * log<sub>2</sub>N), because when i insert the first element, height should not be log<sub>2</sub>N, but just 1
+- TODO: try if shifting up works? start from 2nd level all the way to last level
 
 ```java
 import java.util.Arrays;

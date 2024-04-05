@@ -7,7 +7,6 @@
 - make note of stl - initializing a list with a specific size and an element - `new ArrayList<>(Collections.nCopies(size, initial_element));`
 - note, my understanding - in lists etc - capacity != size. size is what we did above, but we can also use `new ArrayList<>(10)` - this is providing an initial capacity. i think this is to do with the dynamic resizing capability of lists, this has nothing to do with the size we are interested in
 - complexity ≈ arguable, might be O(n) or O(n*logN), not sure
-- so to check - is it even worth doing it via priority queue, or the regular old sorting works as well?
 
 ```java
 import java.util.List;

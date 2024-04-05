@@ -10,6 +10,7 @@
 - if number of these conversions needed are greater than k, then we move the left pointer forward
 - why two pointer works - if x conversions are needed for a window l to r, no way lesser than x conversions would be needed for a window l to r + 1
 - so, we should be fine with incrementing l for r, since r + 1 would be able to "reuse" this
+- time complexity - 26 * 2 * N? (assuming each l movement has time complexity of 26, both l and r contribute n each)
 
 ```java
 class Solution {

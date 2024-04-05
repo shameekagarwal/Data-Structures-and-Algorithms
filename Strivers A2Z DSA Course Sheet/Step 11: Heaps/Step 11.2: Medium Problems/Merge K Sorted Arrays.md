@@ -1,7 +1,7 @@
 # Merge K Sorted Arrays
 
 - https://www.codingninjas.com/studio/problems/merge-k-sorted-arrays_975379
-- inspired ditto by [Flattening of LL](/Striver%20-%20Interview%20Prep/Step%206:%20Learn%20LinkedList/Step%206.5/Flattening%20of%20LL.md)
+- inspired ditto by [Flattening of LL](../../Step%206:%20Learn%20LinkedList/Step%206.5:%20Hard%20Problems%20of%20LL/Flattening%20of%20LL.md)
 - but there, we had the liberty of using `.child`, so we had the liberty of storing just the node and the value. here, we need to store "which list" and "which index" as well to be able to grab the next element
 
 ```java

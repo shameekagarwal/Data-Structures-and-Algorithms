@@ -1,6 +1,6 @@
 # Sort K Sorted Array
 
-- https://www.geeksforgeeks.org/problems/nearly-sorted-1587115620/
+- https://www.geeksforgeeks.org/problems/nearly-sorted-1587115620/1
 - brute - shouts selection sort to me - 
   - normal insertion sort will go 0 to N - 1 for picking smallest element. this will go from 0 to K
   - normal insertion sort will go 1 to N - 2 for picking second smallest element. this will go from 1 to K + 1
@@ -15,19 +15,23 @@
 ```java
 class Solution {
 
-    ArrayList <Integer> nearlySorted(int arr[], int num, int k) {
+    ArrayList<Integer> nearlySorted(int arr[], int n, int k) {
         
+        k = Math.min(n - 1, k);
         PriorityQueue<Integer> minHeap = new PriorityQueue<>();
-        for (int i = 0; i < k + 1; i++) {
+        ArrayList<Integer> result = new ArrayList<Integer>();
+        
+        for (int i = 0; i < k; i++) {
             minHeap.add(arr[i]);
         }
         
-        ArrayList<Integer> result = new ArrayList<>();
-        for (int i = 0; i < arr.length; i++) {
-            result.add(minHeap.remove());
-            if (i + k + 1 < arr.length) {
-                minHeap.add(arr[i + k + 1]);
-            }
+        for (int i = k; i < n; i++) {
+            minHeap.add(arr[i]);
+            result.add(minHeap.poll());
+        }
+        
+        for (int i = n - k; i < n; i++) {
+            result.add(minHeap.poll());
         }
         
         return result;

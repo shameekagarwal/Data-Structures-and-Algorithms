@@ -3,7 +3,7 @@
 - https://leetcode.com/problems/hand-of-straights/
 - edge case - if n % k != 0, return 0
 - try forming first group greedily - using the k minimum elements possible
-  - every element has to be a part of sme group - so does the minimum element
+  - every element has to be a part of same group - so does the minimum element
   - the minimum element would be the starting of its group, and we need all elements - minimum element, minimum element + 1, minimum element + 2 .... minimum element + k - 1
 - when forming a group - we extract the minimum element fom the priority queue
 - but if we find duplicates, we store it in an auxiliary array, and then add it back after the current group has been formed

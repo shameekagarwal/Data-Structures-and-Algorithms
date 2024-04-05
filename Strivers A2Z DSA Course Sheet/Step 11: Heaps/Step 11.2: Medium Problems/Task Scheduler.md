@@ -1,7 +1,6 @@
 # Task Scheduler
 
 - https://leetcode.com/problems/task-scheduler/
-- doing this using greedy approach felt more intuitive than forcing priority queue in this
 - greedy approach - assume we have tasks like this - a a a b b b c c c d d e, n = 5
 - the optimal way to place these tasks is a b c _ _ _ a b c _ _ _ a b c
 - i.e. place the tasks with the max frequency together with the "remaining cooldown gaps" between them
@@ -36,8 +35,61 @@ class Solution {
         }
 
         int cooldownGapsLeft = (n - (tasksWithMaxFrequency - 1)) * (maxFrequency - 1);
-        int taskInstancesWithMaxFrequency = tasksWithMaxFrequency * maxFrequency; 
+        int taskInstancesWithMaxFrequency = tasksWithMaxFrequency * maxFrequency;
         return taskInstancesWithMaxFrequency + Math.max(tasks.length - taskInstancesWithMaxFrequency, cooldownGapsLeft);
+    }
+}
+```
+
+## Solution 2
+
+- my understanding - a variation of the below algorithm is the priority queue solution?
+
+```java
+class Solution {
+
+    private static final int size = 'Z' - 'A' + 1;
+
+    public int leastInterval(char[] tasks, int cooldown) {
+
+        int n = tasks.length;
+
+        int[] frequency = new int[size];
+
+        for (char task : tasks) {
+            frequency[task - 'A'] += 1;
+        }
+
+        int currentTime = 1;
+        int picked = 0;
+        int[] lastSeen = new int[size];
+        Arrays.fill(lastSeen, -cooldown);
+
+        while (picked < n) {
+
+            char toPick = '!';
+            int remaining = 0;
+
+            for (char i = 'A'; i <= 'Z'; i++) {
+                if ((remaining < frequency[i - 'A']) && (lastSeen[i - 'A'] + cooldown + 1 <= currentTime)) {
+                    remaining = frequency[i - 'A'];
+                    toPick = i;
+                }
+            }
+
+            if (remaining != 0) {
+                lastSeen[toPick - 'A'] = currentTime;
+                frequency[toPick - 'A'] -= 1;
+                picked += 1;
+                // System.out.printf("%c ", toPick);
+            } else {
+                // System.out.printf("_ ", toPick);
+            }
+
+            currentTime += 1;
+        }
+
+        return currentTime - 1;
     }
 }
 ```

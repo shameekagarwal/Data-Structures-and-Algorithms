@@ -1,6 +1,6 @@
 # Does array represent Heap
 
-- https://www.geeksforgeeks.org/problems/does-array-represent-heap4345/
+- https://www.geeksforgeeks.org/problems/does-array-represent-heap4345/1
 - check one by one from parent to all its children
 
 ```java

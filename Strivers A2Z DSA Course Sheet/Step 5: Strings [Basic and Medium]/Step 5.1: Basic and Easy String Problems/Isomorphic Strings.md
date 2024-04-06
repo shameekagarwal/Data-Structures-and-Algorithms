@@ -10,21 +10,26 @@ class Solution {
 
     public boolean isIsomorphic(String s, String t) {
 
-        if (s.length() != t.length()) {
-            return false;
-        }
+        char[] source = s.toCharArray();
+        char[] target = t.toCharArray();
 
-        int map[] = new int[65536];
-        boolean alreadyMapped[] = new boolean[65536];
+        int m = source.length;
+        int n = target.length;
 
-        for (int i = 0; i < s.length(); i++) {
-            if (map[s.charAt(i)] == 0) {
-                if (alreadyMapped[t.charAt(i)]) {
+        if (m != n) return false;
+
+        int[] map = new int[256];
+        Arrays.fill(map, -1);
+        boolean[] alreadyMapped = new boolean[256];
+
+        for (int i = 0; i < n; i++) {
+            if (map[source[i]] == -1) {
+                if (alreadyMapped[target[i]]) {
                     return false;
                 }
-                map[s.charAt(i)] = t.charAt(i);
-                alreadyMapped[t.charAt(i)] = true;
-            } else if (map[s.charAt(i)] != t.charAt(i)) {
+                map[source[i]] = target[i];
+                alreadyMapped[target[i]] = true;
+            } else if (map[source[i]] != target[i]) {
                 return false;
             }
         }

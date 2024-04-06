@@ -14,85 +14,50 @@
 
 ```java
 class Solution {
- 
+
     public String longestPalindrome(String s) {
         
-        char[] arr = s.toCharArray();
-        
-        PalindromeResult oddResult = findMaxOddLengthPalindrome(arr);
-        PalindromeResult evenResult = findMaxEvenLengthPalindrome(arr);
+        char[] characters = s.toCharArray();
+        int n = characters.length;
+        int result = 0;
 
-        return oddResult.length > evenResult.length ? 
-            s.substring(oddResult.start, oddResult.end + 1) :
-            s.substring(evenResult.start, evenResult.end + 1);
-    }
+        int start = 0;
+        int end = 0;
 
-    private PalindromeResult findMaxOddLengthPalindrome(char[] arr) {
+        for (int i = 0; i < n; i++) {
 
-        PalindromeResult result = new PalindromeResult();
-
-        for (int i = 0; i < arr.length; i++) {
-
-            int currentPalindromeLength = 1;
-            int left = i - 1;
-            int right = i + 1;
-
-            while (left > -1 && right < arr.length && arr[left] == arr[right]) {
-                currentPalindromeLength += 2;
-                left -= 1;
-                right += 1;
-            }
-            
-            if (result.length < currentPalindromeLength) {
-                result.set(currentPalindromeLength, left + 1, right - 1);
+            int equal = totalEqual(characters, n, i - 1, i + 1);
+            if (result < 2 * equal + 1) {
+                result = 2 * equal + 1;
+                start = i - equal;
+                end = i + equal;
             }
         }
 
-        return result;
-    }
+        for (int i = 0; i + 1 < n; i++) {
 
-    private PalindromeResult findMaxEvenLengthPalindrome(char[] arr) {
-
-        PalindromeResult result = new PalindromeResult();
-
-        for (int i = 1; i < arr.length; i++) {
-
-            if (arr[i] != arr[i - 1]) continue;
-
-            int currentPalindromeLength = 2;
-            int left = i - 2;
-            int right = i + 1;
-
-            while (left > -1 && right < arr.length && arr[left] == arr[right]) {
-                currentPalindromeLength += 2;
-                left -= 1;
-                right += 1;
-            }
-
-            if (result.length < currentPalindromeLength) {
-                result.set(currentPalindromeLength, left + 1, right - 1);
+            int equal = totalEqual(characters, n, i, i + 1);
+            if (result < 2 * equal) {
+                result = 2 * equal;
+                start = i - equal + 1;
+                end = i + equal;
             }
         }
 
-        return result;
-    }
-}
-
-class PalindromeResult {
-
-    int length = 0;
-    int start = -1;
-    int end = -1;
-
-    void set(int length, int start, int end) {
-        this.length = length;
-        this.start = start;
-        this.end = end;
+        return s.substring(start, end + 1);
     }
 
-    @Override
-    public String toString() {
-        return "(" + length + ", " + start + "," + end + ")";
+    private int totalEqual(char[] characters, int n, int l, int r) {
+
+        int count = 0;
+
+        while (l > -1 && r < n && (characters[l] == characters[r])) {
+            l -= 1;
+            r += 1;
+            count += 1;
+        }
+
+        return count;
     }
 }
 ```

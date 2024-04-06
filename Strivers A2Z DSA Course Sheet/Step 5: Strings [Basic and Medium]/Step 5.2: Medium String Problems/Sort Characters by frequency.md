@@ -2,6 +2,7 @@
 
 - https://leetcode.com/problems/sort-characters-by-frequency/
 - notice the use of string builder - which results in efficient runtime
+- wasted a lot of time trying to use tree map - remember, tree map sorts by key and not value
 
 ```java
 class Solution {

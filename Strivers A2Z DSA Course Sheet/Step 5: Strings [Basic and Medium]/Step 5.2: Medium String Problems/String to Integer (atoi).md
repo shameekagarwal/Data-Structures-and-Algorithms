@@ -38,11 +38,8 @@ class Solution {
             value = (value * 10) + digit;
             i += 1;
         }
-        if (isNegative) {
-            value *= -1;
-        }
 
-        return value;
+        return isNegative ? -value : value;
     }
 }
 ```

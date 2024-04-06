@@ -30,19 +30,7 @@ class Solution {
 
 ## KMP Algorithm
 
-- let us say 1st 2nd and 3rd parts of the needle are the same
-- initially, first three parts of the needle match the haystack
-- but, it does not match from the beginning of the fourth part of the needle
-- we know that first and third parts of the needle are the same
-- kmp is "intelligent enough" to now match from the 4th part of haystack to 2nd part of needle
-- this jump makes kmp efficient - since we did not have to rematch the part that had already matched
-- the part - suffix thats also the prefix
-- so, a good e.g. for interviews - 
-  - needle - ab cd ab ef
-  - haystack - ab cd ab cd ab ef
-
-![kmp intuition](./kmp-intuition.png)
-
+- remember - whenever solving kmp problem, try to come up with example for both lps construction and matching - this will help give intuition to interviewer
 - we construct an array such that if for index i, value is x, it means `needle[0...x - 1]` = `needle[i - x - 1...i]`
 - this array is called the "longest prefix suffix" - thats why the title has lps
 - logic behind if - 
@@ -51,64 +39,62 @@ class Solution {
   - thus `lps[i] = prevLps`
   - then, we increment i and prevLps
 - logic behind else if - straight forward, nothing is matching
-- logic behind final else - 
-  - assume needle - aa bb aa x aa bb aaa
-  - lps - 01 00 12 0 12 34 562
-  - it tries matching aa bb aaa with aa bb aa x - cannot match last a with x
-  - then tries matching starting aa b with aa a - cannot match last a with b
-  - then tries matching starting aa with aa -  matches!
-  - for all above cases - it only tries matching a with the character at prevLps - it does not try to match everything before prevLps - this is the advantage of kmp
+- logic behind final else - try understanding for last character in below example - last c will be first compared against the middle d and fail. then, it would compared against third c and match - we did not have to compare the a and b before the last c to find that for last c, lps is up to third c
+  ```
+  a b c a b d a b c a b c
+  0 0 0 1 2 0 1 2 3 4 5 3
+  ```
 - time complexity of building lps - `O(2 * n)`
 
 ```java
-    private int[] getLps(String s) {
+private int[] getLps(String s) {
 
-        int[] lps = new int[s.length()];
-        int prevLps = 0;
-        int i = 1;
+    int[] lps = new int[s.length()];
+    int prevLps = 0;
+    int i = 1;
 
-        while (i < s.length()) {
-            if (s.charAt(prevLps) == s.charAt(i)) {
-                lps[i] = prevLps + 1;
-                prevLps += 1;
-                i += 1;
-            } else if (prevLps == 0) {
-                lps[i] = 0;
-                i += 1;
-            } else {
-                prevLps = lps[prevLps - 1];
-            }
+    while (i < s.length()) {
+        if (s.charAt(prevLps) == s.charAt(i)) {
+            lps[i] = prevLps + 1;
+            prevLps += 1;
+            i += 1;
+        } else if (prevLps == 0) {
+            lps[i] = 0;
+            i += 1;
+        } else {
+            prevLps = lps[prevLps - 1];
         }
-
-        return lps;
     }
+
+    return lps;
+}
 ```
 
-- for matching - this example is good - 
-  - haystack - aaa x aaay
-  - needle - aaay
-- first three a's match
-- when x does not match y
-- we compare x of haystack with the "third a" of needle
-- notice how we did not have to compare the first two as of the needle with the two as before the x of haystack
+- for matching - 
+  ```
+  a b c a b c a b x
+  a b c a b x
+  ```
+- after x does not match c, we automatically match third c of pattern with sixth c of source, and then the remaining pattern matches
+- we did not have to start matching for pattern from start
 
 ```java
-    private int findFirstIndex(int[] lps, String haystack, String needle) {
-        
-        int i = 0;
-        int j = 0;
+private int findFirstIndex(int[] lps, String haystack, String needle) {
+    
+    int i = 0;
+    int j = 0;
 
-        while (i < haystack.length() && j < needle.length()) {
-            if (haystack.charAt(i) == needle.charAt(j)) {
-                i += 1;
-                j += 1;
-            } else if (j == 0) {
-                i += 1;
-            } else {
-                j = lps[j - 1];
-            }
+    while (i < haystack.length() && j < needle.length()) {
+        if (haystack.charAt(i) == needle.charAt(j)) {
+            i += 1;
+            j += 1;
+        } else if (j == 0) {
+            i += 1;
+        } else {
+            j = lps[j - 1];
         }
-
-        return j == needle.length() ? i - j : -1;
     }
+
+    return j == needle.length() ? i - j : -1;
+}
 ```

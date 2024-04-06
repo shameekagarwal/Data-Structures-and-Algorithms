@@ -33,7 +33,7 @@ class Solution {
 
 - use the same concept from brute force but optimal - 
 - make `s = s + s`
-- then use kmp (discussed [here](/Strivers%20A2Z%20DSA%20Sheet/Step%2018:%20Strings/Step%2018.1/KMP%20algo%20LPS(pi)%20array.md))
+- then use kmp (discussed [here](../../Step%2018:%20Strings/Step%2018.1/KMP%20algo%20LPS(pi)%20array.md))
 - so important? - to check if an array is a rotated version of another array - we use kmp?
 - note - place condition of lengths not equal at the beginning - otherwise, a will be found in aa, i.e. aa + aa, but actually its substring not rotated version
 

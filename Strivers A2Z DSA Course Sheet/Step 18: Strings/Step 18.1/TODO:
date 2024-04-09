@@ -1,3 +1,0 @@
-Number of Subarrays That Match a Pattern II\
-1st part was construct the pattern for the array
-then, use kmp

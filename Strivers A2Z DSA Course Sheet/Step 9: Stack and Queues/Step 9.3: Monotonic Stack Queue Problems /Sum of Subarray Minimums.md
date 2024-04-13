@@ -67,3 +67,45 @@ class Solution {
     }
 }
 ```
+
+## Optimal 
+
+- refer [](./Largest%20Rectangle%20in%20Histogram.md)
+
+```java
+class Solution {
+
+    private static final int MOD = 1000000007;
+
+    public int sumSubarrayMins(int[] arr) {
+
+        int n = arr.length;
+        Deque<Integer> stack = new ArrayDeque<>();
+        int result = 0;
+
+        for (int i = 0; i <= n; i++) {
+
+            while (!stack.isEmpty() && ((i == n) || (arr[stack.peekLast()] >= arr[i]))) {
+
+                int idx = stack.removeLast();
+                int left = stack.isEmpty() ? -1 : stack.peekLast();
+                int right = i;
+                int noOfSubArrays = mul(idx - left, right - idx);
+                result = add(result, mul(noOfSubArrays, arr[idx]));
+            }
+
+            stack.addLast(i);
+        }
+
+        return result;
+    }
+
+    private int mul(int a, int b) {
+        return (int)((a * 1L * b) % MOD);
+    }
+
+    private int add(int a, int b) {
+        return (int)((a + 0L + b) % MOD);
+    }
+}
+```

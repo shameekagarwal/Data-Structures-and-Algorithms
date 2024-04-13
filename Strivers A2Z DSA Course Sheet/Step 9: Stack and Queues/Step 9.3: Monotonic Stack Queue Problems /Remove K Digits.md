@@ -2,6 +2,7 @@
 
 - https://leetcode.com/problems/remove-k-digits/
 - we try to be "greedy" about this
+- ultimately, the number would have n - k digits left,and we have to use the lowest possible value for these n 0- k digits. for this, we try to minimize msb first and then remove from lsb
 - e.g. i have a number 54321. observe
   - if k is 1, i would remove 5
   - if k is 2, i would remove 5 and 4

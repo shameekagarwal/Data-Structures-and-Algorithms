@@ -2,7 +2,7 @@
 
 - https://leetcode.com/problems/next-greater-element-i/
 - naive - 
-  - for all elements i in nums 2
+  - for all elements i in nums2
   - go from i + 1 to nums2.length - 1 looking for the next greatest element
   - put it in a map
   - then construct the result from this map

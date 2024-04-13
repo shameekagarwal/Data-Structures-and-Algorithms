@@ -1,4 +1,4 @@
-# Prefix, Infix, PostFix
+# Prefix, Infix, Postfix
 
 - prefix - operator before operands - also called polish
 - infix - operator between operands
@@ -7,13 +7,14 @@
 - which order to evaluate - associativity
 - e.g. 1 - 3 - 4 = -6 if we do (1 - 3) - 4, but = 2 if we do 1 - (3 - 4)
 - -4 is correct because of associativity
-- do not think bodmas for precedence - 
+- do not think bodmas for precedence. the following is precedence, and then associativity for each of them - 
   - parentheses - left
   - unary operators
   - exponent - right
   - multiplication, division - left
   - addition, subtraction - left
   - assignment - right
+- why we should not think bodmas - e.g. if i type this - `System.out.println(3 * 4 / 3);`, result is not 3 (4/3 is 1, 3x1 is 3). result is 4, because 3x4 was evaluated first. both multiplication and division have the same precedence, and evaluation happened from left to right due to associativity
 - so, 2^3^2 is 512, not 64
 - input - 2 + 3 * 5 - 1. output in steps by making chunks based on operator precedence - every time, treat each chunk as an operand
 - infix to prefix 

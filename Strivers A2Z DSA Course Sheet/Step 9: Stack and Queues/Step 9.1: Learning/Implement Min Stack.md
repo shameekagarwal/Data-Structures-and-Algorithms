@@ -1,5 +1,6 @@
 # Implement Min Stack
 
+- https://leetcode.com/problems/min-stack/
 - maintain a pair at the top of the stack - one is the actual element, while the other is the minimum
 - time complexity for all operations stays O(1)
 - space complexity - O(2 * n)

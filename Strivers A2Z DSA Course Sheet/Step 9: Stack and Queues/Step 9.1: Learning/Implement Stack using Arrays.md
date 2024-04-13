@@ -4,7 +4,7 @@
 - ptr can go up to `arr.length - 1`
 - ptr would be -1 when stack is empty
 - for every insertion, increment pointer and then put element in `arr[ptr]`
-- note if asked in interview - remember to have capacity in constructor to get rid  of issues like dynamic sizing etc
+- note if asked in interview - remember to have capacity in constructor to get rid of issues like dynamic sizing etc
 - also, remember the check of isFull that is needed if we initialize using capacity and do not handle dynamic sizing
 - look reusing of isEmpty / isFull in other functions, reusing of top inside pop, etc
 

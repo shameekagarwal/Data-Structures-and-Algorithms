@@ -7,19 +7,24 @@
 ```java
 class Solution {
 
+    private final Map<Character, Character> bracketLookup = Map.of(
+        '(', ')',
+        '{', '}',
+        '[', ']'
+    );
+
     public boolean isValid(String s) {
-
+        
         Deque<Character> stack = new ArrayDeque<>();
-
-        for (char c : s.toCharArray()) {
-            if (c == '(' || c == '{' || c == '[') {
+        char[] arr = s.toCharArray();
+        
+        for (char c : arr) {
+            if (bracketLookup.containsKey(c)) {
                 stack.addLast(c);
-            } else if (c == ')') {
-                if (stack.isEmpty() || stack.removeLast() != '(') return false;
-            } else if (c == '}') {
-                if (stack.isEmpty() || stack.removeLast() != '{') return false;
-            } else if (c == ']') {
-                if (stack.isEmpty() || stack.removeLast() != '[') return false;
+            } else {
+                if (stack.isEmpty()) return false;
+                char topOpening = stack.removeLast();
+                if (bracketLookup.get(topOpening) != c) return false;
             }
         }
 

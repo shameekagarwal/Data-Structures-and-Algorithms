@@ -9,7 +9,7 @@
 - total area where height = current bar = `(y - x + 1) * heights[i]`
 - time complexity - O(3 * n) - constructing pse, nse and final calculation
 - space complexity -O(2 * n)
-- note - for all solutions based on previous smaller and next smaller, i have noticed that people have gotten away by using only one stack - TODO: how difficult is that solution
+- note - for all solutions based on previous smaller and next smaller, i have noticed that people have gotten away by using only one stack
 
 ```java
 class Solution {
@@ -72,8 +72,8 @@ class Solution {
   - their left would be the top of the stack
   - their right would be the current index we are trying to push
 - this way, we only end up doing it one pass instead of 3, using one stack instead of 2
-- notice how the loop runs from 0 up to n (not n - 1 like usual)
-- TODO - look at other questions in this section which can make use of this optimization
+- vvimp - we make the loop run up to n - this is a smart trick to avoid code duplication
+- else, run loop till n - 1, and outside the loop, duplicate the same code, with i as n, and run it till stack does not become empty
 
 ```java
 class Solution {

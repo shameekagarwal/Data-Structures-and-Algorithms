@@ -16,32 +16,36 @@ class Solution {
     public int[] asteroidCollision(int[] asteroids) {
         
         Deque<Integer> stack = new ArrayDeque<>();
+        int n = asteroids.length;
 
-        for (int i = 0; i < asteroids.length; i++) {
-            if (asteroids[i] < 0) {
+        for (int i = 0; i < n; i++) {
+            if (asteroids[i] > 0) {
+                stack.addLast(asteroids[i]);
+            } else {
 
-                while (!stack.isEmpty() && stack.peekLast() > 0 && stack.peekLast() < Math.abs(asteroids[i])) {
-                    stack.removeLast();
+                int value = -asteroids[i];
+                boolean destroyed = false;
+
+                while (!stack.isEmpty() && stack.peekLast() > 0 && !destroyed) {
+                    if (stack.peekLast() < value) {
+                        stack.removeLast();
+                    } else if (stack.peekLast() == value) {
+                        stack.removeLast();
+                        destroyed = true;
+                    } else {
+                        destroyed = true;
+                    }
                 }
 
-                if (!stack.isEmpty()) {
-                    if (stack.peekLast() < 0) {
-                        stack.addLast(asteroids[i]);
-                    } else {
-                        if (stack.peekLast() == Math.abs(asteroids[i])) {
-                            stack.removeLast();
-                        }
-                    }
-                } else {
+                if (!destroyed) {
                     stack.addLast(asteroids[i]);
                 }
-            } else {
-                stack.addLast(asteroids[i]);
             }
         }
 
-        int[] result = new int[stack.size()];
-        for (int i = 0; i < result.length; i++) {
+        int m = stack.size();
+        int[] result = new int[m];
+        for (int i = 0; i < m; i++) {
             result[i] = stack.removeFirst();
         }
         return result;

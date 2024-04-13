@@ -22,7 +22,8 @@ class Solution {
 }
 ```
 
-- optimal - inspired by [Sum of Subarray Minimums](./Sum%20of%20Subarray%20Minimums.md)
+- better - inspired by [Sum of Subarray Minimums](./Sum%20of%20Subarray%20Minimums.md)
+- for interview, point out this can use "strategy pattern"
 - time complexity - O(n)
 
 ```java
@@ -112,6 +113,68 @@ class Solution {
         }
 
         return nge;
+    }
+}
+```
+
+- optimal - just use one stack for each min and max contribution
+- reference - [Largest Rectangle in Histogram](./Largest%20Rectangle%20in%20Histogram.md)
+
+```java
+class Solution {
+
+    public long subArrayRanges(int[] nums) {
+
+        int n = nums.length;
+        return maxContribution(nums, n) - minContribution(nums, n);
+    }
+
+    private long maxContribution(int[] nums, int n) {
+        
+        long result = 0;
+        Deque<Integer> stack = new ArrayDeque<>();
+
+        for (int i = 0; i <= n; i++) {
+
+            while (!stack.isEmpty() && ((i == n) || (nums[stack.peekLast()] < nums[i]))) {
+                
+                int idx = stack.removeLast();
+                int left = stack.isEmpty() ? -1 : stack.peekLast();
+                int right = i;
+                int noOfSubArrays = (idx - left) * (right - idx);
+                // System.out.printf("max contrib: [%d to %d]: %d\n", left, right, nums[idx]);
+
+                result += (noOfSubArrays * 1L * nums[idx]);
+            }
+
+            stack.addLast(i);
+        }
+
+        return result;
+    }
+
+    private long minContribution(int[] nums, int n) {
+
+        long result = 0;
+        Deque<Integer> stack = new ArrayDeque<>();
+
+        for (int i = 0; i <= n; i++) {
+
+            while (!stack.isEmpty() && ((i == n) || (nums[stack.peekLast()] > nums[i]))) {
+                
+                int idx = stack.removeLast();
+                int left = stack.isEmpty() ? -1 : stack.peekLast();
+                int right = i;
+                int noOfSubArrays = (idx - left) * (right - idx);
+                // System.out.printf("min contrib: [%d to %d]: %d\n", left, right, nums[idx]);
+
+                result += (noOfSubArrays * 1L * nums[idx]);
+            }
+
+            stack.addLast(i);
+        }
+
+        return result;
     }
 }
 ```

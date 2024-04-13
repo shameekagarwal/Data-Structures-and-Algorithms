@@ -34,11 +34,11 @@ script();
 
 | completed | leetcode | coding_ninjas |
 | --------- | -------- | ------------- |
-| |  | https://www.codingninjas.com/studio/problems/longest-increasing-subsequence_630459 |
-| | https://leetcode.com/problems/find-the-smallest-divisor-given-a-threshold/ | https://www.codingninjas.com/codestudio/problems/smallest-divisor-with-the-given-limit_1755882 |
-| | https://leetcode.com/problems/word-ladder-ii/ | https://www.codingninjas.com/codestudio/problems/shortest-transition-paths_8391015 |
-| | https://leetcode.com/problems/minimum-number-of-days-to-make-m-bouquets/ | https://www.codingninjas.com/codestudio/problems/rose-garden_2248080 |
-| |  | https://www.codingninjas.com/studio/problems/longest-common-substring_1235207 |
+| ✅,❌,✅ |  | https://www.codingninjas.com/studio/problems/longest-increasing-subsequence_630459 |
+| ✅ | https://leetcode.com/problems/find-the-smallest-divisor-given-a-threshold/ | https://www.codingninjas.com/codestudio/problems/smallest-divisor-with-the-given-limit_1755882 |
+| ✅ | https://leetcode.com/problems/word-ladder-ii/ | https://www.codingninjas.com/codestudio/problems/shortest-transition-paths_8391015 |
+| ✅ | https://leetcode.com/problems/minimum-number-of-days-to-make-m-bouquets/ | https://www.codingninjas.com/codestudio/problems/rose-garden_2248080 |
+| ❌ |  | https://www.codingninjas.com/studio/problems/longest-common-substring_1235207 |
 | | https://leetcode.com/problems/sliding-window-maximum/ | https://www.codingninjas.com/studio/problems/sliding-maximum-_701652 |
 | | https://leetcode.com/problems/maximum-depth-of-binary-tree/ | https://www.codingninjas.com/studio/problems/height-of-binary-tree_4609628 |
 | | https://leetcode.com/problems/search-a-2d-matrix/ | https://www.codingninjas.com/codestudio/problems/search-in-a-2d-matrix_980531 |

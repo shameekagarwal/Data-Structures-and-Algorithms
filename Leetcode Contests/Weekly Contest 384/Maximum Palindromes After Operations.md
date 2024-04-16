@@ -1,6 +1,6 @@
 # Maximum Palindromes After Operations
 
-- https://leetcode.com/problems/maximum-palindromes-after-operations/description/
+- https://leetcode.com/problems/maximum-palindromes-after-operations/
 - what is given - any pairs of characters can be swapped
 - just used greedy
 - count number of characters having odd occurrence and number of characters having even occurrence

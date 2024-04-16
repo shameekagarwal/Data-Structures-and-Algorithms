@@ -1,6 +1,8 @@
-# Random Reviser
+# Strivers A2Z DSA Course Sheet
 
-### Script
+### Random Revision Generation Script
+
+run it inside the console tab after opening the a2z link
 
 ```js
 const script = async () => {
@@ -30,7 +32,7 @@ const script = async () => {
 script();
 ```
 
-### Progress
+### Random Revision Progress
 
 | completed | leetcode | coding_ninjas |
 | --------- | -------- | ------------- |

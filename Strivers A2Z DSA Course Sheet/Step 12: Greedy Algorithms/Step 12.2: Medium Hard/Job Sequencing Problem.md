@@ -1,5 +1,6 @@
 # Job Sequencing Problem
 
+- https://practice.geeksforgeeks.org/problems/job-sequencing-problem-1587115620/1 
 - greedy - sort them according to decreasing order of profit to perform the job with maximum profit first
 - perform the job on the last day so that there is time for "more important" tasks earlier
 - if last is occupied, keep moving back till an empty slot is found

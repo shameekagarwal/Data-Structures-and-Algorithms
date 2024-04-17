@@ -131,11 +131,8 @@ class Solution {
 ```
 
 - my solution (not dp) - if i think of it like a graph, it is easy to see - buy at all minima and sell at all maxima
-- e.g. i have a slope - 1,3,7 - best i can do is buy at 1 and sell at 7 - i cannot do better than this
-- so, we have a maxima if `prices[i] < prices[i - 1]`
-- so, `prices[i - 1]` becomes the maxima for its earlier minima, and `prices[i]` becomes the minima
-- the last profit calculation outside the loop is needed for cases when there is a maxima at end, e.g. `3,1,4`
-- dry run for examples like this - `7,6,5,1,2,5,3,10,7,5,1`
+- now, an easy way to calculate it is - if `nums[i] > nums[i - 1]`, ad it to profit
+- this way, we are basically adding the maxima - minima into small chunks
 
 ```java
 class Solution {
@@ -143,17 +140,13 @@ class Solution {
     public int maxProfit(int[] prices) {
 
         int n = prices.length;
-        int previousMinima = prices[0];
         int profit = 0;
 
         for (int i = 1; i < n; i++) {
-            if (prices[i] < prices[i - 1]) {
-                profit += (prices[i - 1] - previousMinima);
-                previousMinima = prices[i];
+            if (prices[i] > prices[i - 1]) {
+                profit += prices[i] - prices[i - 1];
             }
-            previousMinima = Math.min(previousMinima, prices[i]);
         }
-        profit += (prices[n - 1] - previousMinima);
 
         return profit;
     }

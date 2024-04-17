@@ -1,5 +1,6 @@
 # Maximum Width of Binary Tree
 
+- https://leetcode.com/problems/maximum-width-of-binary-tree/
 - it actually means number of nodes between them when we do a level order traversal
 - trick - number the nodes - left child is numbered 2x, right child is numbered 2x + 1
 - so, subtract these numbers
@@ -11,59 +12,50 @@
 
 ![./maximum-width-final](./maximum-width-final.png)
 
-- notice the use ofo peekFirst and peekLast to calculate minimum and maximum tags
+- notice the use of peekFirst and peekLast to calculate minimum and maximum tags
 
 ```java
 class Solution {
 
     public int widthOfBinaryTree(TreeNode root) {
-        
+
         if (root == null) return 0;
-        
-        int result = 0;
-        Deque<QueueElement> queue = new ArrayDeque<>();
-        queue.addLast(new QueueElement(root, 1));
+
+        Deque<QueueNode> queue = new ArrayDeque<>();
+        queue.addLast(new QueueNode(root, 0));
+
+        int width = 0;
 
         while (!queue.isEmpty()) {
-            
-            int currentLevelSize = queue.size();
-            int minTagSeen = queue.peekFirst().tag;
-            int maxTagSeen = queue.peekLast().tag;
-            result = Math.max(result, maxTagSeen - minTagSeen + 1);
-            
-            for (int i = 0; i < currentLevelSize; i++) {
-                
-                QueueElement element = queue.removeFirst();
-                
-                if (i == 0) minTagSeen = element.tag;
-                if (i == currentLevelSize - 1) maxTagSeen = element.tag;
 
-                if (element.node.left != null) {
-                    queue.addLast(new QueueElement(element.node.left, 2 * element.tag - 1));
+            width = Math.max(width, queue.peekLast().val - queue.peekFirst().val + 1);
+            int currentLevelSize = queue.size();
+
+            for (int i = 0; i < currentLevelSize; i++) {
+
+                QueueNode queueNode = queue.removeFirst();
+
+                if (queueNode.node.left != null) {
+                    queue.addLast(new QueueNode(queueNode.node.left, 2 * queueNode.val));
                 }
 
-                if (element.node.right != null) {
-                    queue.addLast(new QueueElement(element.node.right, 2 * element.tag));
+                if (queueNode.node.right != null) {
+                    queue.addLast(new QueueNode(queueNode.node.right, 2 * queueNode.val + 1));
                 }
             }
         }
 
-        return result;
+        return width;
     }
 
-    static class QueueElement {
+    static class QueueNode {
 
         TreeNode node;
-        int tag;
+        int val;
 
-        QueueElement(TreeNode node, int tag) {
+        QueueNode(TreeNode node, int val) {
             this.node = node;
-            this.tag = tag;
-        }
-
-        @Override
-        public String toString() {
-            return "QueueElement(node=" + node + ", tag=" + tag + ")";
+            this.val = val;
         }
     }
 }

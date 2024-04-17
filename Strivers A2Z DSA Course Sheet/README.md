@@ -45,16 +45,16 @@ script();
 | ✅ | https://leetcode.com/problems/maximum-depth-of-binary-tree/ | https://www.codingninjas.com/studio/problems/height-of-binary-tree_4609628 |
 | ✅ | https://leetcode.com/problems/search-a-2d-matrix/ | https://www.codingninjas.com/codestudio/problems/search-in-a-2d-matrix_980531 |
 | ✅ |  | https://www.codingninjas.com/studio/problems/min-heap-implementation_5480527 |
-| | https://leetcode.com/problems/binary-tree-postorder-traversal/ | https://www.codingninjas.com/studio/problems/postorder-traversal_2035933 |
-| | https://leetcode.com/problems/valid-anagram/ | https://www.codingninjas.com/studio/problems/anagram-pairs_626517 |
-| |  | https://www.codingninjas.com/studio/problems/ceil-from-bst_920464 |
-| | https://leetcode.com/problems/rotate-array/ | https://www.codingninjas.com/codestudio/problems/left-rotate-an-array-by-one_5026278 |
-| | https://leetcode.com/problems/maximum-width-of-binary-tree/ | https://www.codingninjas.com/studio/problems/maximum-width-in-binary-tree_763671 |
-| | https://practice.geeksforgeeks.org/problems/job-sequencing-problem-1587115620/1 | https://www.codingninjas.com/studio/problems/job-sequencing-problem_1169460 |
-| | https://www.interviewbit.com/problems/nearest-smaller-element/ | https://www.codingninjas.com/studio/problems/immediate-smaller-element-_1062597 |
-| | https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/ | https://www.codingninjas.com/studio/problems/best-time-to-buy-and-sell-stock-ii_630282 |
-| | https://leetcode.com/problems/longest-common-subsequence/ | https://www.codingninjas.com/studio/problems/longest-common-subsequence_624879 |
-| | https://practice.geeksforgeeks.org/problems/n-meetings-in-one-room-1587115620/1 | https://www.codingninjas.com/studio/problems/maximum-meetings_1062658 |
+| ✅❌ (iterative soln 2) | https://leetcode.com/problems/binary-tree-postorder-traversal/ | https://www.codingninjas.com/studio/problems/postorder-traversal_2035933 |
+| ✅ | https://leetcode.com/problems/valid-anagram/ | https://www.codingninjas.com/studio/problems/anagram-pairs_626517 |
+| ✅ |  | https://www.codingninjas.com/studio/problems/ceil-from-bst_920464 |
+| ✅ | https://leetcode.com/problems/rotate-array/ | https://www.codingninjas.com/codestudio/problems/left-rotate-an-array-by-one_5026278 |
+| ✅ | https://leetcode.com/problems/maximum-width-of-binary-tree/ | https://www.codingninjas.com/studio/problems/maximum-width-in-binary-tree_763671 |
+| ❌ | https://practice.geeksforgeeks.org/problems/job-sequencing-problem-1587115620/1 | https://www.codingninjas.com/studio/problems/job-sequencing-problem_1169460 |
+| ✅ | https://www.interviewbit.com/problems/nearest-smaller-element/ | https://www.codingninjas.com/studio/problems/immediate-smaller-element-_1062597 |
+| ✅✅ | https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/ | https://www.codingninjas.com/studio/problems/best-time-to-buy-and-sell-stock-ii_630282 |
+| ✅ | https://leetcode.com/problems/longest-common-subsequence/ | https://www.codingninjas.com/studio/problems/longest-common-subsequence_624879 |
+| ✅ | https://practice.geeksforgeeks.org/problems/n-meetings-in-one-room-1587115620/1 | https://www.codingninjas.com/studio/problems/maximum-meetings_1062658 |
 | |  | https://www.codingninjas.com/codestudio/problems/nth-root-of-m_1062679 |
 | |  | https://www.codingninjas.com/studio/problems/stack-implementation-using-array_3210209 |
 | | https://leetcode.com/problems/word-search/ | https://www.codingninjas.com/studio/problems/word-search---l_892986 |

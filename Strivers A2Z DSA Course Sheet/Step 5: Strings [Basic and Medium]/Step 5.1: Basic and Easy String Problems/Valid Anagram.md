@@ -33,3 +33,26 @@ class Solution {
     }
 }
 ```
+
+## An STL Solution
+
+```java
+class Solution {
+
+    public boolean isAnagram(String s, String t) {
+
+        Map<Character, Integer> sFrequency = new HashMap<>();
+        Map<Character, Integer> tFrequency = new HashMap<>();
+
+        for (char c : s.toCharArray()) {
+            sFrequency.put(c, sFrequency.getOrDefault(c, 0) + 1);
+        }
+
+        for (char c : t.toCharArray()) {
+            tFrequency.put(c, tFrequency.getOrDefault(c, 0) + 1);
+        }
+
+        return sFrequency.equals(tFrequency);
+    }
+}
+```

@@ -55,14 +55,14 @@ script();
 | ✅✅ | https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/ | https://www.codingninjas.com/studio/problems/best-time-to-buy-and-sell-stock-ii_630282 |
 | ✅ | https://leetcode.com/problems/longest-common-subsequence/ | https://www.codingninjas.com/studio/problems/longest-common-subsequence_624879 |
 | ✅ | https://practice.geeksforgeeks.org/problems/n-meetings-in-one-room-1587115620/1 | https://www.codingninjas.com/studio/problems/maximum-meetings_1062658 |
-| |  | https://www.codingninjas.com/codestudio/problems/nth-root-of-m_1062679 |
-| |  | https://www.codingninjas.com/studio/problems/stack-implementation-using-array_3210209 |
-| | https://leetcode.com/problems/word-search/ | https://www.codingninjas.com/studio/problems/word-search---l_892986 |
-| |  | https://www.codingninjas.com/codestudio/problems/longest-subarray-with-zero-sum_6783450 |
-| | https://leetcode.com/problems/diameter-of-binary-tree/ | https://www.codingninjas.com/studio/problems/diameter-of-binary-tree_920552 |
-| | https://leetcode.com/problems/count-good-numbers/ | https://www.codingninjas.com/studio/problems/good-numbers_625508 |
-| | https://leetcode.com/problems/search-in-rotated-sorted-array-ii/ | https://www.codingninjas.com/codestudio/problems/search-in-a-rotated-sorted-array-ii_7449547 |
-| | https://leetcode.com/problems/most-stones-removed-with-same-row-or-column/ | https://www.codingninjas.com/studio/problems/-most-stones-removed-with-same-row-or-column_1376597 |
+| ✅❌ |  | https://www.codingninjas.com/codestudio/problems/nth-root-of-m_1062679 |
+| ✅ |  | https://www.codingninjas.com/studio/problems/stack-implementation-using-array_3210209 |
+| ✅ | https://leetcode.com/problems/word-search/ | https://www.codingninjas.com/studio/problems/word-search---l_892986 |
+| ✅ |  | https://www.codingninjas.com/codestudio/problems/longest-subarray-with-zero-sum_6783450 |
+| ✅ | https://leetcode.com/problems/diameter-of-binary-tree/ | https://www.codingninjas.com/studio/problems/diameter-of-binary-tree_920552 |
+| ✅ | https://leetcode.com/problems/count-good-numbers/ | https://www.codingninjas.com/studio/problems/good-numbers_625508 |
+| ✅ | https://leetcode.com/problems/search-in-rotated-sorted-array-ii/ | https://www.codingninjas.com/codestudio/problems/search-in-a-rotated-sorted-array-ii_7449547 |
+| ✅ | https://leetcode.com/problems/most-stones-removed-with-same-row-or-column/ | https://www.codingninjas.com/studio/problems/-most-stones-removed-with-same-row-or-column_1376597 |
 | | https://leetcode.com/problems/roman-to-integer/ | https://www.codingninjas.com/studio/problems/roman-numeral-to-integer_981308 |
 | |  | https://www.codingninjas.com/studio/problems/if-else-decision-making_8357235 |
 | | https://leetcode.com/problems/coin-change/ | https://www.codingninjas.com/studio/problems/minimum-elements_3843091 |

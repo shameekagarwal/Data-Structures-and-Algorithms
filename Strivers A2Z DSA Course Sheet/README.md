@@ -2,7 +2,7 @@
 
 ### Random Revision Generation Script
 
-run it inside the console tab after opening the a2z link
+to help with revision, so that the topic etc is not revealed. run it inside the console tab after opening the a2z link
 
 ```js
 const script = async () => {

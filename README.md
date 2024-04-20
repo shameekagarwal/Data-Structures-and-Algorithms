@@ -3,3 +3,6 @@
 ### Resources
 
 - https://takeuforward.org/strivers-a2z-dsa-course/strivers-a2z-dsa-course-sheet-2/
+- https://leetcode.com/contest/
+- https://topmate.io/satyajitganguly
+

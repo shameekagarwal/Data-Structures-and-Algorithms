@@ -63,12 +63,12 @@ script();
 | ✅ | https://leetcode.com/problems/count-good-numbers/ | https://www.codingninjas.com/studio/problems/good-numbers_625508 |
 | ✅ | https://leetcode.com/problems/search-in-rotated-sorted-array-ii/ | https://www.codingninjas.com/codestudio/problems/search-in-a-rotated-sorted-array-ii_7449547 |
 | ✅ | https://leetcode.com/problems/most-stones-removed-with-same-row-or-column/ | https://www.codingninjas.com/studio/problems/-most-stones-removed-with-same-row-or-column_1376597 |
-| | https://leetcode.com/problems/roman-to-integer/ | https://www.codingninjas.com/studio/problems/roman-numeral-to-integer_981308 |
-| |  | https://www.codingninjas.com/studio/problems/if-else-decision-making_8357235 |
-| | https://leetcode.com/problems/coin-change/ | https://www.codingninjas.com/studio/problems/minimum-elements_3843091 |
-| | https://leetcode.com/problems/maximum-points-you-can-obtain-from-cards/ | https://www.codingninjas.com/codestudio/problems/maximum-points-from-cards_8391016 |
-| | https://leetcode.com/problems/longest-consecutive-sequence/solution/ | https://www.codingninjas.com/codestudio/problems/longest-successive-elements_6811740 |
-| |  | https://www.codingninjas.com/studio/problems/frog-jump_3621012 |
+| ✅ | https://leetcode.com/problems/roman-to-integer/ | https://www.codingninjas.com/studio/problems/roman-numeral-to-integer_981308 |
+| ✅ |  | https://www.codingninjas.com/studio/problems/if-else-decision-making_8357235 |
+| ✅ | https://leetcode.com/problems/coin-change/ | https://www.codingninjas.com/studio/problems/minimum-elements_3843091 |
+| ❌ | https://leetcode.com/problems/maximum-points-you-can-obtain-from-cards/ | https://www.codingninjas.com/codestudio/problems/maximum-points-from-cards_8391016 |
+| ✅ | https://leetcode.com/problems/longest-consecutive-sequence/ | https://www.codingninjas.com/codestudio/problems/longest-successive-elements_6811740 |
+| ✅ |  | https://www.codingninjas.com/studio/problems/frog-jump_3621012 |
 | | https://leetcode.com/problems/two-sum-iv-input-is-a-bst/ | https://www.codingninjas.com/studio/problems/pair-sum-in-bst._920493 |
 | | https://leetcode.com/problems/count-complete-tree-nodes/ | https://www.codingninjas.com/studio/problems/nodes-in-complete-binary-tree_1281151 |
 | |  | https://www.codingninjas.com/studio/problems/subset-sum-equal-to-k_1550954 |

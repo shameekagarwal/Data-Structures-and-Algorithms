@@ -45,64 +45,74 @@ class Solution {
 ```java
 class Solution {
 
-    private TreeNode currentNextNode;
-    private Deque<TreeNode> nextStack;
-
-    private TreeNode currentPreviousNode;
-    private Deque<TreeNode> previousStack;
-
     public boolean findTarget(TreeNode root, int k) {
 
-        currentNextNode = root;
-        nextStack = new ArrayDeque<>();
+        LeftIterator leftIterator = new LeftIterator(root);
+        RightIterator rightIterator = new RightIterator(root);
 
-        currentPreviousNode = root;
-        previousStack = new ArrayDeque<>();
+        int left = leftIterator.next().val;
+        int right = rightIterator.next().val;
 
-        int l = next();
-        int r = previous();
-
-        while (true) {
-            if (l == r) {
-                return false;
-            } else if (l + r > k) {
-                if (!hasPrevious()) return false;
-                r = previous();
-            } else if (l + r < k) {
-                if (!hasNext()) return false;
-                l = next();
-            } else {
+        while (left < right) {
+            
+            if (left + right == k) {
                 return true;
+            } else if (left + right > k) {
+                right = rightIterator.next().val;
+            } else {
+                left = leftIterator.next().val;
             }
         }
+
+        return false;
     }
 
-    private int next() {
-        while (currentNextNode != null) {
-            nextStack.addLast(currentNextNode);
-            currentNextNode = currentNextNode.left;
+    static class LeftIterator {
+
+        TreeNode current;
+        Deque<TreeNode> stack;
+
+        LeftIterator(TreeNode root) {
+            this.current = root;
+            stack = new ArrayDeque<>();
         }
-        int value = nextStack.peekLast().val;
-        currentNextNode = nextStack.removeLast().right;
-        return value;
-    }
 
-    private int previous() {
-        while (currentPreviousNode != null) {
-            previousStack.addLast(currentPreviousNode);
-            currentPreviousNode = currentPreviousNode.right;
+        TreeNode next() {
+
+            while (current != null) {
+                stack.addLast(current);
+                current = current.left;
+            }
+
+            TreeNode nextNode = stack.removeLast();
+            current = nextNode.right;
+
+            return nextNode;
         }
-        int value = previousStack.peekLast().val;
-        currentPreviousNode = previousStack.removeLast().left;
-        return value;
     }
 
-    private boolean hasNext() {
-        return !(currentNextNode == null && nextStack.isEmpty());
-    }
+    static class RightIterator {
 
-    private boolean hasPrevious() {
-        return !(currentPreviousNode == null && previousStack.isEmpty());
+        TreeNode current;
+        Deque<TreeNode> stack;
+
+        RightIterator(TreeNode root) {
+            this.current = root;
+            stack = new ArrayDeque<>();
+        }
+
+        TreeNode next() {
+
+            while (current != null) {
+                stack.addLast(current);
+                current = current.right;
+            }
+
+            TreeNode nextNode = stack.removeLast();
+            current = nextNode.left;
+
+            return nextNode;
+        }
     }
 }
 ```

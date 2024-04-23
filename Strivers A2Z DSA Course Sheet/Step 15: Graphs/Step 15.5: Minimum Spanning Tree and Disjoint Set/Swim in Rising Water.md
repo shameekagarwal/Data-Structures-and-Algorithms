@@ -8,7 +8,6 @@
 - question says that all value in grid are unique and contain values from 0 to n*n - 1
 - return result once ultimate parent of 0,0 and n-1,n-1 become the same
 - using a visited is a recurring pattern - only call union if the neighbor has already been visited
-- TODO: leetCODE is down, run and fix me
 
 ```java
 class Solution {
@@ -21,87 +20,88 @@ class Solution {
     };
 
     public int swimInWater(int[][] grid) {
-        
-        int n = grid.length;
-        int flattenedSize = n * n;
 
-        int[][] coordinateLookup = new int[flattenedSize][2];
+        int n = grid.length;
+        DSU dsu = new DSU(n * n);
+        int[][] lookup = new int[n * n][2];
 
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
-                coordinateLookup[grid[i][j]][0] = i;
-                coordinateLookup[grid[i][j]][1] = j;
+                lookup[grid[i][j]][0] = i;
+                lookup[grid[i][j]][1] = j;
             }
         }
 
-        DisjointSetUnion dsu = new DisjointSetUnion(flattenedSize);
-        boolean[] visited = new boolean[flattenedSize];
+        for (int i = 0; i < n * n; i++) {
 
-        for (int i = 0; i < flattenedSize; i++) {
-            
-            int[] coordinates = coordinateLookup[i];
-            int flattenedCoordinate = (coordinates[0] * n) + coordinates[1];
-            visited[flattenedCoordinate] = true;
-            
+            int x = lookup[i][0];
+            int y = lookup[i][1];
+
+            int flattenedCell = (x * n) + y;
+            dsu.put(flattenedCell);
+
             for (int[] direction : directions) {
-                
-                int neighborCoordinateX = coordinates[0] + direction[0];
-                int neighborCoordinateY = coordinates[1] + direction[1];
-                int flattenedNeighborCoordinate = (neighborCoordinateX * n) + neighborCoordinateY;
 
-                if (neighborCoordinateX > -1 && neighborCoordinateX < n && neighborCoordinateY > -1 && neighborCoordinateY < n) {
-                    if (visited[flattenedNeighborCoordinate]) {
-                        dsu.union(flattenedCoordinate, flattenedNeighborCoordinate);
-                    }
+                int neighborX = x + direction[0];
+                int neighborY = y + direction[1];
+
+                if (neighborX == n || neighborX == -1 || neighborY == n || neighborY == -1) continue;
+
+                int neighborFlattenedCell = (neighborX * n) + neighborY;
+
+                if (dsu.parent[neighborFlattenedCell] != -1) {
+                    dsu.union(flattenedCell, neighborFlattenedCell);
                 }
             }
 
-            if (dsu.findParent(0) == dsu.findParent(n * n - 1)) {
-                return i;
+            if (dsu.parent[0] != -1 && dsu.parent[n * n - 1] != -1) {
+                if (dsu.findParent(0) == dsu.findParent(n * n - 1)) {
+                    return i;
+                }
             }
         }
 
         return -1;
     }
 
-    static class DisjointSetUnion {
+    static class DSU {
 
-        private int[] parent;
-        private int[] rank;
+        int[] parent;
+        int[] rank;
 
-        DisjointSetUnion(int n) {
-
-            parent = new int[n];
-            for (int i = 0; i < n; i++) {
-                parent[i] = i;
-            }
-
+        DSU(int n) {
             rank = new int[n];
+            parent = new int[n];
+            Arrays.fill(parent, -1);
         }
 
-        int findParent(int u) {
-            if (u == parent[u]) {
-                return u;
+        int findParent(int node) {
+
+            if (parent[node] == node) {
+                return node;
             }
-            parent[u] = findParent(parent[u]);
-            return parent[u];
+
+            parent[node] = findParent(parent[node]);
+            return parent[node];
         }
 
-        void union(int u, int v) {
+        void put(int x) {
+            parent[x] = x;
+        }
+
+        void union(int a, int b) {
             
-            int parentU = findParent(u);
-            int parentV = findParent(v);
+            int parentA = findParent(a);
+            int parentB = findParent(b);
 
-            if (parentU == parentV) {
-                return;
-            }
+            if (parentA == parentB) return;
 
-            if (rank[parentU] < rank[parentV]) {
-                union(v, u);
+            if (rank[parentA] < rank[parentB]) {
+                union(b, a);
             } else {
-                parent[parentV] = parentU;
-                if (rank[parentU] == rank[parentV]) {
-                    rank[parentU] += 1;
+                parent[parentB] = parentA;
+                if (rank[parentA] == rank[parentB]) {
+                    rank[parentA] += 1;
                 }
             }
         }

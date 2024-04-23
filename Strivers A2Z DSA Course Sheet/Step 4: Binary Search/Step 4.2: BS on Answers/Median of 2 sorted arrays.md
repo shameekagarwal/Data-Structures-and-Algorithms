@@ -76,72 +76,67 @@ class Solution {
   - (max(l1, l2) + min(r1, r2)) / 2 - if total elements are even
   - max(l1, l2) - if total elements are odd
 - time complexity - O(log(smaller array length))?
+- important, something i realized when revising - setting the bounds properly is also important - then we would not have to check for 0 length individually
+  - if we need to pick 5 elements for left, and 2nd array has length 1, we cannot pick < 4 elements from 1st array
+  - if we need to pick 5 elements for left, and 1nd array has length 10, we can pick at max 5, and not 10 elements from 1st array
 
 ```java
 class Solution {
-    
+
     public double findMedianSortedArrays(int[] nums1, int[] nums2) {
 
-        // ensure nums1.length < nums2.length
-        if (nums1.length > nums2.length) {
-            int[] temp = nums1;
-            nums1 = nums2;
-            nums2 = temp;
-        }
+        int m = nums1.length;
+        int n = nums2.length;
 
-        // handle boundary cases
-        if (nums1.length == 0 && nums2.length == 0) {
-            return -1;
-        } else if (nums1.length == 0 && nums2.length == 1) {
-            return nums2[0];
-        }
+        int sz = m + n;
+        
+        int left = (sz + 1) / 2;
+        int right = sz - left;
 
-        // elements on left from first array + second array
-        int totalElementsOnLeft = (nums1.length + nums2.length) / 2;
+        int l = Math.max(0, left - n);
+        int r = Math.min(m, left);
 
-        int low = 0;
-        int high = nums1.length;
+        while (l <= r) {
 
-        while (low <= high) {
-            
-            int l1 = low + ((high - low) / 2); // elements from first array on left
-            int l2 = totalElementsOnLeft - l1; // elements from second array on left
+            int x = (l + r) / 2;
+            int y = left - x;
 
-            // decrease elements from first array on left
-            if (l1 != 0 && l2 != nums2.length && nums1[l1 - 1] > nums2[l2]) {
-                high = l1 - 1;
-            }
+            if (x != 0 && y != n && nums1[x - 1] > nums2[y]) {
+                r = x - 1;
+            } else if (y != 0 && x != m && nums2[y - 1] > nums1[x]) {
+                l = x + 1;
+            } else {
+                if (sz % 2 == 0) {
 
-            // increase elements from first array on left
-            else if (l2 != 0 && l1 != nums1.length && nums2[l2 - 1] > nums1[l1]) {
-                low = l1 + 1;
-            }
+                    int max, min;
 
-            else {
-                
-                int maxNumFromLeft = -1;
-                int minNumFromRight = -1;
+                    if (x != 0 && y != 0) {
+                        max = Math.max(nums1[x - 1], nums2[y - 1]);
+                    } else if (x != 0) {
+                        max = nums1[x - 1];
+                    } else {
+                        max = nums2[y - 1];
+                    }
 
-                if (l1 == 0) {
-                    maxNumFromLeft = nums2[l2 - 1];
-                } else if (l2 == 0) {
-                    maxNumFromLeft = nums1[l1 - 1];
+                    if (x != m && y != n) {
+                        min = Math.min(nums1[x], nums2[y]);
+                    } else if (x != m) {
+                        min = nums1[x];
+                    } else {
+                        min = nums2[y];
+                    }
+
+                    return (max + min) / 2.0;
+
                 } else {
-                    maxNumFromLeft = Math.max(nums1[l1 - 1], nums2[l2 - 1]);
-                }
-
-                if (l1 == nums1.length) {
-                    minNumFromRight = nums2[l2];
-                } else if (l2 == nums2.length) {
-                    minNumFromRight = nums1[l1];
-                } else {
-                    minNumFromRight = Math.min(nums1[l1], nums2[l2]);
-                }
-
-                if ((nums1.length + nums2.length) % 2 == 0) {
-                    return (maxNumFromLeft + minNumFromRight) / 2.0;
-                } else {
-                    return minNumFromRight;
+                    // max from left
+                    if (x != 0 && y != 0) {
+                        return Math.max(nums1[x - 1], nums2[y - 1]);
+                    } else if (x != 0) {
+                        return nums1[x - 1];
+                    } else {
+                        return nums2[y - 1];
+                    }
                 }
             }
         }

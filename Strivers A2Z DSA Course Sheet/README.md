@@ -69,14 +69,14 @@ script();
 | ❌ | https://leetcode.com/problems/maximum-points-you-can-obtain-from-cards/ | https://www.codingninjas.com/codestudio/problems/maximum-points-from-cards_8391016 |
 | ✅ | https://leetcode.com/problems/longest-consecutive-sequence/ | https://www.codingninjas.com/codestudio/problems/longest-successive-elements_6811740 |
 | ✅ |  | https://www.codingninjas.com/studio/problems/frog-jump_3621012 |
-| | https://leetcode.com/problems/two-sum-iv-input-is-a-bst/ | https://www.codingninjas.com/studio/problems/pair-sum-in-bst._920493 |
-| | https://leetcode.com/problems/count-complete-tree-nodes/ | https://www.codingninjas.com/studio/problems/nodes-in-complete-binary-tree_1281151 |
-| |  | https://www.codingninjas.com/studio/problems/subset-sum-equal-to-k_1550954 |
-| |  | https://www.codingninjas.com/studio/problems/postfix-to-prefix_1788455 |
-| | https://leetcode.com/problems/swim-in-rising-water/ | https://www.codingninjas.com/studio/problems/minimum-time_8360128 |
-| | https://leetcode.com/problems/word-break/ | https://www.codingninjas.com/studio/problems/word-break-1_758963 |
-| | https://practice.geeksforgeeks.org/problems/bottom-view-of-binary-tree/1 | https://www.codingninjas.com/studio/problems/bottom-view-of-binary-tree_893110 |
-| | https://leetcode.com/problems/median-of-two-sorted-arrays/ | https://www.codingninjas.com/codestudio/problems/median-of-two-sorted-arrays_985294 |
+| ✅ | https://leetcode.com/problems/two-sum-iv-input-is-a-bst/ | https://www.codingninjas.com/studio/problems/pair-sum-in-bst._920493 |
+| ✅ | https://leetcode.com/problems/count-complete-tree-nodes/ | https://www.codingninjas.com/studio/problems/nodes-in-complete-binary-tree_1281151 |
+| ✅❌ (space optimized) |  | https://www.codingninjas.com/studio/problems/subset-sum-equal-to-k_1550954 |
+| ✅ |  | https://www.codingninjas.com/studio/problems/postfix-to-prefix_1788455 |
+| ✅❌ | https://leetcode.com/problems/swim-in-rising-water/ | https://www.codingninjas.com/studio/problems/minimum-time_8360128 |
+| ✅ | https://leetcode.com/problems/word-break/ | https://www.codingninjas.com/studio/problems/word-break-1_758963 |
+| ✅ | https://practice.geeksforgeeks.org/problems/bottom-view-of-binary-tree/1 | https://www.codingninjas.com/studio/problems/bottom-view-of-binary-tree_893110 |
+| ✅ | https://leetcode.com/problems/median-of-two-sorted-arrays/ | https://www.codingninjas.com/codestudio/problems/median-of-two-sorted-arrays_985294 |
 | | https://leetcode.com/problems/distinct-subsequences/ | https://www.codingninjas.com/studio/problems/subsequence-counting_3755256 |
 | |  | https://www.codingninjas.com/codestudio/problems/print-1-to-n_628290 |
 | | https://leetcode.com/problems/house-robber-ii/ | https://www.codingninjas.com/studio/problems/house-robber-ii_839733 |

@@ -77,19 +77,17 @@ script();
 | ✅ | https://leetcode.com/problems/word-break/ | https://www.codingninjas.com/studio/problems/word-break-1_758963 |
 | ✅ | https://practice.geeksforgeeks.org/problems/bottom-view-of-binary-tree/1 | https://www.codingninjas.com/studio/problems/bottom-view-of-binary-tree_893110 |
 | ✅ | https://leetcode.com/problems/median-of-two-sorted-arrays/ | https://www.codingninjas.com/codestudio/problems/median-of-two-sorted-arrays_985294 |
-| | https://leetcode.com/problems/distinct-subsequences/ | https://www.codingninjas.com/studio/problems/subsequence-counting_3755256 |
-| |  | https://www.codingninjas.com/codestudio/problems/print-1-to-n_628290 |
-| | https://leetcode.com/problems/house-robber-ii/ | https://www.codingninjas.com/studio/problems/house-robber-ii_839733 |
-| | https://leetcode.com/problems/longest-palindromic-subsequence/ | https://www.codingninjas.com/studio/problems/longest-palindromic-subsequence_842787 |
-| | https://leetcode.com/problems/largest-odd-number-in-string/ |  |
-| | https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/ | https://www.codingninjas.com/studio/problems/best-time-to-buy-and-sell-stock-with-transaction-fee_3118974 |
-| | https://leetcode.com/problems/binary-tree-right-side-view/ | https://www.codingninjas.com/studio/problems/left-view-of-binary-tree_625707 |
-| | https://leetcode.com/problems/longest-repeating-character-replacement/ | https://www.codingninjas.com/studio/problems/longest-repeating-substring_980523 |
-| |  | https://www.codingninjas.com/codestudio/problems/odd-even_7993579 |
-| |  | https://www.codingninjas.com/studio/problems/merge-k-sorted-arrays_975379 |
-| |  | https://www.codingninjas.com/codestudio/problems/hcf-and-lcm_840448 |
-| | https://leetcode.com/problems/largest-rectangle-in-histogram/ | https://www.codingninjas.com/studio/problems/largest-rectangle-in-a-histogram_1058184 |
-| | https://leetcode.com/problems/longest-palindromic-substring/ |  |
+| ✅ | https://leetcode.com/problems/distinct-subsequences/ | https://www.codingninjas.com/studio/problems/subsequence-counting_3755256 |
+| ✅ | https://leetcode.com/problems/house-robber-ii/ | https://www.codingninjas.com/studio/problems/house-robber-ii_839733 |
+| ✅ | https://leetcode.com/problems/longest-palindromic-subsequence/ | https://www.codingninjas.com/studio/problems/longest-palindromic-subsequence_842787 |
+| ✅ | https://leetcode.com/problems/largest-odd-number-in-string/ |  |
+| ✅ | https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/ | https://www.codingninjas.com/studio/problems/best-time-to-buy-and-sell-stock-with-transaction-fee_3118974 |
+| ✅❌ | https://leetcode.com/problems/binary-tree-right-side-view/ | https://www.codingninjas.com/studio/problems/left-view-of-binary-tree_625707 |
+| ✅ | https://leetcode.com/problems/longest-repeating-character-replacement/ | https://www.codingninjas.com/studio/problems/longest-repeating-substring_980523 |
+| ✅ |  | https://www.codingninjas.com/studio/problems/merge-k-sorted-arrays_975379 |
+| ✅ |  | https://www.codingninjas.com/codestudio/problems/hcf-and-lcm_840448 |
+| ✅✅ | https://leetcode.com/problems/largest-rectangle-in-histogram/ | https://www.codingninjas.com/studio/problems/largest-rectangle-in-a-histogram_1058184 |
+| ✅ | https://leetcode.com/problems/longest-palindromic-substring/ |  |
 | |  | https://www.codingninjas.com/studio/problems/quick-sort_5844 |
 | | https://leetcode.com/problems/minimize-max-distance-to-gas-station/ | https://www.codingninjas.com/codestudio/problems/minimise-max-distance_7541449 |
 | |  | https://www.codingninjas.com/codestudio/problems/single-source-shortest-path_8416371 |

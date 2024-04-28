@@ -42,3 +42,69 @@ class Solution {
 ```
 
 ![combination sum II intuition](./combination-sum-II-intuition.png)
+
+## Solution 2
+
+- given an array - `[1, 2, 2, 3]`
+- we create an end array - `[0, 2, 2, 3]`
+- self explanatory - it describes the index at which my current element's presence ends
+- for next recursion call, i always use index as `end[idx] + 1`
+- all occurrences of `nums[idx]` will be picked by current recursive call only
+
+```java
+class Solution {
+
+    public List<List<Integer>> combinationSum2(int[] candidates, int target) {
+        
+        Arrays.sort(candidates);
+        
+        int n = candidates.length;
+
+        int[] end = new int[n];
+        end[n - 1] = n - 1;
+
+        for (int i = n - 2; i > -1; i--) {
+            if (candidates[i] == candidates[i + 1]) {
+                end[i] = end[i + 1];
+            } else {
+                end[i] = i;
+            }
+        }
+        
+        List<List<Integer>> result = new ArrayList<>();
+        
+        recurse(candidates, n, 0, target, result, 0, new ArrayList<>(), end);
+
+        return result;
+    }
+
+    private void recurse(int[] candidates, int n, int idx, int target, List<List<Integer>> result, int currentSum, List<Integer> currentPick, int[] end) {
+
+        if (idx == n) {
+            if (currentSum == target) {
+                result.add(new ArrayList<>(currentPick));
+            }
+            return;
+        }
+
+        recurse(candidates, n, end[idx] + 1, target, result, currentSum, currentPick, end);
+
+        int ranTill = idx - 1;
+
+        for (int i = idx; i < end[idx] + 1; i++) {
+
+            currentSum += candidates[idx];
+
+            if (currentSum > target) break;
+
+            ranTill = i;
+            currentPick.add(candidates[idx]);
+            recurse(candidates, n, end[idx] + 1, target, result, currentSum, currentPick, end);
+        }
+
+        for (int i = idx; i < ranTill + 1; i++) {
+            currentPick.remove(currentPick.size() - 1);
+        }
+    }
+}
+```

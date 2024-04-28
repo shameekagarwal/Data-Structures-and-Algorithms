@@ -2,7 +2,8 @@
 
 ### Random Revision Generation Script
 
-to help with revision, so that the topic etc is not revealed. run it inside the console tab after opening the a2z link
+to help with revision, so that the topic etc is not revealed.  
+run it inside the console tab after opening the a2z link.
 
 ```js
 const script = async () => {
@@ -88,18 +89,19 @@ script();
 | ✅ |  | https://www.codingninjas.com/codestudio/problems/hcf-and-lcm_840448 |
 | ✅✅ | https://leetcode.com/problems/largest-rectangle-in-histogram/ | https://www.codingninjas.com/studio/problems/largest-rectangle-in-a-histogram_1058184 |
 | ✅ | https://leetcode.com/problems/longest-palindromic-substring/ |  |
-| |  | https://www.codingninjas.com/studio/problems/quick-sort_5844 |
-| | https://leetcode.com/problems/minimize-max-distance-to-gas-station/ | https://www.codingninjas.com/codestudio/problems/minimise-max-distance_7541449 |
-| |  | https://www.codingninjas.com/codestudio/problems/single-source-shortest-path_8416371 |
-| |  | https://www.codingninjas.com/studio/problems/minimum-spanning-tree_631769 |
-| | https://leetcode.com/problems/subsets-ii/ | https://www.codingninjas.com/studio/problems/get-all-unique-subsets_624393 |
-| | https://leetcode.com/problems/min-stack/ | https://www.codingninjas.com/studio/problems/min-stack_3843991 |
-| | https://leetcode.com/problems/valid-parentheses/ | https://www.codingninjas.com/studio/problems/valid-parentheses_795104 |
-| |  | https://www.codingninjas.com/codestudio/problems/longest-subarray-with-sum-k_6682399 |
-| | https://practice.geeksforgeeks.org/problems/depth-first-traversal-for-a-graph/1 | https://www.codingninjas.com/studio/problems/dfs-traversal_630462 |
-| | https://leetcode.com/problems/number-of-longest-increasing-subsequence/ | https://www.codingninjas.com/studio/problems/number-of-longest-increasing-subsequence_3751627 |
-| |  | https://www.codingninjas.com/codestudio/problems/row-of-a-matrix-with-maximum-ones_982768 |
-| | https://leetcode.com/problems/combination-sum-iii/ | https://www.codingninjas.com/studio/problems/combination-sum-iii_5038357 |
+| ❌ |  | https://www.codingninjas.com/studio/problems/quick-sort_5844 |
+| ✅ | https://leetcode.com/problems/minimize-max-distance-to-gas-station/ | https://www.codingninjas.com/codestudio/problems/minimise-max-distance_7541449 |
+| ✅ |  | https://www.codingninjas.com/codestudio/problems/single-source-shortest-path_8416371 |
+| ✅(kruskal), ❌(prim) |  | https://www.codingninjas.com/studio/problems/minimum-spanning-tree_631769 |
+| ✅ | https://leetcode.com/problems/subsets-ii/ | https://www.codingninjas.com/studio/problems/get-all-unique-subsets_624393 |
+| ✅ | https://leetcode.com/problems/combination-sum-ii/ | https://www.codingninjas.com/studio/problems/combination-sum-ii_1112622 |
+| ✅❌ | https://leetcode.com/problems/min-stack/ | https://www.codingninjas.com/studio/problems/min-stack_3843991 |
+| ✅ | https://leetcode.com/problems/valid-parentheses/ | https://www.codingninjas.com/studio/problems/valid-parentheses_795104 |
+| ✅ |  | https://www.codingninjas.com/codestudio/problems/longest-subarray-with-sum-k_6682399 |
+| ✅ | https://practice.geeksforgeeks.org/problems/depth-first-traversal-for-a-graph/1 | https://www.codingninjas.com/studio/problems/dfs-traversal_630462 |
+| ❌ (took some attempts to get right)  | https://leetcode.com/problems/number-of-longest-increasing-subsequence/ | https://www.codingninjas.com/studio/problems/number-of-longest-increasing-subsequence_3751627 |
+| ✅ |  | https://www.codingninjas.com/codestudio/problems/row-of-a-matrix-with-maximum-ones_982768 |
+| ✅ | https://leetcode.com/problems/combination-sum-iii/ | https://www.codingninjas.com/studio/problems/combination-sum-iii_5038357 |
 | | https://leetcode.com/problems/validate-binary-search-tree/ | https://www.codingninjas.com/studio/problems/check-bst_5975 |
 | | https://leetcode.com/problems/is-graph-bipartite/ | https://www.codingninjas.com/studio/problems/check-bipartite-graph-_920551 |
 | |  | https://www.codingninjas.com/codestudio/problems/more-subsequence_8842355 |
@@ -468,7 +470,6 @@ script();
 | |  | https://www.codingninjas.com/studio/problems/sjf_1172165 |
 | | https://leetcode.com/problems/valid-palindrome/ | https://www.codingninjas.com/studio/problems/check-palindrome-recursive_624386 |
 | | https://leetcode.com/problems/kth-smallest-element-in-a-bst/ | https://www.codingninjas.com/studio/problems/kth-smallest-node-in-bst_920441 |
-| | https://leetcode.com/problems/combination-sum-ii/ | https://www.codingninjas.com/studio/problems/combination-sum-ii_1112622 |
 | |  | https://www.codingninjas.com/studio/problems/insertion-sort_624381 |
 | | https://leetcode.com/problems/jump-game/ | https://www.codingninjas.com/studio/problems/jump-game_3164697 |
 | | https://leetcode.com/problems/power-of-two/ | https://www.codingninjas.com/studio/problems/power-of-two_893061 |

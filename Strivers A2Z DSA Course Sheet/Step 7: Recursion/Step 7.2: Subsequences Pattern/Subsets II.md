@@ -2,7 +2,6 @@
 
 - https://leetcode.com/problems/subsets-ii/
 - intuition explained inside [Combination Sum II](./Combination%20Sum%20II.md)
-- remember this pattern as is to avoid confusion - notice how there is no base case here unlike what we usually see in recursion
 - vvipmp - recursion tree - this pattern can be tricky to come up with in interview, remember this as is
 
 ![](./subsets-ii.png)
@@ -28,6 +27,47 @@ class Solution {
             pick.add(nums[i]);
             recurse(result, nums, i + 1, pick);
             pick.remove(pick.size() - 1);
+        }
+    }
+}
+```
+
+## Solution 2
+
+```java
+class Solution {
+
+    public List<List<Integer>> subsetsWithDup(int[] nums) {
+        Arrays.sort(nums);
+        List<List<Integer>> result = new ArrayList<>();
+        recurse(nums, nums.length, result, 0, new ArrayList<>());
+        return result;
+    }
+
+    private void recurse(int[] nums, int n, List<List<Integer>> result, int idx, List<Integer> current) {
+        
+        if (idx == n) {
+            result.add(new ArrayList<>(current));
+            return;
+        }
+
+        int currentElement = nums[idx];
+        
+        int end = idx;
+        
+        while (end < n && nums[end] == nums[idx]) {
+            end += 1;
+        }
+
+        recurse(nums, n, result, end, current);
+
+        for (int i = idx; i < end; i++) {
+            current.add(nums[i]);
+            recurse(nums, n, result, end, current);
+        }
+
+        for (int i = idx; i < end; i++) {
+            current.remove(current.size() - 1);
         }
     }
 }

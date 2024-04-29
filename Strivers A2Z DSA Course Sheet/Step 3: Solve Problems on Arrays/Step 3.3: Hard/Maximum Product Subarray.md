@@ -1,5 +1,6 @@
 # Maximum Product Subarray
 
+- https://leetcode.com/problems/maximum-product-subarray/
 - brute - O(n^2)
 - optimal - the current solution is intuition based. there is another kadane's algorithm based solution, but it is not intuitive, so intuitive one is discussed here
 - case 1 - if array contains all positive numbers, result = product of all numbers

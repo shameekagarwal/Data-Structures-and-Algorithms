@@ -102,19 +102,17 @@ script();
 | ❌ (took some attempts to get right)  | https://leetcode.com/problems/number-of-longest-increasing-subsequence/ | https://www.codingninjas.com/studio/problems/number-of-longest-increasing-subsequence_3751627 |
 | ✅ |  | https://www.codingninjas.com/codestudio/problems/row-of-a-matrix-with-maximum-ones_982768 |
 | ✅ | https://leetcode.com/problems/combination-sum-iii/ | https://www.codingninjas.com/studio/problems/combination-sum-iii_5038357 |
-| | https://leetcode.com/problems/validate-binary-search-tree/ | https://www.codingninjas.com/studio/problems/check-bst_5975 |
-| | https://leetcode.com/problems/is-graph-bipartite/ | https://www.codingninjas.com/studio/problems/check-bipartite-graph-_920551 |
-| |  | https://www.codingninjas.com/codestudio/problems/more-subsequence_8842355 |
-| | https://leetcode.com/problems/maximum-product-subarray/ | https://www.codingninjas.com/codestudio/problems/subarray-with-maximum-product_6890008 |
-| | https://leetcode.com/problems/sum-of-beauty-of-all-substrings/ | https://www.codingninjas.com/studio/problems/sum-of-beauty-of-all-substrings_8143656 |
-| |  | https://www.codingninjas.com/studio/problems/data-type_8357232 |
-| | https://leetcode.com/problems/number-of-islands-ii/ | https://www.codingninjas.com/studio/problems/largest-island_840701 |
-| | https://leetcode.com/problems/max-consecutive-ones-iii/ | https://www.codingninjas.com/studio/problems/maximum-consecutive-ones_892994 |
-| |  | https://www.codingninjas.com/studio/problems/reverse-stack-using-recursion_631875 |
-| |  | https://www.codingninjas.com/studio/problems/subarrays-with-sum-‘k'_6922076 |
-| |  | https://www.codingninjas.com/studio/problems/replace-each-element-of-array-with-its-corresponding-rank_975384 |
-| | https://leetcode.com/problems/reverse-nodes-in-k-group/ | https://www.codingninjas.com/studio/problems/reverse-list-in-k-groups_983644 |
-| | https://leetcode.com/problems/3sum/ | https://www.codingninjas.com/codestudio/problems/three-sum_6922132 |
+| ✅ | https://leetcode.com/problems/validate-binary-search-tree/ | https://www.codingninjas.com/studio/problems/check-bst_5975 |
+| ✅ | https://leetcode.com/problems/is-graph-bipartite/ | https://www.codingninjas.com/studio/problems/check-bipartite-graph-_920551 |
+| ✅ | https://leetcode.com/problems/maximum-product-subarray/ | https://www.codingninjas.com/codestudio/problems/subarray-with-maximum-product_6890008 |
+| ✅ | https://leetcode.com/problems/sum-of-beauty-of-all-substrings/ | https://www.codingninjas.com/studio/problems/sum-of-beauty-of-all-substrings_8143656 |
+| ✅ | https://leetcode.com/problems/number-of-islands-ii/ | https://www.codingninjas.com/studio/problems/largest-island_840701 |
+| ✅ | https://leetcode.com/problems/max-consecutive-ones-iii/ | https://www.codingninjas.com/studio/problems/maximum-consecutive-ones_892994 |
+| ✅ |  | https://www.codingninjas.com/studio/problems/reverse-stack-using-recursion_631875 |
+| ✅ |  | https://www.codingninjas.com/studio/problems/subarrays-with-sum-‘k'_6922076 |
+| ✅ |  | https://www.codingninjas.com/studio/problems/replace-each-element-of-array-with-its-corresponding-rank_975384 |
+| ✅ | https://leetcode.com/problems/reverse-nodes-in-k-group/ | https://www.codingninjas.com/studio/problems/reverse-list-in-k-groups_983644 |
+| ✅❌ | https://leetcode.com/problems/3sum/ | https://www.codingninjas.com/codestudio/problems/three-sum_6922132 |
 | | https://leetcode.com/problems/delete-node-in-a-bst/ | https://www.codingninjas.com/studio/problems/delete-node-in-bst_920381 |
 | |  | https://www.codingninjas.com/studio/problems/selection-sort_624469 |
 | | https://leetcode.com/problems/4sum/ | https://www.codingninjas.com/codestudio/problems/4sum_5713771 |

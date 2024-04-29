@@ -113,7 +113,7 @@ script();
 | ✅ |  | https://www.codingninjas.com/studio/problems/replace-each-element-of-array-with-its-corresponding-rank_975384 |
 | ✅ | https://leetcode.com/problems/reverse-nodes-in-k-group/ | https://www.codingninjas.com/studio/problems/reverse-list-in-k-groups_983644 |
 | ✅❌ | https://leetcode.com/problems/3sum/ | https://www.codingninjas.com/codestudio/problems/three-sum_6922132 |
-| | https://leetcode.com/problems/delete-node-in-a-bst/ | https://www.codingninjas.com/studio/problems/delete-node-in-bst_920381 |
+| ✅ | https://leetcode.com/problems/delete-node-in-a-bst/ | https://www.codingninjas.com/studio/problems/delete-node-in-bst_920381 |
 | |  | https://www.codingninjas.com/studio/problems/selection-sort_624469 |
 | | https://leetcode.com/problems/4sum/ | https://www.codingninjas.com/codestudio/problems/4sum_5713771 |
 | | https://leetcode.com/problems/find-median-from-data-stream/ | https://www.codingninjas.com/studio/problems/median-in-a-stream_975268 |

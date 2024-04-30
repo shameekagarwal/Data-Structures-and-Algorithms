@@ -1,6 +1,7 @@
 # Shortest Common Supersequencue
 
 - https://leetcode.com/problems/shortest-common-supersequence/
+- for interviews - do not try to go down the route of optimizing from recursive approach - directly jump to this solution
 - take common part only once
 - common part = lcs
 - so, final = m + n - lcs
@@ -53,6 +54,8 @@ class Solution {
                     sb.append(str2Arr[y]);
                     y -= 1;
                 } else {
+                    // i think this case is for s = 0, e = 0, dp[0][0] = 0?
+                    // just add first character of both in the remaining while loops
                     break;
                 }
             }

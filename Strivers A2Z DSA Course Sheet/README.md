@@ -114,11 +114,11 @@ script();
 | ✅ | https://leetcode.com/problems/reverse-nodes-in-k-group/ | https://www.codingninjas.com/studio/problems/reverse-list-in-k-groups_983644 |
 | ✅❌ | https://leetcode.com/problems/3sum/ | https://www.codingninjas.com/codestudio/problems/three-sum_6922132 |
 | ✅ | https://leetcode.com/problems/delete-node-in-a-bst/ | https://www.codingninjas.com/studio/problems/delete-node-in-bst_920381 |
-| |  | https://www.codingninjas.com/studio/problems/selection-sort_624469 |
-| | https://leetcode.com/problems/4sum/ | https://www.codingninjas.com/codestudio/problems/4sum_5713771 |
-| | https://leetcode.com/problems/find-median-from-data-stream/ | https://www.codingninjas.com/studio/problems/median-in-a-stream_975268 |
-| |  | https://www.codingninjas.com/studio/problems/prime-factorisation_1760849 |
-| | https://leetcode.com/problems/shortest-common-supersequence/ | https://www.codingninjas.com/studio/problems/shortest-common-supersequence_4244493 |
+| ✅ |  | https://www.codingninjas.com/studio/problems/selection-sort_624469 |
+| ✅ | https://leetcode.com/problems/4sum/ | https://www.codingninjas.com/codestudio/problems/4sum_5713771 |
+| ✅ | https://leetcode.com/problems/find-median-from-data-stream/ | https://www.codingninjas.com/studio/problems/median-in-a-stream_975268 |
+| ❌ (think what is optimal complexity and how to do it) |  | https://www.codingninjas.com/studio/problems/prime-factorisation_1760849 |
+| ❌ (think what problem it is related to and then solve) | https://leetcode.com/problems/shortest-common-supersequence/ | https://www.codingninjas.com/studio/problems/shortest-common-supersequence_4244493 |
 | | https://leetcode.com/problems/search-in-a-binary-search-tree/ | https://www.codingninjas.com/studio/problems/search-in-bst_1402878 |
 | |  | https://www.codingninjas.com/studio/problems/set-the-rightmost-unset-bit_8160456 |
 | | https://leetcode.com/problems/trapping-rain-water/ | https://www.codingninjas.com/studio/problems/trapping-rain-water_630519 |

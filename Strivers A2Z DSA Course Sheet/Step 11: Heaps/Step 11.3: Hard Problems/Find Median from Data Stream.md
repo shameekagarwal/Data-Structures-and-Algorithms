@@ -1,5 +1,6 @@
 # Find Median from Data Stream
 
+- https://leetcode.com/problems/find-median-from-data-stream/
 - second half (the larger half) is a min heap
 - first half (the smaller half) is a max heap
 - when total size (length of first half + length of second half) is odd 

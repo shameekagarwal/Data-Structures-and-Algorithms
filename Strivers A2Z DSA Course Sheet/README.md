@@ -119,12 +119,12 @@ script();
 | ✅ | https://leetcode.com/problems/find-median-from-data-stream/ | https://www.codingninjas.com/studio/problems/median-in-a-stream_975268 |
 | ❌ (think what is optimal complexity and how to do it) |  | https://www.codingninjas.com/studio/problems/prime-factorisation_1760849 |
 | ❌ (think what problem it is related to and then solve) | https://leetcode.com/problems/shortest-common-supersequence/ | https://www.codingninjas.com/studio/problems/shortest-common-supersequence_4244493 |
-| | https://leetcode.com/problems/search-in-a-binary-search-tree/ | https://www.codingninjas.com/studio/problems/search-in-bst_1402878 |
-| |  | https://www.codingninjas.com/studio/problems/set-the-rightmost-unset-bit_8160456 |
-| | https://leetcode.com/problems/trapping-rain-water/ | https://www.codingninjas.com/studio/problems/trapping-rain-water_630519 |
-| | https://leetcode.com/problems/making-a-large-island/ | https://www.codingninjas.com/studio/problems/making-the-largest-island_1381282 |
-| | https://leetcode.com/problems/binary-tree-postorder-traversal/ | https://www.codingninjas.com/studio/problems/postorder-traversal_2035933 |
-| | https://leetcode.com/problems/find-a-peak-element-ii/ | https://www.codingninjas.com/codestudio/problems/find-peak-element_7449073 |
+| ✅ | https://leetcode.com/problems/search-in-a-binary-search-tree/ | https://www.codingninjas.com/studio/problems/search-in-bst_1402878 |
+| ✅ |  | https://www.codingninjas.com/studio/problems/set-the-rightmost-unset-bit_8160456 |
+| ❌ | https://leetcode.com/problems/trapping-rain-water/ | https://www.codingninjas.com/studio/problems/trapping-rain-water_630519 |
+| ✅ | https://leetcode.com/problems/making-a-large-island/ | https://www.codingninjas.com/studio/problems/making-the-largest-island_1381282 |
+| ✅ | https://leetcode.com/problems/binary-tree-postorder-traversal/ | https://www.codingninjas.com/studio/problems/postorder-traversal_2035933 |
+| ❌ | https://leetcode.com/problems/find-a-peak-element-ii/ | https://www.codingninjas.com/codestudio/problems/find-peak-element_7449073 |
 | |  | https://www.codingninjas.com/studio/problems/minimum-operations_8360665 |
 | |  | https://www.codingninjas.com/studio/problems/-print-n-times_8380707 |
 | | https://leetcode.com/problems/next-greater-element-ii/ | https://www.codingninjas.com/studio/problems/next-greater-element-ii_6212757 |

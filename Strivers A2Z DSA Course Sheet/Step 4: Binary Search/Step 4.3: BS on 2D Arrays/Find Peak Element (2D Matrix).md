@@ -5,6 +5,7 @@
 - i don't entirely get the intuition visually like in [Find Peak Element](/Step%204:%20Binary%20Search/Step%204.1/Find%20Peak%20Element.md) i.e. the 1d array variant
 - however, think like this - max of a column ensures vertically we would not have to check
 - eliminating horizontally is the same logic as in 1d array variant
+- one optimization - precalculate max row idx for every column - I AM STUPID - that makes it m*n again!!
 
 ```java
 class Solution {

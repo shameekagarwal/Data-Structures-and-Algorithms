@@ -125,15 +125,14 @@ script();
 | ✅ | https://leetcode.com/problems/making-a-large-island/ | https://www.codingninjas.com/studio/problems/making-the-largest-island_1381282 |
 | ✅ | https://leetcode.com/problems/binary-tree-postorder-traversal/ | https://www.codingninjas.com/studio/problems/postorder-traversal_2035933 |
 | ❌ | https://leetcode.com/problems/find-a-peak-element-ii/ | https://www.codingninjas.com/codestudio/problems/find-peak-element_7449073 |
-| |  | https://www.codingninjas.com/studio/problems/minimum-operations_8360665 |
-| |  | https://www.codingninjas.com/studio/problems/-print-n-times_8380707 |
-| | https://leetcode.com/problems/next-greater-element-ii/ | https://www.codingninjas.com/studio/problems/next-greater-element-ii_6212757 |
-| |  | https://www.codingninjas.com/codestudio/problems/convert-min-heap-to-max-heap_1381084 |
-| | https://leetcode.com/problems/majority-element/ | https://www.codingninjas.com/codestudio/problems/majority-element_6783241 |
-| |  | https://www.codingninjas.com/studio/problems/chocolate-pickup_3125885 |
-| | https://leetcode.com/problems/subsets/ | https://www.codingninjas.com/studio/problems/print-subsequences_8416366 |
-| |  | https://www.codingninjas.com/studio/problems/bit-manipulation_8142533 |
-| | https://leetcode.com/problems/lfu-cache/ | https://www.codingninjas.com/codestudio/problems/lfu-cache_8381892 |
+| ✅ |  | https://www.codingninjas.com/studio/problems/minimum-operations_8360665 |
+| ✅ | https://leetcode.com/problems/next-greater-element-ii/ | https://www.codingninjas.com/studio/problems/next-greater-element-ii_6212757 |
+| ❌ |  | https://www.codingninjas.com/codestudio/problems/convert-min-heap-to-max-heap_1381084 |
+| ✅ | https://leetcode.com/problems/majority-element/ | https://www.codingninjas.com/codestudio/problems/majority-element_6783241 |
+| ✅ |  | https://www.codingninjas.com/studio/problems/chocolate-pickup_3125885 |
+| ✅ | https://leetcode.com/problems/subsets/ | https://www.codingninjas.com/studio/problems/print-subsequences_8416366 |
+| ✅ |  | https://www.codingninjas.com/studio/problems/bit-manipulation_8142533 |
+| ✅ | https://leetcode.com/problems/lfu-cache/ | https://www.codingninjas.com/codestudio/problems/lfu-cache_8381892 |
 | | https://leetcode.com/problems/binary-tree-preorder-traversal/ | https://www.codingninjas.com/studio/problems/preorder-binary-tree_5948 |
 | | https://leetcode.com/problems/single-element-in-a-sorted-array/ | https://www.codingninjas.com/codestudio/problems/unique-element-in-sorted-array_1112654 |
 | | https://leetcode.com/problems/split-array-largest-sum/ | https://www.codingninjas.com/codestudio/problems/largest-subarray-sum-minimized_7461751 |

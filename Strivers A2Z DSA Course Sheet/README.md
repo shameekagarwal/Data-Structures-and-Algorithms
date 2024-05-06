@@ -133,19 +133,19 @@ script();
 | ✅ | https://leetcode.com/problems/subsets/ | https://www.codingninjas.com/studio/problems/print-subsequences_8416366 |
 | ✅ |  | https://www.codingninjas.com/studio/problems/bit-manipulation_8142533 |
 | ✅ | https://leetcode.com/problems/lfu-cache/ | https://www.codingninjas.com/codestudio/problems/lfu-cache_8381892 |
-| | https://leetcode.com/problems/binary-tree-preorder-traversal/ | https://www.codingninjas.com/studio/problems/preorder-binary-tree_5948 |
-| | https://leetcode.com/problems/single-element-in-a-sorted-array/ | https://www.codingninjas.com/codestudio/problems/unique-element-in-sorted-array_1112654 |
-| | https://leetcode.com/problems/split-array-largest-sum/ | https://www.codingninjas.com/codestudio/problems/largest-subarray-sum-minimized_7461751 |
-| |  | https://www.codingninjas.com/codestudio/problems/floor-from-bst_625868 |
-| | https://leetcode.com/problems/reverse-words-in-a-string/ | https://www.codingninjas.com/studio/problems/reverse-words-in-a-string_696444 |
-| | https://leetcode.com/problems/koko-eating-bananas/ | https://www.codingninjas.com/codestudio/problems/minimum-rate-to-eat-bananas_7449064 |
-| |  | https://www.codingninjas.com/studio/problems/tree-traversals_981269 |
-| |  | https://www.codingninjas.com/studio/problems/add-one-to-a-number-represented-as-linked-list_920557 |
-| |  | https://www.codingninjas.com/studio/problems/bellman-ford_2041977 |
-| |  | https://www.codingninjas.com/studio/problems/time-to-burn-tree_1469067 |
-| |  | https://www.codingninjas.com/studio/problems/remove-duplicates-from-a-sorted-doubly-linked-list_2420283 |
-| | https://leetcode.com/problems/sort-colors/ | https://www.codingninjas.com/codestudio/problems/sort-an-array-of-0s-1s-and-2s_892977 |
-| | https://leetcode.com/problems/minimum-bit-flips-to-convert-number/ | https://www.codingninjas.com/studio/problems/flip-bits_8160405 |
+| ✅ | https://leetcode.com/problems/binary-tree-preorder-traversal/ | https://www.codingninjas.com/studio/problems/preorder-binary-tree_5948 |
+| ✅ | https://leetcode.com/problems/single-element-in-a-sorted-array/ | https://www.codingninjas.com/codestudio/problems/unique-element-in-sorted-array_1112654 |
+| ❌✅ | https://leetcode.com/problems/split-array-largest-sum/ | https://www.codingninjas.com/codestudio/problems/largest-subarray-sum-minimized_7461751 |
+| ✅ |  | https://www.codingninjas.com/codestudio/problems/floor-from-bst_625868 |
+| ✅ | https://leetcode.com/problems/reverse-words-in-a-string/ | https://www.codingninjas.com/studio/problems/reverse-words-in-a-string_696444 |
+| ✅ | https://leetcode.com/problems/koko-eating-bananas/ | https://www.codingninjas.com/codestudio/problems/minimum-rate-to-eat-bananas_7449064 |
+| ✅ |  | https://www.codingninjas.com/studio/problems/tree-traversals_981269 |
+| ✅ |  | https://www.codingninjas.com/studio/problems/add-one-to-a-number-represented-as-linked-list_920557 |
+| ❌ |  | https://www.codingninjas.com/studio/problems/bellman-ford_2041977 |
+| ✅ |  | https://www.codingninjas.com/studio/problems/time-to-burn-tree_1469067 |
+| ✅ |  | https://www.codingninjas.com/studio/problems/remove-duplicates-from-a-sorted-doubly-linked-list_2420283 |
+| ✅ | https://leetcode.com/problems/sort-colors/ | https://www.codingninjas.com/codestudio/problems/sort-an-array-of-0s-1s-and-2s_892977 |
+| ✅ | https://leetcode.com/problems/minimum-bit-flips-to-convert-number/ | https://www.codingninjas.com/studio/problems/flip-bits_8160405 |
 | | https://practice.geeksforgeeks.org/problems/minimum-platforms-1587115620/1 | https://www.codingninjas.com/studio/problems/minimum-number-of-platforms_799400 |
 | |  | https://www.codingninjas.com/codestudio/problems/first-occurence-of-a-pattern-in-a-text_8416393 |
 | | https://leetcode.com/problems/palindrome-number/ | https://www.codingninjas.com/studio/problems/palindrome-number_624662 |

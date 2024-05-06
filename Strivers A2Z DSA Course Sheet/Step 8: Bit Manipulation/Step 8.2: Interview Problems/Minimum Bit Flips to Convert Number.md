@@ -20,3 +20,31 @@ class Solution {
     }
 }
 ```
+
+## Another Solution
+
+- xor will give the different bits
+- count the different bits in xor
+
+```java
+class Solution {
+
+    public int minBitFlips(int start, int goal) {
+
+        int xor = start ^ goal;
+
+        int bits = 0;
+
+        while (xor > 0) {
+
+            if ((xor & 1) == 1) {
+                bits += 1;
+            }
+
+            xor /= 2;
+        }
+
+        return bits;
+    }
+}
+```

@@ -46,3 +46,57 @@ class Solution {
     }
 }
 ```
+
+## Solution 2
+
+- can do it using priority queue / by sorting
+- add 1 to current number of platforms in use for every arrival
+- subtract 1 from current number of platforms in use for every departure
+- update max platforms seen till now
+- note - prioritize arrival over departure - question says "At any given instance of time, same platform can not be used for both departure of a train and arrival of another train. In such cases, we need different platforms."
+
+```java
+class Solution {
+
+    static int findPlatform(int arr[], int dep[], int n) {
+        
+        List<TrainState> trainStates = new ArrayList<>();
+        
+        for (int i = 0; i < n; i++) {
+            trainStates.add(new TrainState(arr[i], 1));
+            trainStates.add(new TrainState(dep[i], 2));
+        }
+        
+        Collections.sort(trainStates);
+        
+        int numberOfPlatforms = 0;
+        int maxPlatforms = 0;
+        
+        for (TrainState trainState : trainStates) {
+            numberOfPlatforms += (trainState.tag == 1 ? 1 : -1);
+            maxPlatforms = Math.max(numberOfPlatforms, maxPlatforms);
+        }
+        
+        return maxPlatforms;
+    }
+    
+    static class TrainState implements Comparable<TrainState> {
+        
+        int time;
+        int tag;
+        
+        TrainState(int time, int tag) {
+            this.time = time;
+            this.tag = tag;
+        }
+        
+        @Override
+        public int compareTo(TrainState trainState) {
+            if (this.time != trainState.time) {
+                return this.time - trainState.time;
+            }
+            return tag - trainState.tag;
+        }
+    }
+}
+```

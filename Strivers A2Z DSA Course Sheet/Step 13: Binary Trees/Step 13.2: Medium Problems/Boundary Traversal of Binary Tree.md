@@ -2,12 +2,13 @@
 
 - https://www.codingninjas.com/studio/problems/boundary-traversal-of-binary-tree_790725
 - add root
-- get left boundary - use root.left otherwise both this and right boundary calls will add root
+- get left boundary - use root.left otherwise
+  - both this and right boundary calls will add root
+  - important - imagine a skewed case i.e. only left is there - both left and right will try adding the boundary had we not called using .left and .right
 - add leaves - level order traversal might not work - refer second example in link
   - leaves can be on different levels
   - we need to go from left to right when adding leaves, but it might happen the left leaf is at a greater level than the right leaf
 - add right boundary - use root.right otherwise both this and left boundary calls will add root
-- remember - left and right boundaries should not add the leaf nodes
 
 ```java
 import java.util.List;

@@ -146,17 +146,15 @@ script();
 | ✅ |  | https://www.codingninjas.com/studio/problems/remove-duplicates-from-a-sorted-doubly-linked-list_2420283 |
 | ✅ | https://leetcode.com/problems/sort-colors/ | https://www.codingninjas.com/codestudio/problems/sort-an-array-of-0s-1s-and-2s_892977 |
 | ✅ | https://leetcode.com/problems/minimum-bit-flips-to-convert-number/ | https://www.codingninjas.com/studio/problems/flip-bits_8160405 |
-| | https://practice.geeksforgeeks.org/problems/minimum-platforms-1587115620/1 | https://www.codingninjas.com/studio/problems/minimum-number-of-platforms_799400 |
-| |  | https://www.codingninjas.com/codestudio/problems/first-occurence-of-a-pattern-in-a-text_8416393 |
-| | https://leetcode.com/problems/palindrome-number/ | https://www.codingninjas.com/studio/problems/palindrome-number_624662 |
-| | https://leetcode.com/problems/boundary-of-binary-tree/ | https://www.codingninjas.com/studio/problems/boundary-traversal-of-binary-tree_790725 |
-| |  | https://www.codingninjas.com/codestudio/problems/articulation-point_840708 |
-| |  | https://www.codingninjas.com/studio/problems/creating-and-printing_1214551 |
-| | https://leetcode.com/problems/longest-substring-without-repeating-characters/ | https://www.codingninjas.com/studio/problems/longest-substring-without-repeating-characters_630418 |
-| |  | https://www.codingninjas.com/studio/problems/rod-cutting-problem_800284 |
-| |  | https://www.codingninjas.com/codestudio/problems/convert-prefix-to-postfix_8391014 |
-| |  | https://www.codingninjas.com/codestudio/problems/largest-element-in-the-array-largest-element-in-the-array_5026279 |
-| | https://leetcode.com/problems/assign-cookies/ | https://www.codingninjas.com/codestudio/problems/assign-cookies_8390826 |
+| ✅ | https://practice.geeksforgeeks.org/problems/minimum-platforms-1587115620/1 | https://www.codingninjas.com/studio/problems/minimum-number-of-platforms_799400 |
+| ✅ |  | https://www.codingninjas.com/codestudio/problems/first-occurence-of-a-pattern-in-a-text_8416393 |
+| ❌ (process was not optimal) | https://leetcode.com/problems/palindrome-number/ | https://www.codingninjas.com/studio/problems/palindrome-number_624662 |
+| ❌ | https://leetcode.com/problems/boundary-of-binary-tree/ | https://www.codingninjas.com/studio/problems/boundary-traversal-of-binary-tree_790725 |
+| ✅ |  | https://www.codingninjas.com/studio/problems/creating-and-printing_1214551 |
+| ✅ | https://leetcode.com/problems/longest-substring-without-repeating-characters/ | https://www.codingninjas.com/studio/problems/longest-substring-without-repeating-characters_630418 |
+| ✅ |  | https://www.codingninjas.com/studio/problems/rod-cutting-problem_800284 |
+| ✅ |  | https://www.codingninjas.com/codestudio/problems/convert-prefix-to-postfix_8391014 |
+| ✅ | https://leetcode.com/problems/assign-cookies/ | https://www.codingninjas.com/codestudio/problems/assign-cookies_8390826 |
 | | https://leetcode.com/problems/sum-of-subarray-minimums/ | https://www.codingninjas.com/codestudio/problems/sum-of-subarray-minimums_8365431 |
 | |  | https://www.codingninjas.com/studio/problems/count-strongly-connected-components-(kosaraju’s-algorithm)_1171151 |
 | | https://leetcode.com/problems/inorder-successor-in-bst/ | https://www.codingninjas.com/studio/problems/predecessor-and-successor-in-bst_893049 |

@@ -155,30 +155,27 @@ script();
 | ✅ |  | https://www.codingninjas.com/studio/problems/rod-cutting-problem_800284 |
 | ✅ |  | https://www.codingninjas.com/codestudio/problems/convert-prefix-to-postfix_8391014 |
 | ✅ | https://leetcode.com/problems/assign-cookies/ | https://www.codingninjas.com/codestudio/problems/assign-cookies_8390826 |
-| | https://leetcode.com/problems/sum-of-subarray-minimums/ | https://www.codingninjas.com/codestudio/problems/sum-of-subarray-minimums_8365431 |
-| |  | https://www.codingninjas.com/studio/problems/count-strongly-connected-components-(kosaraju’s-algorithm)_1171151 |
-| | https://leetcode.com/problems/inorder-successor-in-bst/ | https://www.codingninjas.com/studio/problems/predecessor-and-successor-in-bst_893049 |
-| | https://bit.ly/3ocRQW0 | https://www.codingninjas.com/studio/problems/count-distinct-substrings_985292 |
-| |  | https://www.codingninjas.com/studio/problems/minimal-cost_8180930 |
-| |  | https://www.codingninjas.com/codestudio/problems/ninja-and-the-second-order-elements_6581960 |
-| |  | https://www.codingninjas.com/studio/problems/topological-sorting_973003 |
-| | https://leetcode.com/problems/binary-search/ | https://www.codingninjas.com/codestudio/problems/binary-search_972 |
-| | https://leetcode.com/problems/recover-binary-search-tree/ | https://www.codingninjas.com/studio/problems/fix-bst_873137 |
-| | https://leetcode.com/problems/count-and-say/ | https://www.codingninjas.com/studio/problems/look-and-say-sequence_668478 |
-| | https://leetcode.com/problems/symmetric-tree/ | https://www.codingninjas.com/studio/problems/symmetric-tree_981177 |
-| | https://leetcode.com/problems/surrounded-regions/ | https://www.codingninjas.com/studio/problems/replace-‘o’-with-‘x’_630517 |
-| | https://leetcode.com/problems/count-square-submatrices-with-all-ones/ |  |
-| | https://leetcode.com/problems/odd-even-linked-list/ | https://www.codingninjas.com/studio/problems/segregate-even-and-odd-nodes-in-a-linked-list_1116100 |
-| | https://leetcode.com/problems/search-in-rotated-sorted-array/ | https://www.codingninjas.com/codestudio/problems/search-in-rotated-sorted-array_1082554 |
-| | https://leetcode.com/problems/course-schedule/ | https://www.codingninjas.com/studio/problems/course-schedule-ii_1069243 |
-| | https://leetcode.com/problems/binary-tree-preorder-traversal/ | https://www.codingninjas.com/studio/problems/preorder-binary-tree_5948 |
-| | https://leetcode.com/problems/add-two-numbers/ | https://www.codingninjas.com/studio/problems/add-two-numbers_1170520 |
-| | https://leetcode.com/problems/rearrange-array-elements-by-sign/ | https://www.codingninjas.com/codestudio/problems/alternate-numbers_6783445 |
-| | https://leetcode.com/problems/kth-largest-element-in-a-stream/ | https://www.codingninjas.com/studio/problems/kth-largest-element-in-a-stream_800301 |
-| | https://leetcode.com/problems/implement-trie-prefix-tree/ | https://www.codingninjas.com/studio/problems/trie-implementation_1062581 |
-| |  | https://www.codingninjas.com/studio/problems/printing-longest-increasing-subsequence_8360670 |
-| |  | https://www.codingninjas.com/studio/problems/is-heap-possible-from-the-array |
-| |  | https://www.codingninjas.com/studio/problems/count-of-greater-elements-to-the-right_8365436 |
+| ✅ | https://leetcode.com/problems/sum-of-subarray-minimums/ | https://www.codingninjas.com/codestudio/problems/sum-of-subarray-minimums_8365431 |
+| ❌ |  | https://www.naukri.com/code360/problems/count-strongly-connected-components-kosaraju-s-algorithm_1171151 |
+| ❌ - just read question title and guess data structure to use | https://www.naukri.com/code360/problems/count-distinct-substrings_985292 | https://www.codingninjas.com/studio/problems/count-distinct-substrings_985292 |
+| ✅ |  | https://www.codingninjas.com/studio/problems/minimal-cost_8180930 |
+| ✅ | https://leetcode.com/problems/inorder-successor-in-bst/ | https://www.codingninjas.com/studio/problems/predecessor-and-successor-in-bst_893049 |
+| ✅ |  | https://www.codingninjas.com/codestudio/problems/ninja-and-the-second-order-elements_6581960 |
+| ✅ |  | https://www.codingninjas.com/studio/problems/topological-sorting_973003 |
+| ✅ | https://leetcode.com/problems/binary-search/ | https://www.codingninjas.com/codestudio/problems/binary-search_972 |
+| ✅ | https://leetcode.com/problems/recover-binary-search-tree/ | https://www.codingninjas.com/studio/problems/fix-bst_873137 |
+| ✅ | https://leetcode.com/problems/count-and-say/ | https://www.codingninjas.com/studio/problems/look-and-say-sequence_668478 |
+| ✅ | https://leetcode.com/problems/symmetric-tree/ | https://www.codingninjas.com/studio/problems/symmetric-tree_981177 |
+| ✅ | https://leetcode.com/problems/surrounded-regions/ | https://www.codingninjas.com/studio/problems/replace-‘o’-with-‘x’_630517 |
+| ✅ | https://leetcode.com/problems/count-square-submatrices-with-all-ones/ |  |
+| ✅ | https://leetcode.com/problems/odd-even-linked-list/ | https://www.codingninjas.com/studio/problems/segregate-even-and-odd-nodes-in-a-linked-list_1116100 |
+| ✅ | https://leetcode.com/problems/search-in-rotated-sorted-array/ | https://www.codingninjas.com/codestudio/problems/search-in-rotated-sorted-array_1082554 |
+| ❌ (directionality concept in topological was not clear) | https://leetcode.com/problems/course-schedule/ | https://www.codingninjas.com/studio/problems/course-schedule-ii_1069243 |
+| ✅ | https://leetcode.com/problems/add-two-numbers/ | https://www.codingninjas.com/studio/problems/add-two-numbers_1170520 |
+| ✅ | https://leetcode.com/problems/kth-largest-element-in-a-stream/ | https://www.codingninjas.com/studio/problems/kth-largest-element-in-a-stream_800301 |
+| ✅ | https://leetcode.com/problems/implement-trie-prefix-tree/ | https://www.codingninjas.com/studio/problems/trie-implementation_1062581 |
+| ✅ |  | https://www.codingninjas.com/studio/problems/printing-longest-increasing-subsequence_8360670 |
+| ❌ |  | https://www.codingninjas.com/studio/problems/count-of-greater-elements-to-the-right_8365436 |
 | | https://leetcode.com/problems/course-schedule-ii/discuss/293048/detecting-cycle-in-directed-graph-problem | https://www.codingninjas.com/studio/problems/detect-cycle-in-a-directed-graph-_920545 |
 | | https://leetcode.com/problems/minimum-window-substring/ | https://www.codingninjas.com/studio/problems/minimum-window-substring_1215004 |
 | | https://leetcode.com/problems/binary-tree-inorder-traversal/ | https://www.codingninjas.com/studio/problems/preorder-binary-tree_5948 |

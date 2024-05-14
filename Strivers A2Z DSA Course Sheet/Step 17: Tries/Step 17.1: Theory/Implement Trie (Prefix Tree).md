@@ -6,62 +6,70 @@
 ```java
 class Trie {
 
-    static class Node {
-
-        Node[] ptr;
-        boolean end;
-
-        Node() {
-            ptr = new Node['z' - 'a' + 1];
-            end = false;
-        }
-    }
-
     Node head;
 
     public Trie() {
         head = new Node();
     }
 
-    public void insert(String word) {
+    public void insert(char[] word) {
 
-        char[] characters = word.toCharArray();
         Node current = head;
 
-        for (char c : characters) {
-            if (current.ptr[c - 'a'] == null) {
-                current.ptr[c - 'a'] = new Node();
+        for (int i = 0; i < word.length; i++) {
+            
+            if (!current.ptr.containsKey(word[i])) {
+                current.ptr.put(word[i], new Node());
             }
-            current = current.ptr[c - 'a'];
+            
+            current = current.ptr.get(word[i]);
         }
 
-        current.end = true;
+        current.isEnd = true;
     }
 
+    private Node find(char[] word) {
+
+        Node current = head;
+
+        for (int i = 0; i < word.length; i++) {
+            
+            if (!current.ptr.containsKey(word[i])) {
+                return null;
+            }
+            
+            current = current.ptr.get(word[i]);
+        }
+
+        return current;
+    }
+    
+    public boolean search(char[] word) {
+        Node node = find(word);
+        return node != null && node.isEnd;
+    }
+    
+    public boolean startsWith(char[] prefix) {
+        Node node = find(prefix);
+        return node != null;
+    }
+    
+    public void insert(String word) {
+        insert(word.toCharArray());
+    }
+    
     public boolean search(String word) {
-
-        char[] characters = word.toCharArray();
-        Node current = head;
-
-        for (char c : characters) {
-            if (current.ptr[c - 'a'] == null) return false;
-            current = current.ptr[c - 'a'];
-        }
-
-        return current.end;
+        return search(word.toCharArray());
+    }
+    
+    public boolean startsWith(String prefix) {
+        return startsWith(prefix.toCharArray());
     }
 
-    public boolean startsWith(String prefix) {
+    static class Node {
 
-        char[] characters = prefix.toCharArray();
-        Node current = head;
-
-        for (char c : characters) {
-            if (current.ptr[c - 'a'] == null) return false;
-            current = current.ptr[c - 'a'];
-        }
-
-        return true;
+        Map<Character, Node> ptr = new HashMap<>();
+        boolean isEnd = false;
     }
 }
 ```

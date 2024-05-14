@@ -7,49 +7,55 @@
   - if end has already been marked - this substring has already been seen in the past
 
 ```java
-import java.util.ArrayList;
+import java.util.*;
 
-public class Solution {
+public class Solution  {
 
 	public static int countDistinctSubstrings(String s) {
 
-		Node head = new Node();
-		head.end = true;
+		char[] arr = s.toCharArray();
 
-		char[] word = s.toCharArray();
-		int n = word.length;
-
+		Trie trie = new Trie();
 		int result = 1;
 
-		for (int i = 0; i < n; i++) {
+		for (int i = 0; i < s.length(); i++) {
 
-			Node current = head;
-
-			for (int j = i; j < n; j++) {
-
-				if (current.ptr[word[j] - 'a'] == null) {
-					current.ptr[word[j] - 'a'] = new Node();
-				}
-
-				current = current.ptr[word[j] - 'a'];
-				if (!current.end) {
-					current.end = true;
-					result += 1;
-				}
+			for (int j = i; j < s.length(); j++) {
+				result += trie.insert(arr, i, j) ? 1 : 0;
+				// System.out.println(i + ", " + j + ": " + result);
 			}
+
+			// System.out.println();
 		}
 
 		return result;
 	}
 
-	static class Node {
+	static class Trie {
 
-		Node[] ptr;
-		boolean end;
+		Node head = new Node();
 
-		Node() {
-			ptr = new Node['z' - 'a' + 1];
-			end = false;
+		private boolean insert(char[] arr, int start, int end) {
+
+			Node current = head;
+			boolean exists = true;
+
+			for (int i = start; i <= end; i++) {
+
+				if (!current.ptr.containsKey(arr[i])) {
+					exists = false;
+					current.ptr.put(arr[i], new Node());
+				}
+
+				current = current.ptr.get(arr[i]);
+			}
+
+			return !exists;
+		}
+
+		static class Node {
+
+			public Map<Character, Node> ptr = new HashMap<>();
 		}
 	}
 }

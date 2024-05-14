@@ -8,40 +8,29 @@
 class Solution {
 
     public String countAndSay(int n) {
-        
-        List<Character> result = recurse(n);
-        
-        StringBuilder sb = new StringBuilder();
-        
-        for (char c : result) {
-            sb.append(c);
-        }
 
-        return sb.toString();
-    }
-
-    private List<Character> recurse(int n) {
+        char[] arr = new char[]{'1'};
         
-        if (n == 1) return List.of('1');
-        
-        List<Character> list = recurse(n - 1);
-        List<Character> result = new ArrayList<>();
-        int size = list.size();
+        for (int i = 0; i < n - 1; i++) {
 
-        for (int i = 0; i < size;) {
+            StringBuilder sb = new StringBuilder();
 
-            int j = i;
+            for (int j = 0; j < arr.length;) {
 
-            while (j < size && list.get(i) == list.get(j)) {
-                j += 1;
+                int start = j;
+
+                while (j < arr.length && arr[j] == arr[start]) {
+                    j += 1;
+                }
+
+                sb.append(Integer.toString(j - start));
+                sb.append(arr[start]);
             }
 
-            result.add((char)(j - i + '0'));
-            result.add(list.get(i));
-            i = j;
+            arr = sb.toString().toCharArray();
         }
 
-        return result;
+        return new String(arr);
     }
 }
 ```

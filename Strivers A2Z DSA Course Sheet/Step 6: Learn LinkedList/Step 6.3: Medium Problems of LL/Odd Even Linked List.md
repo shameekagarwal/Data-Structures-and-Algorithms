@@ -13,21 +13,33 @@ class Solution {
 
     public ListNode oddEvenList(ListNode head) {
         
-        if (head == null || head.next == null) return head;
-
-        ListNode oddNodeStart = head;
-        ListNode evenNodeStart = head.next;
-
-        ListNode currentOddNode = oddNodeStart;
-        ListNode currentEvenNode = evenNodeStart;
-        while (currentEvenNode != null && currentEvenNode.next != null) {
-            currentOddNode.next = currentOddNode.next.next;
-            currentEvenNode.next = currentEvenNode.next.next;
-            currentOddNode = currentOddNode.next;
-            currentEvenNode = currentEvenNode.next;
+        if (head == null || head.next == null) {
+            return head;
         }
 
-        currentOddNode.next = evenNodeStart;
+        ListNode currentOdd = head;
+        ListNode currentEven = head.next;
+        ListNode evenHead = currentEven;
+
+        ListNode current = head.next.next;
+
+        while (current != null) {
+
+            currentOdd.next = current;
+            currentEven.next = current.next;
+
+            currentOdd = currentOdd.next;
+            currentEven = currentEven.next;
+
+            current = current.next;
+
+            if (current != null) {
+                current = current.next;
+            }
+        }
+
+        currentOdd.next = evenHead;
+
         return head;
     }
 }

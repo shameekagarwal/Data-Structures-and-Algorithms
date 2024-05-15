@@ -59,9 +59,10 @@ class Solution {
 - so, assume we track two different variables - "satisfied" and "to satisfy"
 - "to satisfy" - distinct characters in target
 - every time count of some character in source becomes equal to count of some character in target, we increment "satisfied" by 1
-- the moment "satisfied" becomes equal to "to satisfy", we start decrementing l
+- the moment "satisfied" becomes equal to "to satisfy", we start incrementing l
 - we increment l till count of some character in source becomes less than count of some character in target
 - also, notice how start is l - 1 and end is r - because condition is "not satisfied" when window starts from l, but condition was satisfied till window was starting at l - 1
+- so, the complexity changes to O(2 * N) from O(256 * 2 * N)
 
 ```java
 class Solution {

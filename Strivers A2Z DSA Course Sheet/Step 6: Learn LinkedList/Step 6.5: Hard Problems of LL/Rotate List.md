@@ -7,54 +7,47 @@
 class Solution {
 
     public ListNode rotateRight(ListNode head, int k) {
+        
+        int length = getLength(head);
 
-        if (head == null || head.next == null) return head;
+        if (length == 0) return head;
 
-        int length = findLength(head);
         k = k % length;
 
-        if (k == 0) return head;
-        
-        ListNode fast = head;
-        for (int i = 0; i < k; i++) {
-            fast = fast.next;
+        if (k == 0) {
+            return head;
         }
 
         ListNode current = head;
-        ListNode newHead = null;
-        ListNode newTail = null;
 
-        while (true) {
-
-            if (fast != null) {
-                if (fast.next == null) {
-                    newTail = current;
-                }
-                fast = fast.next;
-                if (fast == null) {
-                    newHead = current.next;                    
-                }
-            }
-
-            if (current.next == null) {
-                current.next = head;
-                break;
-            }
-
+        for (int i = 0; i < k; i++) {
             current = current.next;
         }
 
-        newTail.next = null;
+        ListNode nodeBeforeKthNodeFromEnd = head;
+        ListNode lastNode = current;
+
+        current = current.next;
+
+        while (current != null) {
+            nodeBeforeKthNodeFromEnd = nodeBeforeKthNodeFromEnd.next;
+            lastNode = current;
+            current = current.next;
+        }
+
+        lastNode.next = head;
+        ListNode newHead = nodeBeforeKthNodeFromEnd.next;
+        nodeBeforeKthNodeFromEnd.next = null;
 
         return newHead;
     }
 
-    private int findLength(ListNode node) {
-
+    private int getLength(ListNode head) {
+        
         int length = 0;
 
-        while (node != null) {
-            node = node.next;
+        while (head != null) {
+            head = head.next;
             length += 1;
         }
 

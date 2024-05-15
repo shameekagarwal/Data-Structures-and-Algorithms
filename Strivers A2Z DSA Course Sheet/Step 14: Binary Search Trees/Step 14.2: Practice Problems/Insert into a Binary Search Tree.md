@@ -1,6 +1,8 @@
 # Insert into a Binary Search Tree
 
 - https://leetcode.com/problems/insert-into-a-binary-search-tree/
+- one solution - make this new node the root, and insert root to its left or right 🤣
+- modify it to "insert it at leaf"
 - question already says no duplicates / value to insert does not exist
 - so, we just try to find the leaf where we can put it
 - if value to insert is smaller than the current node

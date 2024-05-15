@@ -176,16 +176,16 @@ script();
 | ✅ | https://leetcode.com/problems/implement-trie-prefix-tree/ | https://www.codingninjas.com/studio/problems/trie-implementation_1062581 |
 | ✅ |  | https://www.codingninjas.com/studio/problems/printing-longest-increasing-subsequence_8360670 |
 | ❌ |  | https://www.codingninjas.com/studio/problems/count-of-greater-elements-to-the-right_8365436 |
-| | https://leetcode.com/problems/course-schedule-ii/discuss/293048/detecting-cycle-in-directed-graph-problem | https://www.codingninjas.com/studio/problems/detect-cycle-in-a-directed-graph-_920545 |
-| | https://leetcode.com/problems/minimum-window-substring/ | https://www.codingninjas.com/studio/problems/minimum-window-substring_1215004 |
-| | https://leetcode.com/problems/binary-tree-inorder-traversal/ | https://www.codingninjas.com/studio/problems/preorder-binary-tree_5948 |
-| | https://leetcode.com/problems/rotate-list/description/ | https://www.codingninjas.com/studio/problems/rotate-linked-list_920454 |
-| | https://leetcode.com/problems/lru-cache/ | https://www.codingninjas.com/studio/problems/lru-cache-implementation_670276 |
-| |  | https://www.codingninjas.com/codestudio/problems/occurrence-of-x-in-a-sorted-array_630456 |
-| | https://leetcode.com/problems/insert-into-a-binary-search-tree/ | https://www.codingninjas.com/studio/problems/insert-into-a-binary-search-tree_1279913 |
-| | https://leetcode.com/problems/all-nodes-distance-k-in-binary-tree/ | https://www.codingninjas.com/studio/problems/print-nodes-at-distance-k-from-a-given-node_842560 |
-| | https://leetcode.com/problems/number-of-ways-to-arrive-at-destination/ | https://www.codingninjas.com/studio/problems/number-of-ways_8360639 |
-| | https://leetcode.com/problems/binary-tree-level-order-traversal/ | https://www.codingninjas.com/studio/problems/zigzag-binary-tree-traversal_920532 |
+| ✅ | https://leetcode.com/problems/course-schedule-ii/discuss/293048/detecting-cycle-in-directed-graph-problem | https://www.codingninjas.com/studio/problems/detect-cycle-in-a-directed-graph-_920545 |
+| ✅❌ | https://leetcode.com/problems/minimum-window-substring/ | https://www.codingninjas.com/studio/problems/minimum-window-substring_1215004 |
+| ✅ | https://leetcode.com/problems/binary-tree-inorder-traversal/ | https://www.codingninjas.com/studio/problems/preorder-binary-tree_5948 |
+| ✅ | https://leetcode.com/problems/rotate-list/description/ | https://www.codingninjas.com/studio/problems/rotate-linked-list_920454 |
+| ✅❌ | https://leetcode.com/problems/lru-cache/ | https://www.codingninjas.com/studio/problems/lru-cache-implementation_670276 |
+| ✅ |  | https://www.codingninjas.com/codestudio/problems/occurrence-of-x-in-a-sorted-array_630456 |
+| ❌ | https://leetcode.com/problems/insert-into-a-binary-search-tree/ | https://www.codingninjas.com/studio/problems/insert-into-a-binary-search-tree_1279913 |
+| ✅ | https://leetcode.com/problems/all-nodes-distance-k-in-binary-tree/ | https://www.codingninjas.com/studio/problems/print-nodes-at-distance-k-from-a-given-node_842560 |
+| ✅ | https://leetcode.com/problems/number-of-ways-to-arrive-at-destination/ | https://www.codingninjas.com/studio/problems/number-of-ways_8360639 |
+| ✅ | https://leetcode.com/problems/binary-tree-level-order-traversal/ | https://www.codingninjas.com/studio/problems/zigzag-binary-tree-traversal_920532 |
 | | https://leetcode.com/problems/hand-of-straights/ | https://www.codingninjas.com/studio/problems/groups-in-ninja-land._1459215 |
 | | https://practice.geeksforgeeks.org/problems/top-view-of-binary-tree/1 | https://www.codingninjas.com/studio/problems/top-view-of-binary-tree_799401 |
 | |  | https://www.codingninjas.com/studio/problems/implement-upper-bound_8165383 |

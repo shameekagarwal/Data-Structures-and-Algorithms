@@ -207,19 +207,16 @@ script();
 | ✅ | https://leetcode.com/problems/n-queens/ | https://www.codingninjas.com/studio/problems/n-queens_696453 |
 | ✅ |  | https://www.codingninjas.com/studio/problems/creating-and-printing_1214551 |
 | ✅ | https://leetcode.com/problems/vertical-order-traversal-of-a-binary-tree/ | https://www.codingninjas.com/studio/problems/vertical-order-traversal_3622711 |
-
-| | https://leetcode.com/problems/serialize-and-deserialize-binary-tree/ | https://www.codingninjas.com/studio/problems/serialize-and-deserialize-binary-tree_920328 |
-| | https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/ | https://www.codingninjas.com/studio/problems/construct-binary-tree-from-inorder-and-preorder-traversal_920539 |
+| ✅ | https://leetcode.com/problems/serialize-and-deserialize-binary-tree/ | https://www.codingninjas.com/studio/problems/serialize-and-deserialize-binary-tree_920328 |
+| ❌ - was not optimal | https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/ | https://www.codingninjas.com/studio/problems/construct-binary-tree-from-inorder-and-preorder-traversal_920539 |
 | | https://leetcode.com/problems/combination-sum/ | https://www.codingninjas.com/studio/problems/combination-sum_981296 |
 | | https://leetcode.com/problems/divide-two-integers/ | https://www.codingninjas.com/studio/problems/-divide-two-integers_1112617 |
 | | https://leetcode.com/problems/string-to-integer-atoi/ | https://www.codingninjas.com/studio/problems/implement-atoi-function_981270 |
-
 | |  | https://www.codingninjas.com/studio/problems/flatten-a-linked-list_1112655 |
 | |  | https://www.codingninjas.com/codestudio/problems/count-digits_8416387 |
 | |  | https://www.codingninjas.com/studio/problems/all-root-to-leaf-paths-in-binary-tree._983599 |
 | |  | https://www.codingninjas.com/studio/problems/count-palindromic-subsequences_1062696 |
 | |  | https://www.codingninjas.com/studio/problems/l-to-r-xor_8160412 |
-
 | | https://leetcode.com/problems/merge-intervals/ | https://www.codingninjas.com/studio/problems/merge-intervals_699917 |
 | | https://leetcode.com/problems/unique-paths/ | https://www.codingninjas.com/studio/problems/unique-paths_1081470 |
 | | https://leetcode.com/problems/search-insert-position/ | https://www.codingninjas.com/codestudio/problems/algorithm-to-find-best-insert-position-in-sorted-array_839813 |

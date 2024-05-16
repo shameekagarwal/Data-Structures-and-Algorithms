@@ -186,39 +186,40 @@ script();
 | ✅ | https://leetcode.com/problems/all-nodes-distance-k-in-binary-tree/ | https://www.codingninjas.com/studio/problems/print-nodes-at-distance-k-from-a-given-node_842560 |
 | ✅ | https://leetcode.com/problems/number-of-ways-to-arrive-at-destination/ | https://www.codingninjas.com/studio/problems/number-of-ways_8360639 |
 | ✅ | https://leetcode.com/problems/binary-tree-level-order-traversal/ | https://www.codingninjas.com/studio/problems/zigzag-binary-tree-traversal_920532 |
-| | https://leetcode.com/problems/hand-of-straights/ | https://www.codingninjas.com/studio/problems/groups-in-ninja-land._1459215 |
-| | https://practice.geeksforgeeks.org/problems/top-view-of-binary-tree/1 | https://www.codingninjas.com/studio/problems/top-view-of-binary-tree_799401 |
-| |  | https://www.codingninjas.com/studio/problems/implement-upper-bound_8165383 |
-| | https://leetcode.com/problems/rotting-oranges/ | https://www.codingninjas.com/studio/problems/rotting-oranges_701655 |
-| | https://leetcode.com/problems/powx-n/ | https://www.codingninjas.com/studio/problems/power-of-numbers_8157729 |
-| |  | https://www.codingninjas.com/codestudio/problems/linear-search_6922070 |
-| |  | https://www.codingninjas.com/studio/problems/n-to-1-without-loop_8357243 |
-| |  | https://www.codingninjas.com/studio/problems/sum-of-all-divisors_8360720 |
-| | https://leetcode.com/problems/subarrays-with-k-different-integers/ | https://www.codingninjas.com/studio/problems/subarrays-with-at-most-‘k’-distinct-values_1473804 |
-| | https://leetcode.com/problems/binary-search-tree-iterator/ | https://www.codingninjas.com/studio/problems/merge-two-bsts_920474 |
-| |  | https://www.codingninjas.com/studio/problems/topological-sorting_973003 |
-| | https://leetcode.com/accounts/login/?next=/problems/find-the-celebrity/ | https://www.codingninjas.com/studio/problems/the-celebrity-problem_982769 |
-| | https://leetcode.com/problems/subsets/ | https://www.codingninjas.com/studio/problems/subsequences-of-string_985087 |
-| | https://leetcode.com/problems/check-if-array-is-sorted-and-rotated/ | https://www.codingninjas.com/codestudio/problems/ninja-and-the-sorted-check_6581957 |
-| |  | https://www.codingninjas.com/studio/problems/sum-of-even-odd_624650 |
-| |  | https://www.codingninjas.com/studio/problems/find-character-case_58513 |
-| |  | https://www.codingninjas.com/codestudio/problems/rotation_7449070 |
-| | https://leetcode.com/problems/string-to-integer-atoi/ | https://www.codingninjas.com/studio/problems/implement-atoi-function_981270 |
-| |  | https://www.codingninjas.com/studio/problems/insert-node-at-the-beginning_8144739 |
-| | https://leetcode.com/problems/n-queens/ | https://www.codingninjas.com/studio/problems/n-queens_696453 |
-| |  | https://www.codingninjas.com/studio/problems/reverse-an-array_8365444 |
-| |  | https://www.codingninjas.com/studio/problems/creating-and-printing_1214551 |
-| | https://leetcode.com/problems/vertical-order-traversal-of-a-binary-tree/ | https://www.codingninjas.com/studio/problems/vertical-order-traversal_3622711 |
+| ✅ | https://leetcode.com/problems/hand-of-straights/ | https://www.codingninjas.com/studio/problems/groups-in-ninja-land._1459215 |
+| ✅ | https://practice.geeksforgeeks.org/problems/top-view-of-binary-tree/1 | https://www.codingninjas.com/studio/problems/top-view-of-binary-tree_799401 |
+| ✅ |  | https://www.codingninjas.com/studio/problems/implement-upper-bound_8165383 |
+| ✅ | https://leetcode.com/problems/rotting-oranges/ | https://www.codingninjas.com/studio/problems/rotting-oranges_701655 |
+| ✅ | https://leetcode.com/problems/powx-n/ | https://www.codingninjas.com/studio/problems/power-of-numbers_8157729 |
+| ❌ |  | https://www.codingninjas.com/studio/problems/sum-of-all-divisors_8360720 |
+| ✅ | https://leetcode.com/problems/subarrays-with-k-different-integers/ | https://www.codingninjas.com/studio/problems/subarrays-with-at-most-‘k’-distinct-values_1473804 |
+| ✅ | https://leetcode.com/problems/binary-search-tree-iterator/ | https://www.codingninjas.com/studio/problems/merge-two-bsts_920474 |
+| ✅ |  | https://www.codingninjas.com/studio/problems/topological-sorting_973003 |
+| ✅ | https://leetcode.com/accounts/login/?next=/problems/find-the-celebrity/ | https://www.codingninjas.com/studio/problems/the-celebrity-problem_982769 |
+| ✅ | https://leetcode.com/problems/subsets/ | https://www.codingninjas.com/studio/problems/subsequences-of-string_985087 |
+| ✅ | https://leetcode.com/problems/check-if-array-is-sorted-and-rotated/ | https://www.codingninjas.com/codestudio/problems/ninja-and-the-sorted-check_6581957 |
+| ✅ |  | https://www.codingninjas.com/studio/problems/sum-of-even-odd_624650 |
+| ✅ |  | https://www.codingninjas.com/studio/problems/find-character-case_58513 |
+| ❌ (termination condition) |  | https://www.codingninjas.com/codestudio/problems/rotation_7449070 |
+| ✅ | https://leetcode.com/problems/string-to-integer-atoi/ | https://www.codingninjas.com/studio/problems/implement-atoi-function_981270 |
+| ✅ |  | https://www.codingninjas.com/studio/problems/insert-node-at-the-beginning_8144739 |
+| ✅ |  | https://www.codingninjas.com/studio/problems/reverse-an-array_8365444 |
+| ✅ | https://leetcode.com/problems/n-queens/ | https://www.codingninjas.com/studio/problems/n-queens_696453 |
+| ✅ |  | https://www.codingninjas.com/studio/problems/creating-and-printing_1214551 |
+| ✅ | https://leetcode.com/problems/vertical-order-traversal-of-a-binary-tree/ | https://www.codingninjas.com/studio/problems/vertical-order-traversal_3622711 |
+
 | | https://leetcode.com/problems/serialize-and-deserialize-binary-tree/ | https://www.codingninjas.com/studio/problems/serialize-and-deserialize-binary-tree_920328 |
 | | https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/ | https://www.codingninjas.com/studio/problems/construct-binary-tree-from-inorder-and-preorder-traversal_920539 |
 | | https://leetcode.com/problems/combination-sum/ | https://www.codingninjas.com/studio/problems/combination-sum_981296 |
 | | https://leetcode.com/problems/divide-two-integers/ | https://www.codingninjas.com/studio/problems/-divide-two-integers_1112617 |
 | | https://leetcode.com/problems/string-to-integer-atoi/ | https://www.codingninjas.com/studio/problems/implement-atoi-function_981270 |
+
 | |  | https://www.codingninjas.com/studio/problems/flatten-a-linked-list_1112655 |
 | |  | https://www.codingninjas.com/codestudio/problems/count-digits_8416387 |
 | |  | https://www.codingninjas.com/studio/problems/all-root-to-leaf-paths-in-binary-tree._983599 |
 | |  | https://www.codingninjas.com/studio/problems/count-palindromic-subsequences_1062696 |
 | |  | https://www.codingninjas.com/studio/problems/l-to-r-xor_8160412 |
+
 | | https://leetcode.com/problems/merge-intervals/ | https://www.codingninjas.com/studio/problems/merge-intervals_699917 |
 | | https://leetcode.com/problems/unique-paths/ | https://www.codingninjas.com/studio/problems/unique-paths_1081470 |
 | | https://leetcode.com/problems/search-insert-position/ | https://www.codingninjas.com/codestudio/problems/algorithm-to-find-best-insert-position-in-sorted-array_839813 |

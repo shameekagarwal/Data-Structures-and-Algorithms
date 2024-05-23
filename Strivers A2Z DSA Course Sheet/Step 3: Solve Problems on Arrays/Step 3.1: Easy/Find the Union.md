@@ -1,6 +1,6 @@
 # Find the Union
 
-- https://www.codingninjas.com/studio/problems/sorted-array_6613259
+- https://www.naukri.com/code360/problems/sorted-array_6613259
 - made a lot of mistakes in this
 - solution - keep advancing the pointer till the element to add is same as element at pointer
 

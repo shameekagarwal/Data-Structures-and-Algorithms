@@ -4,22 +4,37 @@
 
 ## Brute Force
 
-- complexity - O(size * (2 * size)) - both creating new substrings and comparing the strings require O(n) so thats where the 2*n comes from
-- another brute force technique, not discussed - make `s = s + s`
-- now, we just have to search for goal in s - we do not have to every time create new strings by breaking into substrings
-- i feel this newer one might run better, but not bothering myself
+- check for all rotations from 0 to n-1
+- complexity - O(n^2)
 
 ```java
 class Solution {
 
     public boolean rotateString(String s, String goal) {
+        return rotateString(s.toCharArray(), goal.toCharArray());
+    }
 
-        if (s.length() != goal.length()) {
+    public boolean rotateString(char[] s, char[] goal) {
+
+        if (s.length != goal.length) {
             return false;
         }
-        
-        for (int i = 0; i < s.length(); i++) {
-            if (s.equals(goal.substring(i, s.length()) + goal.substring(0, i))) {
+
+        int n = s.length;
+
+        for (int rotation = 0; rotation < n; rotation++) {
+
+            boolean matches = true;
+
+            for (int i = 0; i < n; i++) {
+
+                if (s[i] != goal[(i + rotation) % n]) {
+                    matches = false;
+                    break;
+                }
+            }
+
+            if (matches) {
                 return true;
             }
         }
@@ -27,11 +42,11 @@ class Solution {
         return false;
     }
 }
+
 ```
 
 ## Optimal
 
-- use the same concept from brute force but optimal - 
 - make `s = s + s`
 - then use kmp (discussed [here](../../Step%2018:%20Strings/Step%2018.1/KMP%20algo%20LPS(pi)%20array.md))
 - so important? - to check if an array is a rotated version of another array - we use kmp?

@@ -44,7 +44,10 @@ class Solution {
 - for some x, `nums[x]` points to d
 - for some y, `nums[y]` points to d
 - and so, d is the entry point
-- we already know how to find the "responsible node" for a cycle - [](../Strivers%20A2Z%20DSA%20Course%20Sheet/Step%206:%20Learn%20LinkedList/Step%206.3:%20Medium%20Problems%20of%20LL/Find%20the%20starting%20point%20in%20LL.md) 
+
+![duplicate number](./duplicate-number.png)
+
+- we already know how to find the "responsible node" for a cycle from [here](../Strivers%20A2Z%20DSA%20Course%20Sheet/Step%206:%20Learn%20LinkedList/Step%206.3:%20Medium%20Problems%20of%20LL/Find%20the%20starting%20point%20in%20LL.md) 
 
 ```java
 class Solution {

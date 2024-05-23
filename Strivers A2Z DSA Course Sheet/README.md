@@ -209,58 +209,52 @@ script();
 | ✅ | https://leetcode.com/problems/vertical-order-traversal-of-a-binary-tree/ | https://www.codingninjas.com/studio/problems/vertical-order-traversal_3622711 |
 | ✅ | https://leetcode.com/problems/serialize-and-deserialize-binary-tree/ | https://www.codingninjas.com/studio/problems/serialize-and-deserialize-binary-tree_920328 |
 | ❌ - was not optimal | https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/ | https://www.codingninjas.com/studio/problems/construct-binary-tree-from-inorder-and-preorder-traversal_920539 |
-| | https://leetcode.com/problems/combination-sum/ | https://www.codingninjas.com/studio/problems/combination-sum_981296 |
-| | https://leetcode.com/problems/divide-two-integers/ | https://www.codingninjas.com/studio/problems/-divide-two-integers_1112617 |
-| | https://leetcode.com/problems/string-to-integer-atoi/ | https://www.codingninjas.com/studio/problems/implement-atoi-function_981270 |
-| |  | https://www.codingninjas.com/studio/problems/flatten-a-linked-list_1112655 |
-| |  | https://www.codingninjas.com/codestudio/problems/count-digits_8416387 |
-| |  | https://www.codingninjas.com/studio/problems/all-root-to-leaf-paths-in-binary-tree._983599 |
-| |  | https://www.codingninjas.com/studio/problems/count-palindromic-subsequences_1062696 |
-| |  | https://www.codingninjas.com/studio/problems/l-to-r-xor_8160412 |
-| | https://leetcode.com/problems/merge-intervals/ | https://www.codingninjas.com/studio/problems/merge-intervals_699917 |
-| | https://leetcode.com/problems/unique-paths/ | https://www.codingninjas.com/studio/problems/unique-paths_1081470 |
-| | https://leetcode.com/problems/search-insert-position/ | https://www.codingninjas.com/codestudio/problems/algorithm-to-find-best-insert-position-in-sorted-array_839813 |
-| | https://leetcode.com/problems/network-delay-time/ | https://www.codingninjas.com/studio/problems/network-delay-time_1382215 |
-| |  | https://www.codingninjas.com/codestudio/problems/square-root-integral_893351 |
-| |  | https://www.codingninjas.com/studio/problems/unbounded-knapsack_1215029 |
-| |  | https://www.codingninjas.com/studio/problems/day-23-:-infix-to-postfix-_1382146 |
-| |  | https://www.codingninjas.com/codestudio/problems/longest-subarray-with-sum-k_6682399 |
-| | https://leetcode.com/problems/linked-list-cycle/ | https://www.codingninjas.com/studio/problems/cycle-detection-in-a-singly-linked-list_628974 |
-| |  | https://www.codingninjas.com/studio/problems/0-1-knapsack_920542 |
-| |  | https://www.codingninjas.com/studio/problems/kruskal’s-minimum-spanning-tree-algorithm_1082553 |
-| |  | https://www.codingninjas.com/studio/problems/bubble-sort_624380 |
-| |  | https://www.codingninjas.com/studio/problems/check-whether-k-th-bit-is-set-or-not_5026446 |
-| | https://leetcode.com/problems/binary-tree-postorder-traversal/ | https://www.codingninjas.com/studio/problems/postorder-traversal_2035933 |
-| | https://leetcode.com/problems/sort-characters-by-frequency/ | https://www.codingninjas.com/studio/problems/sorting-characters-by-frequency_1263699 |
-| | https://leetcode.com/problems/isomorphic-strings/ | https://www.codingninjas.com/studio/problems/isomorphic-strings-_1117636 |
-| | https://leetcode.com/problems/rotate-image/ | https://www.codingninjas.com/codestudio/problems/rotate-the-matrix_6825090 |
-| | https://leetcode.com/problems/implement-strstr/ | https://www.codingninjas.com/codestudio/problems/pattern-searching-using-z-algorithm_8395752 |
-| | https://practice.geeksforgeeks.org/problems/m-coloring-problem-1587115620/1 | https://www.codingninjas.com/studio/problems/m-coloring-problem_981273 |
-| | https://leetcode.com/problems/maximum-nesting-depth-of-the-parentheses/ |  |
-| |  | https://www.codingninjas.com/studio/problems/reverse-a-doubly-linked-list_1116098 |
-| | https://leetcode.com/problems/candy/ | https://www.codingninjas.com/studio/problems/candies_893290 |
-| | https://leetcode.com/problems/rotate-string/ | https://www.codingninjas.com/studio/problems/check-if-one-string-is-a-rotation-of-another-string_1115683 |
-| | https://leetcode.com/problems/kth-missing-positive-number/ | https://www.codingninjas.com/codestudio/problems/kth-missing-element_893215 |
-| | https://leetcode.com/problems/move-zeroes/ | https://www.codingninjas.com/codestudio/problems/ninja-and-the-zero-s_6581958 |
-| |  | https://www.codingninjas.com/studio/problems/unique-binary-tree_8180906 |
-| |  | https://www.codingninjas.com/studio/problems/ninja’s-training_3621003 |
-| | https://leetcode.com/problems/count-number-of-nice-subarrays/ | https://www.codingninjas.com/studio/problems/count-distinct-subarrays-with-at-most-k-odd-elements_1069335 |
-| |  | https://www.codingninjas.com/studio/problems/connect-n-ropes-with-minimum-cost_625783 |
-| |  | https://www.codingninjas.com/studio/problems/swap-two-numbers_1380853 |
-| | https://leetcode.com/problems/next-permutation/ | https://www.codingninjas.com/codestudio/problems/next-greater-permutation_6929564 |
-| | https://leetcode.com/problems/implement-strstr/ | https://www.codingninjas.com/codestudio/problems/search-pattern-kmp-algorithm_8416386 |
-| | https://leetcode.com/problems/01-matrix/ | https://www.codingninjas.com/studio/problems/distance-of-nearest-cell-having-1-in-a-binary-matrix_1169913 |
-| |  | https://www.codingninjas.com/studio/problems/introduction-to-linked-list_8144737 |
-| | https://leetcode.com/problems/spiral-matrix/ | https://www.codingninjas.com/codestudio/problems/spiral-matrix_6922069 |
-| |  | https://www.codingninjas.com/studio/problems/check-prime_624934 |
-| | https://leetcode.com/problems/minimum-falling-path-sum/ | https://www.codingninjas.com/studio/problems/maximum-path-sum-in-the-matrix_797998 |
-| |  | https://www.codingninjas.com/codestudio/problems/sorted-array_6613259 |
-| | https://leetcode.com/problems/binary-tree-maximum-path-sum/ | https://www.codingninjas.com/studio/problems/maximum-sum-path-of-a-binary-tree._1214968 |
-| |  | https://www.codingninjas.com/studio/problems/merge-sort_5846 |
-| | https://leetcode.com/problems/copy-list-with-random-pointer/ | https://www.codingninjas.com/studio/problems/clone-a-linked-list-with-random-pointers_983604 |
-| | https://leetcode.com/problems/pascals-triangle/ | https://www.codingninjas.com/codestudio/problems/print-pascal-s-triangle_6917910 |
+| ✅ | https://leetcode.com/problems/combination-sum/ | https://www.codingninjas.com/studio/problems/combination-sum_981296 |
+| ❌ | https://leetcode.com/problems/divide-two-integers/ | https://www.codingninjas.com/studio/problems/-divide-two-integers_1112617 |
+| ✅ |  | https://www.codingninjas.com/studio/problems/flatten-a-linked-list_1112655 |
+| ✅ |  | https://www.codingninjas.com/studio/problems/all-root-to-leaf-paths-in-binary-tree._983599 |
+| ❌ |  | https://www.codingninjas.com/studio/problems/count-palindromic-subsequences_1062696 |
+| ❌ |  | https://www.codingninjas.com/studio/problems/l-to-r-xor_8160412 |
+| ✅ | https://leetcode.com/problems/merge-intervals/ | https://www.codingninjas.com/studio/problems/merge-intervals_699917 |
+| ✅ | https://leetcode.com/problems/unique-paths/ | https://www.codingninjas.com/studio/problems/unique-paths_1081470 |
+| ✅ | https://leetcode.com/problems/search-insert-position/ | https://www.codingninjas.com/codestudio/problems/algorithm-to-find-best-insert-position-in-sorted-array_839813 |
+| ✅ | https://leetcode.com/problems/network-delay-time/ | https://www.codingninjas.com/studio/problems/network-delay-time_1382215 |
+| ✅ |  | https://www.codingninjas.com/codestudio/problems/square-root-integral_893351 |
+| ✅ |  | https://www.codingninjas.com/studio/problems/unbounded-knapsack_1215029 |
+| ✅ |  | https://www.codingninjas.com/studio/problems/day-23-:-infix-to-postfix-_1382146 |
+| ✅ |  | https://www.codingninjas.com/codestudio/problems/longest-subarray-with-sum-k_6682399 |
+| ✅ | https://leetcode.com/problems/linked-list-cycle/ | https://www.codingninjas.com/studio/problems/cycle-detection-in-a-singly-linked-list_628974 |
+| ✅ |  | https://www.codingninjas.com/studio/problems/0-1-knapsack_920542 |
+| ✅ |  | https://www.codingninjas.com/studio/problems/kruskal’s-minimum-spanning-tree-algorithm_1082553 |
+| ✅ |  | https://www.codingninjas.com/studio/problems/check-whether-k-th-bit-is-set-or-not_5026446 |
+| ✅ | https://leetcode.com/problems/binary-tree-postorder-traversal/ | https://www.codingninjas.com/studio/problems/postorder-traversal_2035933 |
+| ❌ | https://leetcode.com/problems/sort-characters-by-frequency/ | https://www.codingninjas.com/studio/problems/sorting-characters-by-frequency_1263699 |
+| ✅ | https://leetcode.com/problems/isomorphic-strings/ | https://www.codingninjas.com/studio/problems/isomorphic-strings-_1117636 |
+| ✅ | https://leetcode.com/problems/rotate-image/ | https://www.codingninjas.com/codestudio/problems/rotate-the-matrix_6825090 |
+| ✅ | https://leetcode.com/problems/implement-strstr/ | https://www.codingninjas.com/codestudio/problems/pattern-searching-using-z-algorithm_8395752 |
+| ❌ | https://practice.geeksforgeeks.org/problems/m-coloring-problem-1587115620/1 | https://www.codingninjas.com/studio/problems/m-coloring-problem_981273 |
+| ✅ | https://leetcode.com/problems/maximum-nesting-depth-of-the-parentheses/ |  |
+| ✅ |  | https://www.codingninjas.com/studio/problems/reverse-a-doubly-linked-list_1116098 |
+| ✅ ❌ | https://leetcode.com/problems/candy/ | https://www.codingninjas.com/studio/problems/candies_893290 |
+| ❌ | https://leetcode.com/problems/rotate-string/ | https://www.codingninjas.com/studio/problems/check-if-one-string-is-a-rotation-of-another-string_1115683 |
+| ❌ | https://leetcode.com/problems/kth-missing-positive-number/ | https://www.codingninjas.com/codestudio/problems/kth-missing-element_893215 |
+| ✅❌ | https://leetcode.com/problems/move-zeroes/ | https://www.codingninjas.com/codestudio/problems/ninja-and-the-zero-s_6581958 |
+| ✅ |  | https://www.codingninjas.com/studio/problems/unique-binary-tree_8180906 |
+| ✅ |  | https://www.codingninjas.com/studio/problems/ninja’s-training_3621003 |
+| ✅ | https://leetcode.com/problems/count-number-of-nice-subarrays/ | https://www.codingninjas.com/studio/problems/count-distinct-subarrays-with-at-most-k-odd-elements_1069335 |
+| ✅ |  | https://www.codingninjas.com/studio/problems/connect-n-ropes-with-minimum-cost_625783 |
+| ✅ |  | https://www.codingninjas.com/studio/problems/swap-two-numbers_1380853 |
+| ✅ | https://leetcode.com/problems/next-permutation/ | https://www.codingninjas.com/codestudio/problems/next-greater-permutation_6929564 |
+| ✅ | https://leetcode.com/problems/01-matrix/ | https://www.codingninjas.com/studio/problems/distance-of-nearest-cell-having-1-in-a-binary-matrix_1169913 |
+| ✅ | https://leetcode.com/problems/spiral-matrix/ | https://www.codingninjas.com/codestudio/problems/spiral-matrix_6922069 |
+| ✅ | https://leetcode.com/problems/minimum-falling-path-sum/ | https://www.codingninjas.com/studio/problems/maximum-path-sum-in-the-matrix_797998 |
+| ❌ (made some boundary cases mistakes - come up with right solution in one go) |  | https://www.codingninjas.com/codestudio/problems/sorted-array_6613259 |
+| ✅ | https://leetcode.com/problems/binary-tree-maximum-path-sum/ | https://www.codingninjas.com/studio/problems/maximum-sum-path-of-a-binary-tree._1214968 |
+| ✅ | https://leetcode.com/problems/copy-list-with-random-pointer/ | https://www.codingninjas.com/studio/problems/clone-a-linked-list-with-random-pointers_983604 |
+| ✅ | https://leetcode.com/problems/pascals-triangle/ | https://www.codingninjas.com/codestudio/problems/print-pascal-s-triangle_6917910 |
 | | https://leetcode.com/problems/maximal-rectangle/ |  |
 | | https://leetcode.com/problems/binary-tree-inorder-traversal/ | https://www.codingninjas.com/studio/problems/inorder-traversal_3839605 |
+
 | | https://leetcode.com/problems/word-ladder/ | https://www.codingninjas.com/studio/problems/word-ladder_1102319 |
 | | https://leetcode.com/problems/middle-of-the-linked-list/ | https://www.codingninjas.com/studio/problems/middle-of-linked-list_973250 |
 | |  | https://www.codingninjas.com/codestudio/problems/print-longest-common-subsequence_8416383 |

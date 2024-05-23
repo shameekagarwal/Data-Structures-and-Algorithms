@@ -4,58 +4,55 @@
 - a straightforward dijkstra question
 - if any of the elements in the distance array are unreachable, return -1
 - else, return max of them
+- note - in addition to dijkstra, i also added pruning logic using visited boolean array
 
 ```java
 class Solution {
 
     public int networkDelayTime(int[][] times, int n, int k) {
-        
-        List<List<Signal>> graph = new ArrayList<>();
 
-        for (int i = 0; i < n + 1; i++) {
+        List<List<int[]>> graph = new ArrayList<>();
+
+        for (int i = 0; i < n; i++) {
             graph.add(new ArrayList<>());
         }
-        
+
         for (int[] time : times) {
-            graph.get(time[0]).add(new Signal(time[1], time[2]));
+            graph.get(time[0] - 1).add(new int[]{time[1] - 1, time[2]});
         }
 
-        int[] minTimes = new int[n + 1];
-        Arrays.fill(minTimes, -1);
+        int[] distance = new int[n];
+        Arrays.fill(distance, -1);
+        distance[k - 1] = 0;
 
-        PriorityQueue<Signal> pq = new PriorityQueue<>((a, b) -> a.time - b.time);
-        pq.add(new Signal(k, 0));
-        minTimes[k] = 0;
+        PriorityQueue<int[]> minHeap = new PriorityQueue<>((a, b) -> a[1] - b[1]);
+        minHeap.add(new int[]{k - 1, 0});
+        boolean[] visited = new boolean[n];
 
-        while (!pq.isEmpty()) {
+        while (!minHeap.isEmpty()) {
 
-            Signal signal = pq.poll();
+            int[] node = minHeap.remove();
+            if (visited[node[0]]) continue;
 
-            for (Signal neighbor : graph.get(signal.node)) {
-                if (minTimes[neighbor.node] == -1 || minTimes[neighbor.node] > signal.time + neighbor.time) {
-                    minTimes[neighbor.node] = signal.time + neighbor.time;
-                    pq.add(new Signal(neighbor.node, minTimes[neighbor.node]));
+            visited[node[0]] = true;
+
+            for (int[] neighbor : graph.get(node[0])) {
+
+                if (distance[neighbor[0]] == -1 || distance[neighbor[0]] > node[1] + neighbor[1]) {
+                    distance[neighbor[0]] = node[1] + neighbor[1];
+                    minHeap.add(new int[]{neighbor[0], distance[neighbor[0]]});
                 }
             }
         }
 
-        int maxTime = Integer.MIN_VALUE;
-        for (int i = 1; i <= n; i++) {
-            if (minTimes[i] == -1) return -1;
-            maxTime = Math.max(minTimes[i], maxTime);
+        int result = 0;
+
+        for (int path : distance) {
+            if (path == -1) return -1;
+            result = Math.max(path, result);
         }
-        return maxTime;
-    }
 
-    static class Signal {
-
-        int node;
-        int time;
-
-        Signal(int node, int time) {
-            this.node = node;
-            this.time = time;
-        }
+        return result;
     }
 }
 ```

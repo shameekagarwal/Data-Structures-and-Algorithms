@@ -74,50 +74,37 @@ public class Solution {
 - time complexity - pq size stays k, so it contributes log<sub>2</sub>k. we try to process ≈ n * k elements, so total = O(n * k * log<sub>2</sub>k)
 
 ```java
-import java.util.PriorityQueue;
+import java.util.*;
 
 public class Solution {
 
     public static Node flattenLinkedList(Node head) {
 
-        PriorityQueue<Pair> minHeap = new PriorityQueue<>();
-
-        Node current = head;
-        while (current != null) {
-            minHeap.add(new Pair(current.data, current));
-            Node nextCurrent = current.next;
-            current.next = null;
-            current = nextCurrent;
-        }
+        PriorityQueue<Node> minHeap = new PriorityQueue<>((a, b) -> a.data - b.data);
 
         Node dummyHead = new Node(-1);
+        Node current = head;
+
+        while (current != null) {
+            minHeap.add(current);
+            current = current.next;
+        }
+
         current = dummyHead;
+
         while (!minHeap.isEmpty()) {
-            Pair pair = minHeap.remove();
-            current.child = pair.node;
+
+            Node node = minHeap.remove();
+            current.child = node;
             current = current.child;
+            current.next = null;
+
             if (current.child != null) {
-                minHeap.add(new Pair(current.child.data, current.child));
+                minHeap.add(current.child);
             }
         }
 
         return dummyHead.child;
-    }
-
-    static class Pair implements Comparable<Pair> {
-
-        int data;
-        Node node;
-
-        Pair(int data, Node node) {
-            this.data = data;
-            this.node = node;
-        }
-
-        @Override
-        public int compareTo(Pair pair) {
-            return data - pair.data;
-        }
     }
 }
 ```

@@ -13,112 +13,237 @@
 ```java
 class LFUCache {
 
-    private Map<Integer, DLL> frequencyLookup;
-    private Map<Integer, DLL.Node> lookup;
-    private int capacity;
+    private final int capacity;
     private int minFrequency;
+    private final Map<Integer, DLL> cache;
+    private final Map<Integer, DLL.Node> lookup;
 
     public LFUCache(int capacity) {
+
         this.capacity = capacity;
-        frequencyLookup = new HashMap<>();
-        lookup = new HashMap<>();
         minFrequency = 0;
+
+        lookup = new HashMap<>();
+        cache = new HashMap<>();
     }
-    
+
     public int get(int key) {
 
         if (!lookup.containsKey(key)) {
             return -1;
         }
 
-        accessKey(key);
+        bubbleUp(key);
+
+        // System.out.println(cache);
 
         return lookup.get(key).value;
+    }
+
+    private void bubbleUp(int key) {
+
+        int frequency = lookup.get(key).frequency;
+        cache.get(frequency).remove(lookup.get(key));
+
+        if (cache.get(frequency).isEmpty()) {
+            cache.remove(frequency);
+
+            if (minFrequency == frequency) {
+                minFrequency += 1;
+            }
+        }
+
+        frequency += 1;
+
+        lookup.get(key).frequency = frequency;
+
+        if (!cache.containsKey(frequency)) {
+            cache.put(frequency, new DLL());
+        }
+
+        cache.get(frequency).insert(lookup.get(key));
     }
     
     public void put(int key, int value) {
 
         if (lookup.containsKey(key)) {
-            accessKey(key);
+            bubbleUp(key);
             lookup.get(key).value = value;
             return;
         }
 
         if (lookup.size() == capacity) {
-            DLL.Node node = frequencyLookup.get(minFrequency).head.next;
-            remove(node);
+            DLL.Node nodeToRemove = cache.get(minFrequency).first();
+            cache.get(minFrequency).remove(nodeToRemove);
+            lookup.remove(nodeToRemove.key);
         }
 
         minFrequency = 1;
-        DLL.Node node = new DLL.Node(key, value);
-        insert(node);
-    }
+        DLL.Node newNode = new DLL.Node(key, value);
+        lookup.put(key, newNode);
 
-    private void accessKey(int key) {
-
-        DLL.Node node = lookup.get(key);
-        remove(node);
-
-        if (minFrequency == node.frequency && frequencyLookup.get(node.frequency).isEmpty()) {
-            minFrequency += 1;
+        if (!cache.containsKey(minFrequency)) {
+            cache.put(minFrequency, new DLL());
         }
 
-        node.frequency += 1;
-        insert(node);
+        cache.get(minFrequency).insert(newNode);
+
+        // System.out.println(cache);
     }
 
-    private void remove(DLL.Node node) {
-        lookup.remove(node.key);
-        frequencyLookup.get(node.frequency).remove(node);
-    }
+    static class DLL {
 
-    private void insert(DLL.Node node) {
-        lookup.put(node.key, node);
-        if (!frequencyLookup.containsKey(node.frequency)) {
-            frequencyLookup.put(node.frequency, new DLL());
+        Node head;
+        Node tail;
+
+        DLL() {
+            head = new Node(-1, -1);
+            tail = new Node(-1, -1);
+            head.next = tail;
+            tail.prev = head;
         }
-        frequencyLookup.get(node.frequency).insert(node);
+
+        void insert(Node node) {
+            node.prev = tail.prev;
+            node.next = tail;
+            tail.prev.next = node;
+            tail.prev = node;
+        }
+
+        void remove(Node node) {
+            node.prev.next = node.next;
+            node.next.prev = node.prev;
+            node.prev = null;
+            node.next = null;
+        }
+
+        Node first() {
+            return isEmpty() ? null : head.next;
+        }
+
+        boolean isEmpty() {
+            return head.next == tail;
+        }
+
+        @Override
+        public String toString() {
+
+            Node current = tail.prev;
+            StringBuilder sb = new StringBuilder();
+
+            while (current != head) {
+                sb.append(current);
+                current = current.prev;
+            }
+
+            return sb.toString();
+        }
+
+        static class Node {
+
+            int key;
+            int value;
+            Node prev;
+            Node next;
+            int frequency;
+
+            Node(int key, int value) {
+                this.key = key;
+                this.value = value;
+                frequency = 1;
+                prev = null;
+                next = null;
+            }
+
+            @Override
+            public String toString() {
+                return "(" + key + ", " + value + ")";
+            }
+        }
     }
 }
+```
 
-class DLL {
+## Java Solution
 
-    Node head, tail;
+- inspired by java solution of [LRU Cache](./LRU%20Cache.md)
 
-    DLL() {
-        head = new Node(-1, -1);
-        tail = new Node(-1, -1);
-        head.next = tail;
-        tail.prev = head;
+```java
+class LFUCache {
+
+    private final int capacity;
+    private final Map<Integer, Map<Integer, Integer>> lookup;
+    private final Map<Integer, Integer> frequencyLookup;
+    private int minFrequency;
+
+    public LFUCache(int capacity) {
+        this.capacity = capacity;
+        lookup = new HashMap<>();
+        frequencyLookup = new HashMap<>();
+        minFrequency = 0;
     }
 
-    void insert(Node node) {
-        node.prev = tail.prev;
-        node.next = tail;
-        tail.prev.next = node;
-        tail.prev = node;
-    }
+    public int get(int key) {
 
-    void remove(Node node) {
-        node.prev.next = node.next;
-        node.next.prev = node.prev;
-    }
-
-    boolean isEmpty() {
-        return head.next == tail;
-    }
-
-    static class Node {
-        
-        int key, value;
-        int frequency;
-        Node prev, next;
-
-        Node(int key, int value) {
-            this.key = key;
-            this.frequency = 1;
-            this.value = value;
+        if (!frequencyLookup.containsKey(key)) {
+            return -1;
         }
+
+        incrementFrequencyOfKey(key);
+
+        int frequency = frequencyLookup.get(key);
+        return lookup.get(frequency).get(key);
+    }
+
+    private void incrementFrequencyOfKey(int key) {
+
+        int frequency = frequencyLookup.get(key);
+        int value = lookup.get(frequency).get(key);
+
+        // 1 - update frequencyLookup
+        frequencyLookup.put(key, frequency + 1);
+        
+        // 2 - lookup - remove old frequency references
+        lookup.get(frequency).remove(key);
+        if (lookup.get(frequency).size() == 0) {
+
+            lookup.remove(frequency);
+
+            if (minFrequency == frequency) {
+                minFrequency += 1;
+            }
+        }
+
+        // 3 - lookup - add new frequency
+        if (!lookup.containsKey(frequency + 1)) {
+            lookup.put(frequency + 1, new LinkedHashMap<>());
+        }
+        lookup.get(frequency + 1).put(key, value);
+    }
+
+    public void put(int key, int value) {
+
+        if (frequencyLookup.containsKey(key)) {
+            incrementFrequencyOfKey(key);
+            int frequency = frequencyLookup.get(key);
+            lookup.get(frequency).put(key, value);
+            return;
+        }
+
+        if (frequencyLookup.size() == capacity) {
+            int keyToEject = lookup.get(minFrequency).keySet().iterator().next();
+            frequencyLookup.remove(keyToEject);
+            lookup.get(minFrequency).remove(keyToEject);
+        }
+
+        minFrequency = 1;
+        frequencyLookup.put(key, minFrequency);
+        
+        if (!lookup.containsKey(minFrequency)) {
+            lookup.put(minFrequency, new LinkedHashMap<>());
+        }
+
+        lookup.get(minFrequency).put(key, value);
     }
 }
 ```

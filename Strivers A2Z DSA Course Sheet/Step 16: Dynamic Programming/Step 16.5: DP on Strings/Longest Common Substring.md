@@ -3,8 +3,8 @@
 - https://www.codingninjas.com/studio/problems/longest-common-substring_1235207
 - like [this](./Longest%20Common%20Subsequence.md), but with minor tweaks
 - remember - cannot think of recursive approach here unlike other problems
-- longest substring ending at i, j - i-1,j-1 + 1 if i and j are same
-- longest - maintain a separate variable. understand that this time, `previous[len - 1]` will not have the result like in subsequences
+- longest substring ending at i, j - i-1,j-1 + 1 if `str1[i]` and `str2[j]` are same, else 0
+- longest - maintain a separate variable. understand that this time, `dp[m-1][n-1]` will not have the result like in subsequences
 
 ```java
 public class Solution {

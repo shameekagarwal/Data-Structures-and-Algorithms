@@ -9,34 +9,36 @@
 ```java
 class Solution {
 
-    public int lengthOfLIS(int[] nums) {
+    public int lengthOfLIS(int[] arr) {
+    
+        int[][] memo = new int[arr.length][arr.length + 1];
 
-        int n = nums.length;
+        for (int[] row : memo) {
+            Arrays.fill(row, -1);
+        }
 
-        int[][] memo = new int[n][n + 1];
-        boolean[][] seen = new boolean[n][n + 1];
-
-        return recurse(0, -1, nums, n, memo, seen);
+        return lengthOfLIS(arr, 0, -1, memo);
     }
 
-    private int recurse(int idx, int prevIdx, int[] nums, int n, int[][] memo, boolean[][] seen) {
+    private static int lengthOfLIS(int arr[], int currIdx, int lastPickedIdx, int[][] memo) {
 
-        if (idx == n) return 0;
-
-        if (seen[idx][prevIdx + 1]) {
-            return memo[idx][prevIdx + 1];
+        if (currIdx == arr.length) {
+            return 0;
         }
 
-        int lis = recurse(idx + 1, prevIdx, nums, n, memo, seen);
-
-        if (prevIdx == -1 || nums[prevIdx] < nums[idx]) {
-            lis = Math.max(lis, recurse(idx + 1, idx, nums, n, memo, seen) + 1);
+        if (memo[currIdx][lastPickedIdx + 1] != -1) {
+            return memo[currIdx][lastPickedIdx + 1];
         }
 
-        seen[idx][prevIdx + 1] = true;
-        memo[idx][prevIdx + 1] = lis;
+        int result = lengthOfLIS(arr, currIdx + 1, lastPickedIdx, memo);
 
-        return lis;
+        if (lastPickedIdx == -1 || arr[lastPickedIdx] < arr[currIdx]) {
+            result = Math.max(result, lengthOfLIS(arr, currIdx + 1, currIdx, memo) + 1);
+        }
+
+        memo[currIdx][lastPickedIdx + 1] = result;
+
+        return result;
     }
 }
 ```

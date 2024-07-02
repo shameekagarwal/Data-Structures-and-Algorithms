@@ -10,20 +10,29 @@
 class Solution {
 
     public List<Integer> rightSideView(TreeNode root) {
+        
+        if (root == null) return List.of();
 
         List<Integer> result = new ArrayList<>();
+
         Deque<TreeNode> queue = new ArrayDeque<>();
-        if (root == null) return result;
         queue.addLast(root);
 
         while (!queue.isEmpty()) {
-            int currentLevelSize = queue.size();
-            for (int i = 0; i < currentLevelSize; i++) {
-                TreeNode current = queue.removeFirst();
-                if (current.left != null) queue.add(current.left);
-                if (current.right != null) queue.add(current.right);
-                if (i == currentLevelSize - 1) {
-                    result.add(current.val);
+
+            int levelSize = queue.size();
+            result.add(queue.peekLast().val);
+
+            for (int i = 0; i < levelSize; i++) {
+
+                TreeNode node = queue.removeFirst();
+
+                if (node.left != null) {
+                    queue.addLast(node.left);
+                }
+
+                if (node.right != null) {
+                    queue.addLast(node.right);
                 }
             }
         }

@@ -1,6 +1,7 @@
 # Number of Longest Increasing Subsequence
 
 - https://leetcode.com/problems/number-of-longest-increasing-subsequence/
+- thought process - for lis ending at i, we do not care how - we want the "count" of all "max lis lengths" possible which "end at i"
 - [Longest Increasing Subsequence](./Longest%20Increasing%20Subsequence.md) with maintaining counts - 
   - if larger, reset count to `count[j]`
   - if equal, add `count[j]`
@@ -16,40 +17,45 @@ class Solution {
 
         int n = nums.length;
 
-        int[] dp = new int[n];
-        Arrays.fill(dp, 1);
-        
-        int[] count = new int[n];
-        Arrays.fill(count, 1);
+        int[] lisSize = new int[n];
+        int[] lisCount = new int[n];
 
         for (int i = 0; i < n; i++) {
 
+            lisSize[i] = 1;
+            lisCount[i] = 1;
+
             for (int j = 0; j < i; j++) {
-                if (nums[j] < nums[i]) {
-                    if (dp[j] + 1 > dp[i]) {
-                        dp[i] = dp[j] + 1;
-                        count[i] = count[j];
-                    } else if (dp[j] + 1 == dp[i]) {
-                        count[i] += count[j];
+
+                if (nums[i] > nums[j]) {
+
+                    if (lisSize[j] + 1 > lisSize[i]) {
+                        lisSize[i] = lisSize[j] + 1;
+                        lisCount[i] = lisCount[j];
+                    } else if (lisSize[j] + 1 == lisSize[i]) {
+                        lisCount[i] += lisCount[j];
                     }
                 }
             }
         }
 
-        int max = 0;
-        int result = 0;
+        // System.out.println(Arrays.toString(lisSize));
+        // System.out.println(Arrays.toString(lisCount));
+
+        int maxLisSize = 0;
+        int count = 0;
 
         for (int i = 0; i < n; i++) {
 
-            if (dp[i] > max) {
-                max = dp[i];
-                result = count[i];
-            } else if (dp[i] == max) {
-                result += count[i];
+            if (maxLisSize < lisSize[i]) {
+                maxLisSize = lisSize[i];
+                count = lisCount[i];
+            } else if (maxLisSize == lisSize[i]) {
+                count += lisCount[i];
             }
         }
 
-        return result;
+        return count;
     }
 }
 ```

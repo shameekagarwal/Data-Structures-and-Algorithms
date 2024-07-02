@@ -98,7 +98,7 @@ public class Solution {
 
 - space optimized + tabular
 
- ```java
+```java
 import java.util.*;
 import java.io.*;
 
@@ -106,23 +106,30 @@ public class Solution {
 
     public static boolean subsetSumToK(int n, int k, int arr[]) {
 
-        Set<Integer> previous = new HashSet<>();
-        previous.add(0);
+        boolean[][] dp = new boolean[2][k + 1];
+        dp[1][0] = true;
 
         for (int i = 0; i < n; i++) {
 
-            Set<Integer> current = new HashSet<>();
+            int currentRow = i % 2;
+            int previousRow = 1 - (i % 2);
 
             for (int j = 0; j <= k; j++) {
-                if (previous.contains(j) || previous.contains(j - arr[i])) {
-                    current.add(j);
+
+                dp[currentRow][j] = dp[previousRow][j];
+
+                if (arr[i] <= j) {
+                    dp[currentRow][j] |= dp[previousRow][j - arr[i]];
                 }
             }
 
-            previous = current;
+            // System.out.println(Arrays.toString(dp[currentRow]));
         }
 
-        return previous.contains(k);
+        int lastRow = (n - 1) % 2;
+
+        return dp[lastRow][k];
     }
 }
+
 ```

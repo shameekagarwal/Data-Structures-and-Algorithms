@@ -1,6 +1,6 @@
 # Kruskal's Algorithm
 
-- https://www.codingninjas.com/studio/problems/kruskal%E2%80%99s-minimum-spanning-tree-algorithm_1082553
+- https://www.codingninjas.com/studio/problems/minimum-spanning-tree_631769
 - kruskal's algorithm can be used to find minimum spanning tree
 - step 1 - sort edges by weight in increasing order
 - step 2 - pick the edges one by one, and call union on disjoint set on the endpoints of the edge

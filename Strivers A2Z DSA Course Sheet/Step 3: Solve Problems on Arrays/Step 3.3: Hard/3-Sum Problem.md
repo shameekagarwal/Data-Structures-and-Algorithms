@@ -4,7 +4,7 @@
 - conditions - 
   - values inside a triplet can be same, but we cannot choose element at same index twice in a triplet
   - distinct triplets - if we have two -1s, we cannot consider a triplet like [-1, 0, 2] twice - a triplet can only occur once
-- brute force - O(n^3 + 3log3 + p) (3log3 for sorting list of 3, p for inserting into set, where p = final number of triplets)
+- brute force - O(n^3 + 3log3) (3log3 for sorting list of 3)
   ```
   for (i = 0 < n) {
     for (j = i + 1 < n) {

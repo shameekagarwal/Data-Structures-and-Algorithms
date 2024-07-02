@@ -56,7 +56,7 @@ script();
 | ✅✅ | https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/ | https://www.codingninjas.com/studio/problems/best-time-to-buy-and-sell-stock-ii_630282 |
 | ✅ | https://leetcode.com/problems/longest-common-subsequence/ | https://www.codingninjas.com/studio/problems/longest-common-subsequence_624879 |
 | ✅ | https://practice.geeksforgeeks.org/problems/n-meetings-in-one-room-1587115620/1 | https://www.codingninjas.com/studio/problems/maximum-meetings_1062658 |
-| ✅❌ |  | https://www.codingninjas.com/codestudio/problems/nth-root-of-m_1062679 |
+| ✅ |  | https://www.codingninjas.com/codestudio/problems/nth-root-of-m_1062679 |
 | ✅ |  | https://www.codingninjas.com/studio/problems/stack-implementation-using-array_3210209 |
 | ✅ | https://leetcode.com/problems/word-search/ | https://www.codingninjas.com/studio/problems/word-search---l_892986 |
 | ✅ |  | https://www.codingninjas.com/codestudio/problems/longest-subarray-with-zero-sum_6783450 |
@@ -74,7 +74,7 @@ script();
 | ✅ | https://leetcode.com/problems/count-complete-tree-nodes/ | https://www.codingninjas.com/studio/problems/nodes-in-complete-binary-tree_1281151 |
 | ✅❌ (space optimized) |  | https://www.codingninjas.com/studio/problems/subset-sum-equal-to-k_1550954 |
 | ✅ |  | https://www.codingninjas.com/studio/problems/postfix-to-prefix_1788455 |
-| ✅❌ | https://leetcode.com/problems/swim-in-rising-water/ | https://www.codingninjas.com/studio/problems/minimum-time_8360128 |
+| ✅❌ (dsu solution) | https://leetcode.com/problems/swim-in-rising-water/ | https://www.codingninjas.com/studio/problems/minimum-time_8360128 |
 | ✅ | https://leetcode.com/problems/word-break/ | https://www.codingninjas.com/studio/problems/word-break-1_758963 |
 | ✅ | https://practice.geeksforgeeks.org/problems/bottom-view-of-binary-tree/1 | https://www.codingninjas.com/studio/problems/bottom-view-of-binary-tree_893110 |
 | ✅ | https://leetcode.com/problems/median-of-two-sorted-arrays/ | https://www.codingninjas.com/codestudio/problems/median-of-two-sorted-arrays_985294 |
@@ -83,23 +83,22 @@ script();
 | ✅ | https://leetcode.com/problems/longest-palindromic-subsequence/ | https://www.codingninjas.com/studio/problems/longest-palindromic-subsequence_842787 |
 | ✅ | https://leetcode.com/problems/largest-odd-number-in-string/ |  |
 | ✅ | https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/ | https://www.codingninjas.com/studio/problems/best-time-to-buy-and-sell-stock-with-transaction-fee_3118974 |
-| ✅❌ | https://leetcode.com/problems/binary-tree-right-side-view/ | https://www.codingninjas.com/studio/problems/left-view-of-binary-tree_625707 |
+| ✅✅ | https://leetcode.com/problems/binary-tree-right-side-view/ | https://www.codingninjas.com/studio/problems/left-view-of-binary-tree_625707 |
 | ✅ | https://leetcode.com/problems/longest-repeating-character-replacement/ | https://www.codingninjas.com/studio/problems/longest-repeating-substring_980523 |
 | ✅ |  | https://www.codingninjas.com/studio/problems/merge-k-sorted-arrays_975379 |
 | ✅ |  | https://www.codingninjas.com/codestudio/problems/hcf-and-lcm_840448 |
 | ✅✅ | https://leetcode.com/problems/largest-rectangle-in-histogram/ | https://www.codingninjas.com/studio/problems/largest-rectangle-in-a-histogram_1058184 |
 | ✅ | https://leetcode.com/problems/longest-palindromic-substring/ |  |
-| ❌ |  | https://www.codingninjas.com/studio/problems/quick-sort_5844 |
 | ✅ | https://leetcode.com/problems/minimize-max-distance-to-gas-station/ | https://www.codingninjas.com/codestudio/problems/minimise-max-distance_7541449 |
 | ✅ |  | https://www.codingninjas.com/codestudio/problems/single-source-shortest-path_8416371 |
 | ✅(kruskal), ❌(prim) |  | https://www.codingninjas.com/studio/problems/minimum-spanning-tree_631769 |
 | ✅ | https://leetcode.com/problems/subsets-ii/ | https://www.codingninjas.com/studio/problems/get-all-unique-subsets_624393 |
 | ✅ | https://leetcode.com/problems/combination-sum-ii/ | https://www.codingninjas.com/studio/problems/combination-sum-ii_1112622 |
-| ✅❌ | https://leetcode.com/problems/min-stack/ | https://www.codingninjas.com/studio/problems/min-stack_3843991 |
+| ✅ | https://leetcode.com/problems/min-stack/ | https://www.codingninjas.com/studio/problems/min-stack_3843991 |
 | ✅ | https://leetcode.com/problems/valid-parentheses/ | https://www.codingninjas.com/studio/problems/valid-parentheses_795104 |
 | ✅ |  | https://www.codingninjas.com/codestudio/problems/longest-subarray-with-sum-k_6682399 |
 | ✅ | https://practice.geeksforgeeks.org/problems/depth-first-traversal-for-a-graph/1 | https://www.codingninjas.com/studio/problems/dfs-traversal_630462 |
-| ❌ (took some attempts to get right)  | https://leetcode.com/problems/number-of-longest-increasing-subsequence/ | https://www.codingninjas.com/studio/problems/number-of-longest-increasing-subsequence_3751627 |
+| ✅ | https://leetcode.com/problems/number-of-longest-increasing-subsequence/ | https://www.codingninjas.com/studio/problems/number-of-longest-increasing-subsequence_3751627 |
 | ✅ |  | https://www.codingninjas.com/codestudio/problems/row-of-a-matrix-with-maximum-ones_982768 |
 | ✅ | https://leetcode.com/problems/combination-sum-iii/ | https://www.codingninjas.com/studio/problems/combination-sum-iii_5038357 |
 | ✅ | https://leetcode.com/problems/validate-binary-search-tree/ | https://www.codingninjas.com/studio/problems/check-bst_5975 |
@@ -112,7 +111,7 @@ script();
 | ✅ |  | https://www.codingninjas.com/studio/problems/subarrays-with-sum-‘k'_6922076 |
 | ✅ |  | https://www.codingninjas.com/studio/problems/replace-each-element-of-array-with-its-corresponding-rank_975384 |
 | ✅ | https://leetcode.com/problems/reverse-nodes-in-k-group/ | https://www.codingninjas.com/studio/problems/reverse-list-in-k-groups_983644 |
-| ✅❌ | https://leetcode.com/problems/3sum/ | https://www.codingninjas.com/codestudio/problems/three-sum_6922132 |
+| ✅❌ (stumbled a bit in the implementation) | https://leetcode.com/problems/3sum/ | https://www.codingninjas.com/codestudio/problems/three-sum_6922132 |
 | ✅ | https://leetcode.com/problems/delete-node-in-a-bst/ | https://www.codingninjas.com/studio/problems/delete-node-in-bst_920381 |
 | ✅ |  | https://www.codingninjas.com/studio/problems/selection-sort_624469 |
 | ✅ | https://leetcode.com/problems/4sum/ | https://www.codingninjas.com/codestudio/problems/4sum_5713771 |
@@ -296,7 +295,6 @@ script();
 | |  | https://www.codingninjas.com/codestudio/problems/number-of-inversions_6840276 |
 | | https://practice.geeksforgeeks.org/problems/fractional-knapsack-1587115620/1 | https://www.codingninjas.com/studio/problems/fractional-knapsack_975286 |
 | | https://www.spoj.com/problems/AGGRCOW/ | https://www.codingninjas.com/codestudio/problems/aggressive-cows_1082559 |
-| |  | https://www.codingninjas.com/studio/problems/minimum-spanning-tree_631769 |
 | | https://leetcode.com/problems/sum-of-subarray-ranges/ | https://www.codingninjas.com/studio/problems/subarray-range-sum_8365419 |
 | |  | https://www.codingninjas.com/studio/problems/number-of-nodes_8162204 |
 | | https://leetcode.com/problems/powx-n/ | https://www.codingninjas.com/studio/problems/find-x-raised-to-power-n-_626560 |

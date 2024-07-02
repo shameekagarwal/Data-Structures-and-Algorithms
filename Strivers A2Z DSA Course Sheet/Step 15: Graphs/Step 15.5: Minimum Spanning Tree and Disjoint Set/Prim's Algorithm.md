@@ -24,7 +24,7 @@ public class Solution {
 	}
 
 	private static int primsAlgorithm(List<List<Edge>> graph, int n) {
-		
+
 		int startVertex = 0;
 
 		boolean[] visited = new boolean[n];

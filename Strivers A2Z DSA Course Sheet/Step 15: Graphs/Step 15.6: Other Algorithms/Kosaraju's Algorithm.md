@@ -16,47 +16,29 @@
 - however, y will only be reachable from x again if they are part of the same scc
 
 ```java
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Arrays;
-import java.util.Collections;
+import java.util.*;
 
 public class Solution {
 
 	public static int stronglyConnectedComponents(int v, ArrayList<ArrayList<Integer>> edges) {
 
-		List<Integer> result = new ArrayList<>();
-		List<Integer> reversedResult = new ArrayList<>();
-		List<List<Integer>> graph = new ArrayList<>();
-		List<List<Integer>> reversedGraph = new ArrayList<>();
+		List<List<Integer>> graph = createGraph(v, edges);
+		List<Integer> sort = topologicalSort(v, graph);
+		List<List<Integer>> reversedGraph = reverseGraph(v, graph);
+
+		return findSccs(v, sort, reversedGraph);
+	}
+
+	private static int findSccs(int v, List<Integer> sort, List<List<Integer>> graph) {
+
 		boolean[] visited = new boolean[v];
-
-		for (int i = 0; i < v; i++) {
-			graph.add(new ArrayList<>());
-			reversedGraph.add(new ArrayList<>());
-		}
-		
-		for (List<Integer> edge : edges) {
-			graph.get(edge.get(0)).add(edge.get(1));
-			reversedGraph.get(edge.get(1)).add(edge.get(0));
-		}
-
-		for (int i = 0; i < v; i++) {
-			if (!visited[i]) {
-				visited[i] = true;
-				dfs(i, result, graph, visited);
-			}
-		}
-
-		Collections.reverse(result);
-		Arrays.fill(visited, false);
-
 		int sccs = 0;
 
-		for (int i = 0; i < v; i++) {
-			if (!visited[result.get(i)]) {
-				visited[result.get(i)] = true;
-				dfs(result.get(i), reversedResult, reversedGraph, visited);
+		for (int node : sort) {
+			
+			if (!visited[node]) {
+
+				dfs(node, visited, graph);
 				sccs += 1;
 			}
 		}
@@ -64,16 +46,75 @@ public class Solution {
 		return sccs;
 	}
 
-	private static void dfs(int src, List<Integer> result, List<List<Integer>> graph, boolean[] visited) {
+	private static List<Integer> topologicalSort(int v, List<List<Integer>> graph) {
 
-		for (int neighbor : graph.get(src)) {
-			if (!visited[neighbor]) {
-				visited[neighbor] = true;
-				dfs(neighbor, result, graph, visited);
+		List<Integer> sort = new ArrayList<>();
+		boolean[] visited = new boolean[v];
+
+		for (int i = 0; i < v; i++) {
+
+			dfs(i, sort, visited, graph);
+		}
+
+		Collections.reverse(sort);
+
+		return sort;
+	}
+
+	
+	private static void dfs(int node, boolean[] visited, List<List<Integer>> graph) {
+
+		if (visited[node]) return;
+		visited[node] = true;
+
+		for (int neighbor : graph.get(node)) {
+			dfs(neighbor, visited, graph);
+		}
+	}
+
+	private static void dfs(int node, List<Integer> sort, boolean[] visited, List<List<Integer>> graph) {
+
+		if (visited[node]) return;
+		visited[node] = true;
+
+		for (int neighbor : graph.get(node)) {
+			dfs(neighbor, sort, visited, graph);
+		}
+
+		sort.add(node);
+	}
+
+	private static List<List<Integer>> createGraph(int v, ArrayList<ArrayList<Integer>> edges) {
+
+		List<List<Integer>> graph = new ArrayList<>();
+
+		for (int i = 0; i < v; i++) {
+			graph.add(new ArrayList<>());
+		}
+
+		for (ArrayList<Integer> edge : edges) {
+			graph.get(edge.get(0)).add(edge.get(1));
+		}
+
+		return graph;
+	}
+	
+	private static List<List<Integer>> reverseGraph(int v, List<List<Integer>> graph) {
+
+		List<List<Integer>> reversedGraph = new ArrayList<>();
+
+		for (int i = 0; i < v; i++) {
+			reversedGraph.add(new ArrayList<>());
+		}
+
+		for (int i = 0; i < v; i++) {
+
+			for (int neighbor : graph.get(i)) {
+				reversedGraph.get(neighbor).add(i);
 			}
 		}
 
-		result.add(src);
+		return reversedGraph;
 	}
 }
 ```

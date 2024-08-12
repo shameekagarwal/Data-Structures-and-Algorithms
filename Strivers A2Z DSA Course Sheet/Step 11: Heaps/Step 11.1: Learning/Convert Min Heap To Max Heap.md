@@ -11,7 +11,6 @@
 - maybe idea is when i am shifting down elements on (last level - 1), the entire height of heap (log<sub>2</sub>n) is not being traveled - we only look at the level below it
 - ignoring actual proof for now
 - i think same logic applies to my initial solution as well - i am just constructing a heap from a given set of elements. complexity of this is not O(n * log<sub>2</sub>N), because when i insert the first element, height should not be log<sub>2</sub>N, but just 1
-- TODO: try if shifting up works? start from 2nd level all the way to last level
 
 ```java
 import java.util.Arrays;
@@ -71,6 +70,50 @@ public class Solution {
         int temp = arr[a];
         arr[a] = arr[b];
         arr[b] = temp;
+    }
+}
+```
+
+## Solution 2
+
+- i tried another solution - bubble upward - do this for all elements from 0 to n-1
+- this way, when iterating, our array from 0 to idx would be ordered like a heap
+
+```java
+import java.util.*;
+
+public class Solution {
+
+    public static int[] MinToMaxHeap(int n, int[] arr) {
+
+        for (int i = 0; i < n; i++) {
+            bubbleUp(arr, i);
+            // System.out.println(Arrays.toString(arr));
+        }
+
+        return arr;
+    }
+
+    private static void bubbleUp(int[] arr, int idx) {
+
+        if (idx == 0) return;
+
+        int parent = getParent(idx);
+
+        if (arr[parent] < arr[idx]) {
+            swap(arr, parent, idx);
+            bubbleUp(arr, parent);
+        }
+    }
+
+    private static void swap(int[] arr, int i, int j) {
+        int element = arr[i];
+        arr[i] = arr[j];
+        arr[j] = element;
+    }
+
+    private static int getParent(int node) {
+        return (node - 1) / 2;
     }
 }
 ```

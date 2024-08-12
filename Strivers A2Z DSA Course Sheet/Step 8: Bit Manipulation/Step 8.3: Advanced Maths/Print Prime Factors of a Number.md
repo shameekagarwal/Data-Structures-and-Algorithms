@@ -1,5 +1,9 @@
 #	Print Prime Factors of a Number
 
+- naive - 
+  - find all numbers that are prime up to n using sieve of eratostheneses - O(n * log(log(n)))
+  - finding all factors should be possible in O(sqrt(n))
+  - during all this, keep checking if the sieve holds true for them
 - https://www.codingninjas.com/studio/problems/prime-factorisation_1760849
 
 ```java

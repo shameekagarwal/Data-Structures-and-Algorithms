@@ -1,13 +1,13 @@
 # Number of NGEs to the right
 
+- https://www.geeksforgeeks.org/problems/number-of-nges-to-the-right/1
 - https://www.codingninjas.com/studio/problems/count-of-greater-elements-to-the-right_8365436
-- nothing to do with stack - think of it like [Inversions](/Striver%20-%20Interview%20Prep/Step%203:%20Solve%20Problems%20on%20Arrays/Step%203.3:%20Hard/Number%20of%20Inversions.md), but here we do not need just the total count, but we want it separately for each index
 - why no stack? - in [next greater element](./Next%20Greater%20Element.md), we pop all `a[y]` from value if `a[x] >= a[y]` for all x < y. advantage - but `a[y]` could have "contributed to the count", even if it is not the immediate nge
 - while both left and right halves have elements
 - every time an element gets from picked from the left
 - number of elements on the right half are all the elements that are greater
 - vvimp - condition checks only < to ensure strictly greater
-  - this way, assume x is an elements present 3 times on left half and 5 times on right half
+  - this way, assume x is an element present 3 times on left half and 5 times on right half
   - first, all the ones on right half will get added
   - now, for the left half, only remaining elements of right half will be considered for nge, which "will be" greater than x
 

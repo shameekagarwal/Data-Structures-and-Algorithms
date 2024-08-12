@@ -13,67 +13,54 @@
 class Solution {
 
     public String shortestCommonSupersequence(String str1, String str2) {
-        
-        char[] str1Arr = str1.toCharArray();
-        char[] str2Arr = str2.toCharArray();
+        return shortestCommonSupersequence(str1.toCharArray(), str2.toCharArray());
+    }
 
-        int m = str1Arr.length;
-        int n = str2Arr.length;
+    public String shortestCommonSupersequence(char[] str1, char[] str2) {
 
-        int[][] dp = new int[m][n];
+        int m = str1.length;
+        int n = str2.length;
+
+        int[][] dp = new int[m + 1][n + 1];
 
         for (int i = 0; i < m; i++) {
+
             for (int j = 0; j < n; j++) {
-                if (str1Arr[i] == str2Arr[j]) {
-                    dp[i][j] = ((i == 0 || j == 0) ? 0 : dp[i - 1][j - 1]) + 1;
-                } else {
-                    dp[i][j] = Math.max(
-                        i == 0 ? 0 : dp[i - 1][j],
-                        j == 0 ? 0 : dp[i][j - 1]
-                    );
+
+                dp[i + 1][j + 1] = Math.max(dp[i + 1][j], dp[i][j + 1]);
+
+                if (str1[i] == str2[j]) {
+                    dp[i + 1][j + 1] = Math.max(dp[i][j] + 1, dp[i + 1][j + 1]);
                 }
             }
-            System.out.println(Arrays.toString(dp[i]));
         }
 
-        int x = m - 1;
-        int y = n - 1;
+        int ptr1 = m;
+        int ptr2 = n;
 
-        StringBuilder sb = new StringBuilder();
+        StringBuilder result = new StringBuilder();
 
-        while (x > -1 && y > -1) {
-            if (str1Arr[x] == str2Arr[y]) {
-                sb.append(str1Arr[x]);
-                x -= 1;
-                y -= 1;
+        while (ptr1 > 0 || ptr2 > 0) {
+
+            if (ptr1 > 0 &&dp[ptr1][ptr2] == dp[ptr1 - 1][ptr2]) {
+                result.append(str1[ptr1 - 1]);
+                ptr1 -= 1;
+            } else if (ptr2 > 0 &&dp[ptr1][ptr2] == dp[ptr1][ptr2 - 1]) {
+                result.append(str2[ptr2 - 1]);
+                ptr2 -= 1;
+            } else if (ptr1 > 0 && ptr2 > 0 && dp[ptr1][ptr2] == dp[ptr1 - 1][ptr2 - 1] + 1) {
+                result.append(str1[ptr1 - 1]);
+                ptr1 -= 1;
+                ptr2 -= 1;
             } else {
-                if (x > 0 && dp[x][y] == dp[x - 1][y]) {
-                    sb.append(str1Arr[x]);
-                    x -= 1;
-                } else if (y > 0 && dp[x][y] == dp[x][y - 1]) {
-                    sb.append(str2Arr[y]);
-                    y -= 1;
-                } else {
-                    // i think this case is for s = 0, e = 0, dp[0][0] = 0?
-                    // just add first character of both in the remaining while loops
-                    break;
-                }
+                System.out.println("kaise hua");
+                break;
             }
         }
 
-        while (x > -1) {
-            sb.append(str1Arr[x]);
-            x -= 1;
-        }
+        result.reverse();
 
-        while (y > -1) {
-            sb.append(str2Arr[y]);
-            y -= 1;
-        }
-
-        sb.reverse();
-
-        return sb.toString();
+        return result.toString();
     }
 }
 ```

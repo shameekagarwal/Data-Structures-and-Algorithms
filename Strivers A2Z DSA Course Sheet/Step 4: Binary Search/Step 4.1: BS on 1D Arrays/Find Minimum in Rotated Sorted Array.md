@@ -53,3 +53,49 @@ class Solution {
     }
 }
 ```
+
+## Solution 2
+
+- came up with this different thought process
+- our answer is the first element of the second slope (if array is not at all rotated, it is the first element)
+- if arr(start) < arr(end) - means range is sorted. return arr(start)
+- else, range is not sorted. and it includes "two slopes". our answer is the first element of the second slope
+  - calculate mid
+  - if mid is smaller than left and right - return mid. this was the smallest element
+  - else, if arr(m) >= arr(s) - s-m is sorted. this has to be on the first slope. we can eliminate this
+  - else, m-e is sorted. this has to be on the second slope. since we already know m is also not it, we can eliminate this
+
+```java
+class Solution {
+
+    public int findMin(int[] nums) {
+
+        int start = 0;
+        int end = nums.length - 1;
+
+        while (start <= end) {
+
+            if (nums[start] <= nums[end]) {
+                return nums[start];
+            }
+
+            int mid = (start + end) / 2;
+
+            boolean lessThanLeft = mid == 0 ? true : nums[mid] < nums[mid - 1];
+            boolean lessThanRight = mid == nums.length - 1 ? true : nums[mid] < nums[mid + 1];
+
+            if (lessThanLeft && lessThanRight) {
+                return nums[mid];
+            }
+
+            if (nums[mid] >= nums[start]) {
+                start = mid + 1;
+            } else {
+                end = mid - 1;
+            }
+        }
+
+        return -1;
+    }
+}
+```

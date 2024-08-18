@@ -28,27 +28,28 @@ const script = async () => {
 script();
 ```
 
+- ✅ - done in 1 attempt
+- ⚠️ - took multiple attempts
+- ❌ - could not do / could not do optimally
+
 | completed | leetcode | gfg |
 | --------- | -------- | -------- |
 | ✅ | null | https://bit.ly/3Np2R2H |
-| | null | https://bit.ly/3dGuwyv |
-| | https://leetcode.com/problems/triangle/ | https://bit.ly/3c1H9Uf |
-| | null | https://bit.ly/3Cbc5fz |
-| | https://leetcode.com/problems/remove-duplicates-from-sorted-array/#:~:text=Input%3A%20nums%20%3D%20%5B0%2C,%2C%203%2C%20and%204%20respectively. | https://bit.ly/3w7b6ck |
-| | https://leetcode.com/problems/combination-sum/ | https://bit.ly/3C9bJ91 |
-| |  | https://bit.ly/3PA7mY0 |
-| | https://leetcode.com/problems/longest-palindromic-subsequence/ | https://practice.geeksforgeeks.org/problems/longest-palindromic-subsequence-1612327878/1 |
-| | https://leetcode.com/problems/binary-tree-inorder-traversal/ | https://bit.ly/3QzNDbU |
-| | https://leetcode.com/problems/word-break/ | https://bit.ly/3bVT5XN |
-| | null | https://bit.ly/3UVCR1U |
-| | https://leetcode.com/problems/unique-paths-ii/ | https://bit.ly/3tNYlBU |
-| | null | https://bit.ly/3SPGzbK |
-| | https://leetcode.com/problems/construct-binary-search-tree-from-preorder-traversal/ | https://practice.geeksforgeeks.org/problems/preorder-to-postorder4423/1 |
-| | null | null |
-| | https://leetcode.com/problems/course-schedule-ii/ | https://bit.ly/3w8ZBBl |
-| | null | null |
-| | null | https://bit.ly/3XiRbmG |
-| | https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/ | https://bit.ly/3Az1OJ3 |
+| ✅ | https://leetcode.com/problems/triangle/ | https://bit.ly/3c1H9Uf |
+| ⚠️ | null | https://bit.ly/3Cbc5fz |
+| ✅ | https://leetcode.com/problems/remove-duplicates-from-sorted-array/#:~:text=Input%3A%20nums%20%3D%20%5B0%2C,%2C%203%2C%20and%204%20respectively. | https://bit.ly/3w7b6ck |
+| ✅ | https://leetcode.com/problems/combination-sum/ | https://bit.ly/3C9bJ91 |
+| ✅ |  | https://bit.ly/3PA7mY0 |
+| ✅ | https://leetcode.com/problems/longest-palindromic-subsequence/ | https://practice.geeksforgeeks.org/problems/longest-palindromic-subsequence-1612327878/1 |
+| ✅ | https://leetcode.com/problems/binary-tree-inorder-traversal/ | https://bit.ly/3QzNDbU |
+| ✅ | https://leetcode.com/problems/word-break/ | https://bit.ly/3bVT5XN |
+| ✅ | null | https://bit.ly/3UVCR1U |
+| ✅ | https://leetcode.com/problems/unique-paths-ii/ | https://bit.ly/3tNYlBU |
+| ❌ | null | https://bit.ly/3SPGzbK |
+| ❌ | https://leetcode.com/problems/construct-binary-search-tree-from-preorder-traversal/ | https://practice.geeksforgeeks.org/problems/preorder-to-postorder4423/1 |
+| ✅ | https://leetcode.com/problems/course-schedule-ii/ | https://bit.ly/3w8ZBBl |
+| ✅ | null | https://bit.ly/3XiRbmG |
+| ✅ | https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/ | https://bit.ly/3Az1OJ3 |
 | | null | https://bit.ly/3dsEbIK |
 | | https://leetcode.com/accounts/login/?next=/problems/find-the-celebrity/ | https://bit.ly/3dC9IIB |
 | | https://leetcode.com/problems/candy/ | https://bit.ly/3h14wzm |

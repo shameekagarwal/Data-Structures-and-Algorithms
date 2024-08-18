@@ -14,3 +14,16 @@
 
 - so, in order + (pre order / post order) - unique binary tree is possible
 - so, pre order + post order - unique binary tree is NOT possible
+- https://www.geeksforgeeks.org/problems/unique-binary-tree-requirements
+
+```java
+class Solution {
+    
+    public static boolean isPossible(int a, int b) {
+
+        if (a > b) return isPossible(b, a);
+
+        return (a == 1 && b == 2) || (a == 2 && b == 3);
+    }
+}
+```

@@ -1,36 +1,52 @@
 # Word Break
 
 - https://leetcode.com/problems/word-break/
-- important - was getting tle for the case - 
-  ```
-  "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab"
-  ["a","aa","aaa","aaaa","aaaaa","aaaaaa","aaaaaaa","aaaaaaaa","aaaaaaaaa","aaaaaaaaaa"]
-  ```
-- at this point i realized - if i can break a sentence up to x into words - does not matter how - i do not need to care about all other solutions for it, given that question asks for true false, not for all possible ways
-- so, i used a `isBreakableUpto` boolean array to help achieve this
+- if sentence(i...word.length) == word, we should try checking if i+word.length onwards can be broken
+- repeating problems - sentence = icecreamman, dict = (ice, cream, icecream)
+- we try breaking up to icecream using two ways - but if we already know man cannot be constructed, no point retrying
+- time complexity - (len of dict * len of word * len of sentence)?
 
 ```java
 class Solution {
+
     public boolean wordBreak(String s, List<String> wordDict) {
-        boolean[] isBreakableUpto = new boolean[s.length()];
-        return recurse(s, wordDict, 0, isBreakableUpto);
+
+        boolean[] memo = new boolean[s.length()];
+        boolean[] seen = new boolean[s.length()];
+
+        return wordBreak(memo, seen, s, wordDict, 0);
     }
 
-    private boolean recurse(String s, List<String> wordDict, int idx, boolean[] isBreakableUpto) {
+    public boolean wordBreak(boolean[] memo, boolean[] seen, String sentence, List<String> wordDict, int idx) {
 
-        if (idx == s.length()) return true;
+        if (idx == sentence.length()) {
+            return true;
+        }
 
-        for (int i = idx; i < s.length(); i++) {
-            if (!isBreakableUpto[i] && wordDict.contains(s.substring(idx, i + 1))) {
-                isBreakableUpto[i] = true;
-                // System.out.printf("found %s at %d\n", s.substring(idx, i + 1), idx);
-                if (recurse(s, wordDict, i + 1, isBreakableUpto)) {
-                    return true;
+        if (seen[idx]) {
+            return memo[idx];
+        }
+
+        boolean result = false;
+
+        for (String word : wordDict) {
+
+            if (idx + word.length() <= sentence.length()) {
+
+                if (sentence.substring(idx, idx + word.length()).equals(word)) {
+
+                    if (wordBreak(memo, seen, sentence, wordDict, idx + word.length())) {
+                        result = true;
+                        break;
+                    }
                 }
             }
         }
 
-        return false;
+        seen[idx] = true;
+        memo[idx] = result;
+
+        return result;
     }
 }
 ```

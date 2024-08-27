@@ -7,80 +7,89 @@
 - so, we need to add the number of ways of reaching x when calculating number of ways of reaching destination
 - simply adding 1 will not work
 - so, along with initializing distance with 0 for source, initialize number of ways for source with 1
+- another point - it might happen that a node is processed multiple times with different weights - 
+    - e.g. we have 1 -> 3 -> 5 and 1 -> 5
+    - first path has weight 7, second path has weight 10
+    - so, however, 1 -> 5 will be added first to the pq, and stay there till the end
+    - 1 -> 3 -> 5 will be added later but removed first
+    - we will just have to discard it
 
 ```java
 class Solution {
 
-    private static final int MODULO = 1000000007;
+    private static final int MOD = 1_000_000_007;
 
     public int countPaths(int n, int[][] roads) {
 
-        /* construct graph */
-        
-        List<List<Road>> graph = new ArrayList<>();
-        
+        List<List<Node>> graph = new ArrayList<>();
+
         for (int i = 0; i < n; i++) {
             graph.add(new ArrayList<>());
         }
 
         for (int[] road : roads) {
-            graph.get(road[0]).add(new Road(road[1], road[2]));
-            graph.get(road[1]).add(new Road(road[0], road[2]));
+            graph.get(road[0]).add(new Node(road[1], road[2]));
+            graph.get(road[1]).add(new Node(road[0], road[2]));
         }
 
-        /* ============================= */
+        long[] distance = new long[n];
+        Arrays.fill(distance, Long.MAX_VALUE);
+        distance[0] = 0;
 
-        /* dijkstra */
+        int[] noOfWays = new int[n];
+        noOfWays[0] = 1;
 
-        long[] times = new long[n];
-        Arrays.fill(times, -1);
-        
-        int[] numberOfWays = new int[n];
+        PriorityQueue<Node> pq = new PriorityQueue<>();
+        pq.add(new Node(0, 0L));
 
-        PriorityQueue<Road> minHeap = new PriorityQueue<>();
-        minHeap.add(new Road(0, 0));
-        numberOfWays[0] = 1;
-        times[0] = 0;
+        while (!pq.isEmpty()) {
 
-        while (!minHeap.isEmpty()) {
+            Node node = pq.remove();
+            if (node.distance > distance[node.vertex]) continue;
 
-            Road road = minHeap.poll();
+            // System.out.printf("processing %d\n", node.vertex);
 
-            for (Road neighbor : graph.get(road.destination)) {
-                if (times[neighbor.destination] == -1 || times[neighbor.destination] > road.time + neighbor.time) {
-                    times[neighbor.destination] = road.time + neighbor.time;
-                    numberOfWays[neighbor.destination] = numberOfWays[road.destination];
-                    minHeap.add(new Road(neighbor.destination, times[neighbor.destination]));
-                } else if (times[neighbor.destination] == road.time + neighbor.time) {
-                    numberOfWays[neighbor.destination] = (numberOfWays[neighbor.destination] + numberOfWays[road.destination]) % MODULO;
+            for (Node neighbor : graph.get(node.vertex)) {
+
+                if (neighbor.distance + distance[node.vertex] < distance[neighbor.vertex]) {
+                    distance[neighbor.vertex] = neighbor.distance + distance[node.vertex];
+                    noOfWays[neighbor.vertex] = noOfWays[node.vertex];
+                    pq.add(new Node(neighbor.vertex, distance[neighbor.vertex]));
+                } else if (neighbor.distance + distance[node.vertex] == distance[neighbor.vertex]) {
+                    noOfWays[neighbor.vertex] = addMod(noOfWays[neighbor.vertex], noOfWays[node.vertex]);
                 }
             }
+
+            // System.out.println(Arrays.toString(distance));
+            // System.out.println(Arrays.toString(noOfWays));
+            // System.out.println();
         }
 
-        return numberOfWays[n - 1];
-
-        /* ============================= */
+        return noOfWays[n - 1];
     }
 
-    static class Road implements Comparable<Road> {
+    private static int addMod(int a, int b) {
+        return (int) ((0L + a + b) % MOD);
+    }
 
-        int destination;
-        long time;
+    static class Node implements Comparable<Node> {
 
-        Road(int destination, long time) {
-            this.destination = destination;
-            this.time = time;
-        }
+        int vertex;
+        long distance;
 
-        @Override
-        public int compareTo(Road road) {
-            if (time > road.time) return 1;
-            return -1;
+        Node(int vertex, long distance) {
+            this.vertex = vertex;
+            this.distance = distance;
         }
 
         @Override
         public String toString() {
-            return "Road(destination=" + destination + ", time=" + time + ")";
+            return "(" + vertex + ", " + distance + ")";
+        }
+
+        @Override
+        public int compareTo(Node node) {
+            return distance > node.distance ? 1 : -1;
         }
     }
 }

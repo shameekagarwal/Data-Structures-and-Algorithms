@@ -58,8 +58,8 @@ script();
 | | https://www.spoj.com/problems/AGGRCOW/ | https://bit.ly/3rBuE5Z |
 | | https://leetcode.com/problems/hand-of-straights/ | null |
 | | https://leetcode.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/ | https://bit.ly/3wbFiTI |
-| | https://leetcode.com/problems/implement-trie-prefix-tree/ | https://bit.ly/3pqacEj |
-| | https://leetcode.com/problems/number-of-ways-to-arrive-at-destination/ | https://practice.geeksforgeeks.org/problems/number-of-ways-to-arrive-at-destination/1 |
+| ✅ | https://leetcode.com/problems/implement-trie-prefix-tree/ | https://bit.ly/3pqacEj |
+| ❌ | https://leetcode.com/problems/number-of-ways-to-arrive-at-destination/ | https://practice.geeksforgeeks.org/problems/number-of-ways-to-arrive-at-destination/1 |
 | | https://leetcode.com/problems/number-of-enclaves/ | https://practice.geeksforgeeks.org/problems/number-of-enclaves/1 |
 | | https://practice.geeksforgeeks.org/problems/n-meetings-in-one-room-1587115620/1 | https://bit.ly/3A6Ob1Y |
 | | null | https://bit.ly/3glak75 |

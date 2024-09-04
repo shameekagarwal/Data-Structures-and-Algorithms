@@ -14,64 +14,66 @@
 
 ```java
 class Solution {
-    
+
     public void solveSudoku(char[][] board) {
-        
-        boolean[][] isRowUsed = new boolean[9][9];
-        boolean[][] isColUsed = new boolean[9][9];
-        boolean[][] isMatUsed = new boolean[9][9];
-        
+
+        boolean[][] rowsFilled = new boolean[9][9];
+        boolean[][] colsFilled = new boolean[9][9];
+        boolean[][] boxesFilled = new boolean[9][9];
+
         for (int i = 0; i < 9; i++) {
             for (int j = 0; j < 9; j++) {
-                if (board[i][j] != '.') {
-                    int matNo = ((i / 3) * 3) + (j / 3);
-                    isRowUsed[i][board[i][j] - '1'] = true;
-                    isColUsed[j][board[i][j] - '1'] = true;
-                    isMatUsed[matNo][board[i][j] - '1'] = true;
-                }
+
+                if (board[i][j] == '.') continue;
+
+                int mark = board[i][j] - '1';
+                int box = getBox(i, j);
+
+                rowsFilled[i][mark] = true;
+                colsFilled[j][mark] = true;
+                boxesFilled[box][mark] = true;
             }
         }
-        
-        fill(board, 0, 0, isRowUsed, isColUsed, isMatUsed);
+
+        solveSudoku(board, 0, 0, rowsFilled, colsFilled, boxesFilled);
     }
 
-    private boolean fill(char[][] board, int x, int y, boolean[][] isRowUsed, boolean[][] isColUsed, boolean[][] isMatUsed) {
+    private boolean solveSudoku(char[][] board, 
+        int row, int col, 
+        boolean[][] rowsFilled, boolean[][] colsFilled, boolean[][] boxesFilled) {
 
-        if (board[x][y] != '.') {
-            if (y + 1 < 9) return fill(board, x, y + 1, isRowUsed, isColUsed, isMatUsed);
-            else if (x + 1 < 9) return fill(board, x + 1, 0, isRowUsed, isColUsed, isMatUsed);
-            else return true;
-        }
+        if (row == 9) return true;
+        if (col == 9) return solveSudoku(board, row + 1, 0, rowsFilled, colsFilled, boxesFilled);
+        if (board[row][col] != '.') return solveSudoku(board, row, col + 1, rowsFilled, colsFilled, boxesFilled);
 
-        for (int i = 0; i < 9; i++) {
-            int matNo = ((x / 3) * 3) + (y / 3);
-            if (!isRowUsed[x][i] && !isColUsed[y][i] && !isMatUsed[matNo][i]) {
+        for (int mark = 1; mark <= 9; mark++) {
 
-                isRowUsed[x][i] = true;
-                isColUsed[y][i] = true;
-                isMatUsed[matNo][i] = true;
-                board[x][y] = (char) ('1' + i);
+            if (rowsFilled[row][mark - 1]) continue;
+            if (colsFilled[col][mark - 1]) continue;
 
-                if (y + 1 < 9) {
-                    if (fill(board, x, y + 1, isRowUsed, isColUsed, isMatUsed)) {
-                        return true;
-                    }
-                } else if (x + 1 < 9) {
-                    if (fill(board, x + 1, 0, isRowUsed, isColUsed, isMatUsed)) {
-                        return true;
-                    }
-                } else {
-                    return true;
-                }
+            int box = (row / 3 * 3) + (col / 3);
+            if (boxesFilled[box][mark - 1]) continue;
 
-                isRowUsed[x][i] = false;
-                isColUsed[y][i] = false;
-                isMatUsed[matNo][i] = false;
-                board[x][y] = '.';
+            board[row][col] = (char) ('0' + mark);
+            boxesFilled[box][mark - 1] = true;
+            rowsFilled[row][mark - 1] = true;
+            colsFilled[col][mark - 1] = true;
+
+            if (solveSudoku(board, row, col + 1, rowsFilled, colsFilled, boxesFilled)) {
+                return true;
             }
+
+            board[row][col] = '.';
+            boxesFilled[box][mark - 1] = false;
+            rowsFilled[row][mark - 1] = false;
+            colsFilled[col][mark - 1] = false;
         }
 
         return false;
+    }
+
+    private int getBox(int row, int col) {
+        return (row / 3 * 3) + (col / 3);
     }
 }
 ```

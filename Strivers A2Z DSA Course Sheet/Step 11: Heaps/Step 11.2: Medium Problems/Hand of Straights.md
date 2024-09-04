@@ -51,6 +51,56 @@ class Solution {
 }
 ```
 
+- i think above solution is a little (better ?) if implemented using tree map
+
+```java
+class Solution {
+
+    public boolean isNStraightHand(int[] hand, int groupSize) {
+
+        if (hand.length % groupSize != 0) {
+            return false;
+        }
+
+        int noOfGroups = hand.length / groupSize;
+
+        Map<Integer, Integer> frequency = new TreeMap<>();
+
+        for (int i = 0; i < hand.length; i++) {
+            frequency.put(hand[i], frequency.getOrDefault(hand[i], 0) + 1);
+        }
+
+        for (int i = 0; i < noOfGroups; i++) {
+
+            int toPick = frequency.entrySet().iterator().next().getKey();
+
+            // System.out.printf("group %d: ", i + 1);
+
+            for (int j = 0; j < groupSize; j++) {
+
+                if (!frequency.containsKey(toPick)) {
+                    return false;
+                }
+
+                // System.out.printf("%d, ", toPick);
+
+                frequency.put(toPick, frequency.get(toPick) - 1);
+
+                if (frequency.get(toPick) == 0) {
+                    frequency.remove(toPick);
+                }
+
+                toPick += 1;
+            }
+
+            // System.out.printf("\n");
+        }
+
+        return true;
+    }
+}
+```
+
 - another solution - sorting
 - store the array of counts inside a map
 - sort the array

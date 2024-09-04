@@ -31,6 +31,7 @@ script();
 - ✅ - done in 1 attempt
 - ⚠️ - took multiple attempts
 - ❌ - could not do / could not do optimally
+- ❓ - could not think of the other approaches
 
 | completed | leetcode | gfg |
 | --------- | -------- | -------- |
@@ -50,14 +51,13 @@ script();
 | ✅ | https://leetcode.com/problems/course-schedule-ii/ | https://bit.ly/3w8ZBBl |
 | ✅ | null | https://bit.ly/3XiRbmG |
 | ✅ | https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/ | https://bit.ly/3Az1OJ3 |
-| | null | https://bit.ly/3dsEbIK |
-| | https://leetcode.com/accounts/login/?next=/problems/find-the-celebrity/ | https://bit.ly/3dC9IIB |
-| | https://leetcode.com/problems/candy/ | https://bit.ly/3h14wzm |
-| | https://leetcode.com/problems/sudoku-solver/ | https://bit.ly/3PrA5hs |
-| | https://leetcode.com/problems/binary-tree-inorder-traversal/ | https://bit.ly/3QzNDbU |
-| | https://www.spoj.com/problems/AGGRCOW/ | https://bit.ly/3rBuE5Z |
-| | https://leetcode.com/problems/hand-of-straights/ | null |
-| | https://leetcode.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/ | https://bit.ly/3wbFiTI |
+| ✅ | https://leetcode.com/accounts/login/?next=/problems/find-the-celebrity/ | https://bit.ly/3dC9IIB |
+| ❓ | https://leetcode.com/problems/candy/ | https://bit.ly/3h14wzm |
+| ✅ | https://leetcode.com/problems/sudoku-solver/ | https://bit.ly/3PrA5hs |
+| ✅ | https://www.spoj.com/problems/AGGRCOW/ | https://bit.ly/3rBuE5Z |
+| ✅ | https://leetcode.com/problems/hand-of-straights/ | null |
+| ⚠️ | https://leetcode.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/ | https://bit.ly/3wbFiTI |
+| ❌ | null | https://bit.ly/3dsEbIK |
 | ✅ | https://leetcode.com/problems/implement-trie-prefix-tree/ | https://bit.ly/3pqacEj |
 | ❌ | https://leetcode.com/problems/number-of-ways-to-arrive-at-destination/ | https://practice.geeksforgeeks.org/problems/number-of-ways-to-arrive-at-destination/1 |
 | | https://leetcode.com/problems/number-of-enclaves/ | https://practice.geeksforgeeks.org/problems/number-of-enclaves/1 |
